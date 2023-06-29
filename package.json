@@ -2,7 +2,6 @@
   "name": "microcms-astro",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@8.6.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -33,5 +32,9 @@
     "prop-types": "^15.8.1",
     "sass": "^1.63.4",
     "storybook": "^7.0.21"
+  },
+  "volta": {
+    "node": "18.16.1",
+    "pnpm": "8.6.5"
   }
 }
