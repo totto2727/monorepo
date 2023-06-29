@@ -1,20 +1,24 @@
 ---
 import "the-new-css-reset/css/reset.css";
-import "@/style/font.scss"
+import "@/style/font.scss";
+import Favicon from "@/layouts/meta/Favicon.astro";
 
 export interface Props {
-    title: string;
+  title: string;
 }
 
-const {title} = Astro.props;
+const { title } = Astro.props;
 ---
+
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <title>{title}</title>
-  <slot name='metas'/>
-</head>
-<body>
-<slot/>
-</body>
+  <head>
+    <title>{title}</title>
+    <meta charset="utf-8" slot="metas" />
+    <Favicon />
+    <slot name="metas" />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
