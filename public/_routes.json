@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/_worker.js",
+    "/404.html",
+    "/404/*",
+    "/favicon/*",
+    "/asset/*",
+    "/_astro/*",
+    "/counter/*",
+    "/hello/*",
+    "/ssg/*"
+  ]
+}
