@@ -7,11 +7,12 @@
     "/_worker.js",
     "/404.html",
     "/404/*",
+    "/error/*",
     "/favicon/*",
     "/asset/*",
     "/_astro/*",
     "/counter/*",
     "/hello/*",
-    "/ssg/*"
+    "/blogs/ssg/*"
   ]
 }

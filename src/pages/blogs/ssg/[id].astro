@@ -1,0 +1,36 @@
+---
+import { microCMS } from "@/config/microCMS";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { isFailure } from "@/lib/result";
+import { getBlogs } from "@/query/blogs";
+
+export async function getStaticPaths() {
+    const client = microCMS(Astro.request);
+    const result = await getBlogs(client, {
+        fields: ["id", "title", "content", "publishedAt"],
+    });
+    if (isFailure(result)) {
+        throw result;
+    }
+    console.info(result);
+
+    const blogs = result.value;
+
+    return blogs.contents.map((blog) => ({
+        params: {
+            id: blog.id,
+        },
+        props: blog,
+    }));
+}
+
+const blog = Astro.props;
+---
+
+<BaseLayout title={blog.title}>
+    <main>
+        <h1>{blog.title}</h1>
+        <p>公開日時：{blog.publishedAt}</p>
+        <div set:html={blog.content} />
+    </main>
+</BaseLayout>
