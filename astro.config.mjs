@@ -7,5 +7,11 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   integrations: [react()],
   output: "hybrid",
-  adapter: cloudflare({ mode: 'directory' })
+  adapter: cloudflare({ mode: 'directory' }),
+  vite: {
+    define: {
+      'process.env.MICROCMS_SERVICE_DOMAIN': JSON.stringify(process.env.MICROCMS_SERVICE_DOMAIN),
+      'process.env.MICROCMS_API_KEY': JSON.stringify(process.env.MICROCMS_API_KEY)
+    }
+  }
 });
