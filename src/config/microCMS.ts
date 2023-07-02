@@ -9,11 +9,10 @@ function loadEnv(env?: Record<string, unknown>) {
 
 export type MicroCMSClientObject = ReturnType<typeof createClient>
 
-export function microCMS(request: Request): MicroCMSClientObject {
-    const runtime = request ? getRuntime(request) as { env?: Record<string, unknown> } | undefined : undefined
-    const isLoadRequest = typeof runtime?.env?.MICROCMS_SERVICE_DOMAIN === 'string' && typeof runtime.env.MICROCMS_API_KEY === 'string'
-    const env = loadEnv(isLoadRequest ? runtime.env : import.meta.env);
-    return createClient(env)
+export function microCMS(request?: Request): MicroCMSClientObject {
+    if (!request) return createClient(loadEnv(import.meta.env))
+    const runtime = getRuntime(request) as { env?: Record<string, unknown> }
+    return createClient(loadEnv(runtime.env))
 }
 
 export async function getList<T extends MicroCMSObjectContent>(client: MicroCMSClientObject, getListRequest: GetListRequest): Promise<AnyhowResult<MicroCMSListResponse<T>>> {
