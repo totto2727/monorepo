@@ -3,6 +3,7 @@ import { getRuntime } from "@astrojs/cloudflare/runtime";
 import { succeed, AnyhowResult, fail } from "@/lib/result";
 
 function loadEnv(env?: Record<string, unknown>) {
+    console.log(env)
     if (!(env && typeof env.MICROCMS_SERVICE_DOMAIN === 'string' && typeof env.MICROCMS_API_KEY === 'string')) throw new Error('MicroCMSの環境変数の読み込みに失敗しました')
     return { serviceDomain: env.MICROCMS_SERVICE_DOMAIN, apiKey: env.MICROCMS_API_KEY }
 }
