@@ -1,0 +1,33 @@
+---
+export const prerender = false;
+
+import { microCMS } from "@/config/microCMS";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { isFailure } from "@/lib/result";
+import { getBlog } from "@/query/blogs";
+
+const { id } = Astro.params;
+if (!id) {
+    return Astro.redirect("/blogs/ssr");
+}
+
+const client = microCMS(Astro.request);
+const result = await getBlog(client, id, {
+    fields: ["id", "title", "content", "publishedAt"],
+});
+if (isFailure(result)) {
+    console.error(result);
+    return Astro.redirect("/error/", 301);
+}
+console.info(result);
+
+const blog = result.value;
+---
+
+<BaseLayout title={blog.title}>
+    <main>
+        <h1>{blog.title}</h1>
+        <p>公開日時：{blog.publishedAt}</p>
+        <div set:html={blog.content} />
+    </main>
+</BaseLayout>
