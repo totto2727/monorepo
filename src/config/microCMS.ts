@@ -10,9 +10,15 @@ function loadEnv(env?: Record<string, unknown>) {
 export type MicroCMSClientObject = ReturnType<typeof createClient>
 
 const isDev = import.meta.env.DEV ?? false
+const isSSR = import.meta.env.SSR ?? false
 
 export function microCMS(request?: Request): MicroCMSClientObject {
-    const env = loadEnv(request && !isDev ? getRuntime(request).env as Record<string, unknown> : import.meta.env);
+    const isLoadRequest = Boolean(!isDev && isSSR && request)
+    if (!isLoadRequest) {
+        console.log('isLoadRequest:', isLoadRequest)
+        console.log('request:', request)
+    }
+    const env = loadEnv(isLoadRequest ? getRuntime(request ?? new Request('')).env as Record<string, unknown> : import.meta.env);
     return createClient(env)
 }
 
