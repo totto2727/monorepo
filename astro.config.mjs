@@ -7,5 +7,5 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   integrations: [react()],
   output: "hybrid",
-  adapter: cloudflare()
+  adapter: cloudflare({ mode: 'directory' })
 });
