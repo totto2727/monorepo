@@ -4,7 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { isFailure } from "@/lib/result";
 import { getBlogs } from "@/query/blogs";
 
-const client = microCMS();
+const client = microCMS(Astro.request);
 const result = await getBlogs(client, { fields: ["id", "title"] });
 if (isFailure(result)) {
     throw result;

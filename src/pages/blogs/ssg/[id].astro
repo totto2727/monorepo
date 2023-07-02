@@ -5,7 +5,7 @@ import { isFailure } from "@/lib/result";
 import { getBlogs } from "@/query/blogs";
 
 export async function getStaticPaths() {
-    const client = microCMS();
+    const client = microCMS(Astro.request);
     const result = await getBlogs(client, {
         fields: ["id", "title", "content", "publishedAt"],
     });
