@@ -1,25 +1,28 @@
-import { MicroCMSClientObject, getList, getListDetail } from "@/config/microCMS";
-import type { MicroCMSImage, MicroCMSListContent, MicroCMSListResponse, MicroCMSQueries } from "microcms-js-sdk";
+import { MicroCMSClientInstance, MicroCMSContent, MicroCMSListContent, MicroCMSQueriesWithoutFields, MicroCMSRichEditorField, getList, getListDetail, } from "@/config/microCMS";
+import type { MicroCMSImage } from "microcms-js-sdk";
 
-export type Blog = MicroCMSListContent & {
-    title: string;
-    content: string;
+export type BlogContent = MicroCMSContent<{
+    title: string
+    content: MicroCMSRichEditorField
     eyecatch: MicroCMSImage
+}>
+
+export type Blog = MicroCMSListContent<MicroCMSContent<BlogContent>>;
+
+const endpoint = 'blogs'
+
+export async function getBlogs<const T extends readonly (keyof Blog)[]>(client: MicroCMSClientInstance, fieldId: T, queries?: MicroCMSQueriesWithoutFields) {
+    return await getList<Blog, T>(client, fieldId, { endpoint, queries });
 };
 
-export type Blogs = MicroCMSListResponse<Blog>;
-
-export async function getBlogs(client: MicroCMSClientObject, queries?: MicroCMSQueries) {
-    return await getList<Blog>(client, { endpoint: "blogs", queries });
-};
-
-export const getBlog = async (
-    client: MicroCMSClientObject,
+export const getBlog = async <const T extends readonly (keyof Blog)[]>(
+    client: MicroCMSClientInstance,
     contentId: string,
-    queries?: MicroCMSQueries
+    fieldId: T,
+    queries?: MicroCMSQueriesWithoutFields
 ) => {
-    return await getListDetail<Blog>(client, {
-        endpoint: "blogs",
+    return await getListDetail<Blog, T>(client, fieldId, {
+        endpoint,
         contentId,
         queries,
     });

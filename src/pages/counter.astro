@@ -1,14 +1,15 @@
 ---
-import {Counter, IncrementButton} from '../components/Counter'
+import { Counter, IncrementButton } from "../components/Counter";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
+
 <BaseLayout title="counter">
-  <meta charset="utf-8" slot="metas"/>
-  <meta name="keywords" content="キーワード1,キーワード2" slot="metas">
-  <meta name="description" content="ページ概要" slot="metas">
+  <meta charset="utf-8" slot="metas" />
+  <meta name="keywords" content="キーワード1,キーワード2" slot="metas" />
+  <meta name="description" content="ページ概要" slot="metas" />
   <main>
     <div>
-      <Counter client:load/>
+      <Counter client:load />
     </div>
     <div>
       <IncrementButton client:load>Increment</IncrementButton>

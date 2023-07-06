@@ -3,16 +3,23 @@ import { microCMS } from "@/config/microCMS";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { isFailure } from "@/lib/result";
 import { getBlogs } from "@/query/blogs";
+import BlogContent, { BlogContentIds, BlogProps, blogContentIds } from "@/components/Blog/Content.astro";
 
-export async function getStaticPaths() {
+export type Props = BlogProps["blog"];
+
+export async function getStaticPaths(): Promise<
+    {
+        params: { id: string };
+        props: Props;
+    }[]
+> {
     const client = microCMS();
-    const result = await getBlogs(client, {
-        fields: ["id", "title", "content", "publishedAt"],
-    });
+
+    const result = await getBlogs<BlogContentIds>(client, blogContentIds);
     if (isFailure(result)) {
         throw result;
     }
-    console.info(result);
+    console.info(JSON.stringify(result));
 
     const blogs = result.value;
 
@@ -28,9 +35,5 @@ const blog = Astro.props;
 ---
 
 <BaseLayout title={blog.title}>
-    <main>
-        <h1>{blog.title}</h1>
-        <p>公開日時：{blog.publishedAt}</p>
-        <div set:html={blog.content} />
-    </main>
+    <BlogContent blog={blog} />
 </BaseLayout>
