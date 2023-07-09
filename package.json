@@ -13,33 +13,35 @@
     "check:type": "tsc"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^6.5.1",
+    "@astrojs/cloudflare": "^6.6.0",
+    "@astrojs/image": "^0.17.2",
     "@astrojs/react": "^2.2.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "astro": "^2.6.6",
-    "jotai": "^2.2.0",
+    "astro": "^2.8.0",
+    "cheerio": "1.0.0-rc.12",
+    "jotai": "^2.2.2",
+    "lucide-react": "^0.258.0",
     "microcms-js-sdk": "^2.5.0",
     "prop-types": "^15.8.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass": "^1.63.6",
-    "the-new-css-reset": "^1.8.6",
+    "the-new-css-reset": "^1.9.0",
     "typescript": "^5.1.6"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.21",
-    "@storybook/addon-interactions": "^7.0.21",
-    "@storybook/addon-links": "^7.0.21",
-    "@storybook/blocks": "^7.0.21",
-    "@storybook/react": "^7.0.21",
-    "@storybook/react-vite": "^7.0.21",
-    "@storybook/testing-library": "^0.0.14-next.2",
-    "storybook": "^7.0.21"
+    "@storybook/addon-essentials": "^7.0.26",
+    "@storybook/addon-interactions": "^7.0.26",
+    "@storybook/addon-links": "^7.0.26",
+    "@storybook/blocks": "^7.0.26",
+    "@storybook/react": "^7.0.26",
+    "@storybook/react-vite": "^7.0.26",
+    "@storybook/testing-library": "0.0.14-next.2",
+    "storybook": "^7.0.26"
   },
   "volta": {
     "node": "18.16.1",
     "pnpm": "8.6.5"
   }
 }
-
