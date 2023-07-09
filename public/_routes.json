@@ -9,10 +9,8 @@
     "/404/*",
     "/error/*",
     "/favicon/*",
+    "images/*",
     "/asset/*",
-    "/_astro/*",
-    "/counter/*",
-    "/hello/*",
-    "/blogs/ssg/*"
+    "/_astro/*"
   ]
 }
