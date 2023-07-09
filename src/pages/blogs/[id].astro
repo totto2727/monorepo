@@ -1,0 +1,152 @@
+---
+export const prerender = false;
+
+import { microCMS } from "@/config/microCMS";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { isFailure } from "@/lib/result";
+import { getBlog } from "@/query/blogs";
+import BlogContent, {
+    BlogContentIds,
+    blogContentIds,
+} from "@/components/Blog/Content.astro";
+import { Search } from "lucide-react";
+import { Image } from "@astrojs/image/components";
+import Maguro from "@/images/sashimi_maguro_akami.png";
+
+const { id } = Astro.params;
+if (!id) {
+    return Astro.redirect("/blogs/ssr");
+}
+
+const client = microCMS(Astro.request);
+const result = await getBlog<BlogContentIds>(client, id, blogContentIds);
+if (isFailure(result)) {
+    console.error(JSON.stringify(result));
+    return Astro.redirect("/error/", 301);
+}
+console.info(JSON.stringify(result));
+
+const blog = result.value;
+---
+
+<BaseLayout title={blog.title}>
+    <header class="header">
+        <nav class="navigation">
+            <span class="title">止まれないITエンジニアのブログ</span>
+            <Image
+                src={Maguro}
+                alt="ロゴのマグロの刺身"
+                width={30}
+                height={30}
+                class="logo"
+            />
+            <Search className="search" />
+        </nav>
+    </header>
+    <main class="container">
+        <h1 class="title">blog.title</h1>
+        <section class="blog"><BlogContent content={blog.content} /></section>
+    </main>
+    <footer class="footer">
+        <nav class="navigation">
+            <span class="title">止まれないITエンジニアのブログ</span>
+            <Image
+                src={Maguro}
+                alt="ロゴのマグロの刺身"
+                width={30}
+                height={30}
+                class="logo"
+            />
+        </nav>
+    </footer>
+</BaseLayout>
+
+<style lang="scss">
+    .header {
+        margin-block: 1rem;
+        display: grid;
+        place-items: center;
+
+        & > .navigation {
+            padding-inline: 2.5rem;
+            max-width: 75rem;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            & > .title {
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+
+            & > .logo {
+                object-fit: contain;
+                margin-right: auto;
+            }
+
+            & > .search {
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .container {
+        background-color: var(--bg-primary);
+
+        padding-bottom: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+
+        & > .title {
+            font-size: calc(var(--size-h1) * 1.125);
+            margin: 3rem;
+        }
+
+        & > .blog {
+            max-width: 75rem;
+
+            padding: 2rem;
+            border-radius: 0.75rem;
+
+            background-color: var(--bg-base);
+        }
+    }
+
+    .footer {
+        margin-block: 1rem;
+        display: grid;
+        place-items: center;
+
+        & > .navigation {
+            padding-inline: 2.5rem;
+            max-width: 75rem;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            & > .title {
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+
+            & > .logo {
+                object-fit: contain;
+                margin-right: auto;
+            }
+
+            & > .search {
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+            }
+        }
+    }
+</style>

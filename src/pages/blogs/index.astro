@@ -1,0 +1,32 @@
+---
+export const prerender = false;
+
+import { microCMS } from "@/config/microCMS";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { isFailure } from "@/lib/result";
+import { getBlogs } from "@/query/blogs";
+
+const client = microCMS(Astro.request);
+const result = await getBlogs(client, ["id", "title"]);
+if (isFailure(result)) {
+    console.error(JSON.stringify(result));
+    return Astro.redirect("/error/", 301);
+}
+console.info(JSON.stringify(result));
+
+const blogs = result.value;
+---
+
+<BaseLayout title=`blogs`>
+    <main>
+        <ul>
+            {
+                blogs.contents.map((blog) => (
+                    <li>
+                        <a href={`./${blog.id}`}>{blog.title}</a>
+                    </li>
+                ))
+            }
+        </ul>
+    </main>
+</BaseLayout>

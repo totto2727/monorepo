@@ -1,0 +1,8 @@
+* {
+    --size-h1: 2rem;
+    --size-h2: calc(var(--size-h1) * 0.85);
+    --size-h3: calc(var(--size-h2) * 0.85);
+    --size-h4: calc(var(--size-h3) * 0.85);
+    --size-h5: calc(var(--size-h4) * 0.85);
+    --size-h6: calc(var(--size-h5) * 0.85);
+}
