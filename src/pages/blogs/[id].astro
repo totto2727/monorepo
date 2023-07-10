@@ -33,7 +33,7 @@ const blog = result.value;
         <nav class="navigation">
             <span class="title">止まれないITエンジニアのブログ</span>
             <img
-                src={Maguro}
+                src={Maguro.src}
                 alt="ロゴのマグロの刺身"
                 width={30}
                 height={30}
@@ -43,14 +43,14 @@ const blog = result.value;
         </nav>
     </header>
     <main class="container">
-        <h1 class="title">blog.title</h1>
+        <h1 class="title">{blog.title}</h1>
         <section class="blog"><BlogContent content={blog.content} /></section>
     </main>
     <footer class="footer">
         <nav class="navigation">
             <span class="title">止まれないITエンジニアのブログ</span>
             <img
-                src={Maguro}
+                src={Maguro.src}
                 alt="ロゴのマグロの刺身"
                 width={30}
                 height={30}

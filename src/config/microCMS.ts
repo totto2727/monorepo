@@ -10,7 +10,7 @@ export type MicroCMSPrimitiveField = string | number | boolean
 
 export type MicroCMSImageField = MicroCMSImage
 export type MicroCMSRichEditorField = string & { [richEditoerSymbol]: 'rich-editor' }
-export type MicroCMSExtendedField = MicroCMSImageField & MicroCMSRichEditorField
+export type MicroCMSExtendedField = MicroCMSImageField | MicroCMSRichEditorField
 
 export type MicroCMSCustomFieldId = { fieldId: string }
 
@@ -31,14 +31,12 @@ export type MicroCMSListResponse<T> = Omit<MicroCMSListResponse_<T>, 'contents'>
     contents: T[];
 }
 
-// TODO as any
 export async function getList<T extends {}, const U extends readonly (keyof T)[]>(client: MicroCMSClientInstance, fields: U, { queries, ...getListRequest }: GetListRequestWithoutFields): Promise<AnyhowResult<MicroCMSListResponse<Pick<T, U[number]>>>> {
-    return await client.getList<Pick<T, U[number]>>({ ...getListRequest, queries: { ...queries, fields: fields as any as string[] } }).then(v => succeed(v)).catch(e => fail(e))
+    return await client.getList<Pick<T, U[number]>>({ ...getListRequest, queries: { ...queries, fields: fields as unknown as string[] } }).then(v => succeed(v)).catch(e => fail(e))
 }
 
-// TODO as any
 export async function getListDetail<T extends {}, const U extends readonly (keyof T)[]>(client: MicroCMSClientInstance, fields: U, { queries, ...getRequest }: GetListDetailRequestWithoutFields): Promise<AnyhowResult<Pick<T, U[number]>>> {
-    return await client.getListDetail<Pick<T, U[number]>>({ ...getRequest, queries: { ...queries, fields: fields as any as string[] } }).then(v => succeed(v)).catch(e => fail(e))
+    return await client.getListDetail<Pick<T, U[number]>>({ ...getRequest, queries: { ...queries, fields: fields as unknown as string[] } }).then(v => succeed(v)).catch(e => fail(e))
 }
 
 function loadEnv(env?: Record<string, unknown>) {
