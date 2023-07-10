@@ -2,11 +2,12 @@ import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import cloudflare from "@astrojs/cloudflare";
 
-import image from "@astrojs/image";
+// import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), image()],
+  integrations: [react()],
+  // integrations: [react(), image()],
   output: "hybrid",
   adapter: cloudflare({
     mode: "directory",

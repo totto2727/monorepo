@@ -9,7 +9,7 @@
     "/404/*",
     "/error/*",
     "/favicon/*",
-    "images/*",
+    "/images/*",
     "/asset/*",
     "/_astro/*"
   ]
