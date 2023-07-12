@@ -1,4 +1,4 @@
-import { defineConfig } from "@pandacss/dev"
+import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
   // Whether to use css reset
@@ -6,10 +6,10 @@ export default defineConfig({
 
   // Where to look for your css declarations
   include: [
-    './src/**/*.{ts,tsx,js,jsx,astro}',
-    './pages/**/*.{ts,tsx,js,jsx,astro}',
+    "./src/**/*.{ts,tsx,js,jsx,astro}",
+    "./pages/**/*.{ts,tsx,js,jsx,astro}",
     "./node_modules/component/src/**/*.{ts,tsx,js,jsx,astro}",
-    "./node_modules/component/pages/**/*.{ts,tsx,js,jsx,astro}"
+    "./node_modules/component/pages/**/*.{ts,tsx,js,jsx,astro}",
   ],
 
   // Files to exclude
@@ -17,11 +17,12 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {}
+    extend: {},
   },
 
-  jsxFramework: 'react',
+  jsxFramework: "react",
 
+  emitPackage: true,
   // The output directory for your css system
-  outdir: "styled-system",
-})
+  outdir: "pandacss",
+});

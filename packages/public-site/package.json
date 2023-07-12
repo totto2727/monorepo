@@ -3,22 +3,19 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "prepare": "panda codegen",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "run-s build:*",
+    "build:panda": "panda codegen",
+    "build:astro": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
+    "format": "prettier . --write --cache"
   },
   "dependencies": {
-    "@astrojs/react": "^2.2.1",
-    "@pandacss/dev": "^0.6.0",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "astro": "^2.8.1",
-    "component": "workspace:*",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "component": "workspace:*"
   },
   "volta": {
     "node": "18.16.1",
