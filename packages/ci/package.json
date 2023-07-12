@@ -1,0 +1,20 @@
+{
+  "name": "ci",
+  "scripts": {
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
+    "format": "prettier . --write --cache"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "src"
+  ],
+  "dependencies": {},
+  "volta": {
+    "node": "18.16.1",
+    "pnpm": "8.6.7"
+  }
+}
