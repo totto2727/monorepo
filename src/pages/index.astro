@@ -1,25 +1,10 @@
 ---
-// import BaseLayout from "@/layouts/BaseLayout.astro";
-import { css } from "~/styled-system/css";
-import { styled } from "~/styled-system/jsx";
-// import "~/styled-system/global.css";
-// import "~/styled-system/reset.css";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { VStack, styled } from "~/styled-system/jsx";
 ---
 
-<html>
-    <head></head>
-    <body>
-        <styled.main height={"3rem"} backgroundColor={"black"}>
-            <styled.span color={"red"}>pandas css</styled.span>
-        </styled.main>
-        <div class={css({ color: "blue" })}>a</div>
-    </body>
-    <style is:global>
-        @layer reset, base, tokens, recipes, utilities;
-    </style>
-</html>
-<!-- <BaseLayout title="home">
-    <div class={css({ backgroundColor: "black" })}>
-        <a href="/blogs/">blogs</a>
-    </div>
-</BaseLayout> -->
+<BaseLayout title="top">
+    <VStack alignItems="start" maxWidth="75rem" marginInline="auto">
+        <styled.a href="/blogs" color={{ base: "blue" }}>Blog</styled.a>
+    </VStack>
+</BaseLayout>
