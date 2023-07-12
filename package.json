@@ -2,12 +2,15 @@
   "name": "microcms-astro",
   "type": "module",
   "version": "0.0.1",
-  "scripts": {},
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build"
+  },
   "dependencies": {
     "turbo": "^1.10.7"
   },
   "volta": {
     "node": "18.16.1",
-    "pnpm": "8.6.5"
+    "pnpm": "8.6.7"
   }
 }
