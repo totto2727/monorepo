@@ -1,38 +1,19 @@
 {
   "name": "component",
-  "version": "0.0.1",
-  "type": "module",
-  "exports": {
-    ".": "./index.ts"
-  },
-  "files": [
-    "src",
-    "panda.config.ts",
-    "index.ts"
-  ],
-  "keywords": [
-    "astro-component"
-  ],
   "scripts": {
-    "prepare": "panda build",
-    "build": "panda build"
+    "build": "panda build",
+    "watch": "panda watch",
+    "check": "astro check",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
+    "format": "prettier . --write --cache"
   },
-  "devDependencies": {
-    "astro": "^2.8.1"
-  },
+  "type": "module",
   "peerDependencies": {
     "astro": "^2.0.0-beta.0"
   },
+  "dependencies": {},
   "volta": {
     "node": "18.16.1",
     "pnpm": "8.6.7"
-  },
-  "dependencies": {
-    "@astrojs/react": "^2.2.1",
-    "@pandacss/dev": "^0.6.0",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
   }
 }
