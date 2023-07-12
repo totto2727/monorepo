@@ -1,5 +1,5 @@
 {
-  "name": "packages-public-site",
+  "name": "public-site",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
