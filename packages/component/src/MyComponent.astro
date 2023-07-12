@@ -1,8 +1,9 @@
 ---
 // Write your component code in this file!
+import { styled } from "../styled-system/jsx";
 export interface Props {
 	prefix?: string;
 }
 ---
 
-<div>{Astro.props.prefix} My special component</div>
+<styled.div color="red">{Astro.props.prefix} My special component</styled.div>
