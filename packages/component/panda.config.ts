@@ -16,8 +16,8 @@ export default defineConfig({
   emitPackage: true,
   outdir: "pandacss",
 
-  "optimize": process.env.NODE_ENV === 'production',
-  "minify": process.env.NODE_ENV === 'production',
-  "hash": process.env.NODE_ENV === 'production',
-  "clean": process.env.NODE_ENV === 'production'
+  optimize: process.env.NODE_ENV === "production",
+  minify: process.env.NODE_ENV === "production",
+  hash: process.env.NODE_ENV === "production",
+  clean: process.env.NODE_ENV === "production",
 });

@@ -8,12 +8,14 @@
     "typescript",
     "typescriptreact"
   ],
-  "prettier.documentSelectors": ["**/*.astro"],
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
-  "prettier.configPath": "prettier.config.cjs"
+  "prettier.configPath": "prettier.config.cjs",
 }
