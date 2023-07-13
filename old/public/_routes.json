@@ -1,8 +1,6 @@
 {
   "version": 1,
-  "include": [
-    "/*"
-  ],
+  "include": ["/*"],
   "exclude": [
     "/_worker.js",
     "/404.html",

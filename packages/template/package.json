@@ -1,0 +1,9 @@
+{
+  "name": "template",
+  "scripts": {
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
+    "format": "prettier . --write --cache"
+  },
+  "type": "module",
+  "dependencies": {}
+}

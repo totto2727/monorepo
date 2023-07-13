@@ -1,5 +1,3 @@
 const config = require("prettier-config");
 
-module.exports = {
-  ...config.base,
-};
+module.exports = config.astro;

@@ -8,6 +8,9 @@
     "prebuild": {
       "dependsOn": [
         "^build"
+      ],
+      "outputs": [
+        "./node_modules/pandacss/**"
       ]
     },
     "build": {
@@ -21,10 +24,15 @@
     },
     "dev": {
       "dependsOn": [
+        "^prebuild",
         "^dev"
       ]
     },
-    "check": {},
+    "type": {
+      "dependsOn": [
+        "prebuild"
+      ]
+    },
     "lint": {
       "outputs": [
         "./node_modules/.cache/eslint/.eslint-cache"
@@ -37,7 +45,7 @@
     },
     "static-analysis": {
       "dependsOn": [
-        "check",
+        "type",
         "lint",
         "format"
       ]
