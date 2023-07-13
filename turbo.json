@@ -1,15 +1,24 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": [
+    "./prettier.config.cjs",
+    "./eslint.config.js",
+    ".env",
     ".env.local"
   ],
   "pipeline": {
-    "build": {
+    "prebuild": {
       "dependsOn": [
         "^build"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "prebuild"
       ],
       "outputs": [
-        "dist/**"
+        "dist/**",
+        "./node_modules/pandacss/**"
       ]
     },
     "dev": {
@@ -33,10 +42,6 @@
         "check",
         "lint",
         "format"
-      ],
-      "outputs": [
-        "./node_modules/.cache/prettier/.prettier-cache",
-        "./node_modules/.cache/eslint/.eslint-cache"
       ]
     }
   }
