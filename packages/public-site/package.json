@@ -22,7 +22,7 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^2.8.1",
-    "component": "^1.1.0",
+    "component": "workspace:^",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   }

@@ -23,6 +23,8 @@ export default [
     rules: {
       ...TypeScript.configs["strict-type-checked"].rules,
       ...TypeScript.configs["stylistic-type-checked"].rules,
+      "@typescript-eslint/ban-ts-comment": "warn",
+      "@typescript-eslint/prefer-ts-expect-error": "warn",
     },
   },
   {
@@ -67,10 +69,6 @@ export default [
     },
   },
   {
-    ignores: ["**/dist/", "**/node_modules"],
-    rules: {
-      "@typescript-eslint/ban-ts-comment": "warn",
-      "@typescript-eslint/prefer-ts-expect-error": "warn",
-    },
+    ignores: ["**/dist/*"],
   },
 ];
