@@ -1,28 +1,25 @@
+/* eslint-disable no-undef */
 import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
-  // Whether to use css reset
   preflight: true,
+  jsxFramework: "react",
+  theme: {
+    extend: {},
+  },
 
-  // Where to look for your css declarations
   include: [
     "./src/**/*.{ts,tsx,js,jsx,astro}",
     "./pages/**/*.{ts,tsx,js,jsx,astro}",
     "./node_modules/component/src/**/*.{ts,tsx,js,jsx,astro}",
     "./node_modules/component/pages/**/*.{ts,tsx,js,jsx,astro}",
   ],
-
-  // Files to exclude
   exclude: [],
-
-  // Useful for theme customization
-  theme: {
-    extend: {},
-  },
-
-  jsxFramework: "react",
-
   emitPackage: true,
-  // The output directory for your css system
   outdir: "pandacss",
+  
+  "optimize": process.env.NODE_ENV === 'production',
+  "minify": process.env.NODE_ENV === 'production',
+  "hash": process.env.NODE_ENV === 'production',
+  "clean": process.env.NODE_ENV === 'production'
 });

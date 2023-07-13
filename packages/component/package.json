@@ -1,19 +1,24 @@
 {
   "name": "component",
+  "volta": {
+    "node": "18.16.1",
+    "pnpm": "8.6.7"
+  },
   "scripts": {
-    "build": "panda build",
+    "prebuild": "panda codegen",
     "watch": "panda watch",
-    "check": "astro check",
+    "type": "astro check",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
     "format": "prettier . --write --cache"
   },
   "type": "module",
-  "peerDependencies": {
-    "astro": "^2.0.0-beta.0"
-  },
-  "dependencies": {},
-  "volta": {
-    "node": "18.16.1",
-    "pnpm": "8.6.7"
+  "dependencies": {
+    "@astrojs/react": "^2.2.1",
+    "@pandacss/dev": "^0.6.0",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^2.8.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
