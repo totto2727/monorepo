@@ -20,6 +20,9 @@ jobs:
       - name: checkout volta
         uses: volta-cli/action@v4
 
+      - name: install volta toolchain
+        run: volta install node pnpm
+
       - name: get pnpm store directory
         id: pnpm-cache
         shell: bash
