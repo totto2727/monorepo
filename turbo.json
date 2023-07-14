@@ -1,59 +1,32 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": [
-    ".env",
-    ".env.local"
-  ],
+  "globalDependencies": [".env", ".env.local"],
   "pipeline": {
     "prebuild": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        "./node_modules/pandacss/**"
-      ]
+      "dependsOn": ["^build"],
+      "outputs": ["./node_modules/pandacss/**"]
     },
     "build": {
-      "dependsOn": [
-        "prebuild"
-      ],
-      "outputs": [
-        "dist/**",
-        "./node_modules/pandacss/**"
-      ]
+      "dependsOn": ["prebuild"],
+      "outputs": ["dist/**", "./node_modules/pandacss/**"]
     },
     "start": {
-      "dependsOn": [
-        "build"
-      ]
+      "dependsOn": ["build"]
     },
     "dev": {
-      "dependsOn": [
-        "^prebuild",
-        "^dev"
-      ]
+      "dependsOn": ["^prebuild", "^dev"]
     },
     "type": {
-      "dependsOn": [
-        "prebuild"
-      ]
+      "dependsOn": ["prebuild"]
     },
     "lint": {
-      "outputs": [
-        "./node_modules/.cache/eslint/.eslint-cache"
-      ]
+      "outputs": ["./node_modules/.cache/eslint/.eslint-cache"]
     },
     "format": {
-      "outputs": [
-        "./node_modules/.cache/prettier/.prettier-cache"
-      ]
+      "outputs": ["./node_modules/.cache/prettier/.prettier-cache"]
     },
     "static-analysis": {
-      "dependsOn": [
-        "type",
-        "lint",
-        "format"
-      ]
+      "dependsOn": ["type", "lint", "format"]
     }
   }
 }
