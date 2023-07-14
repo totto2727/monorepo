@@ -1,0 +1,68 @@
+on:
+  push:
+
+env:
+  VOLTA_FEATURE_PNPM: 1
+
+jobs:
+  publish:
+    name: publish www
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    environment:
+      name: "www-production-build"
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: checkout volta
+        uses: volta-cli/action@v4
+
+      - name: get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: build www-prod
+        run: pnpm build --filter www-prod
+
+      - name: publish www-prod
+        uses: cloudflare/pages-action@v1
+        with:
+          workingDirectory: .
+          directory: ./packages/www-prod/dist
+          wranglerVersion: "3"
+          branch: ${{ github.ref_name }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectName: www-prod
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      - name: build www-preview
+        run: pnpm build --filter www-preview
+
+      - name: publish www-preview
+        uses: cloudflare/pages-action@v1
+        with:
+          workingDirectory: .
+          directory: ./packages/www-preview/dist
+          wranglerVersion: "3"
+          branch: ${{ github.ref_name }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectName: www-preview
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
