@@ -13,23 +13,37 @@
   },
   "type": "module",
   "files": [
+    "index.ts",
     "src"
   ],
+  "main": "./index.ts",
   "exports": {
-    "./page": "./src/page.ts",
-    "./layout": "./src/layout.ts",
-    "./panda": "./src/panda.ts"
+    ".": {
+      "types": "./index.ts",
+      "import": "./index.ts",
+      "require": "./index.ts"
+    },
+    "./page": {
+      "types": "./src/page.ts",
+      "import": "./src/page.ts",
+      "require": "./src/page.ts"
+    },
+    "./layout": {
+      "types": "./src/layout.ts",
+      "import": "./src/layout.ts",
+      "require": "./src/layout.ts"
+    }
   },
   "typesVersions": {
     "*": {
+      "*": [
+        "./index.ts"
+      ],
       "page": [
         "./src/page.ts"
       ],
       "layout": [
         "./src/layout.ts"
-      ],
-      "panda": [
-        "./src/panda.ts"
       ]
     }
   },
@@ -39,6 +53,7 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^2.8.1",
+    "pandacss-config": "workspace:^",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   }

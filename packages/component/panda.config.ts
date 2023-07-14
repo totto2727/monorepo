@@ -1,7 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable no-undef */
 import { defineConfig } from "@pandacss/dev";
+import { base } from "pandacss-config";
 
-import { panda } from "./src/panda";
-
-export default defineConfig(panda);
+export default defineConfig(base);
