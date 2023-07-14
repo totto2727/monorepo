@@ -1,0 +1,27 @@
+{
+  "name": "pandacss-config",
+  "scripts": {
+    "type": "tsc",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
+    "format": "prettier . --write --cache"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "import": "./index.ts",
+      "require": "./index.ts"
+    }
+  },
+  "files": [
+    "index.ts",
+    "src"
+  ],
+  "dependencies": {
+    "@pandacss/dev": "^0.6.0"
+  },
+  "volta": {
+    "node": "18.16.1",
+    "pnpm": "8.6.7"
+  }
+}
