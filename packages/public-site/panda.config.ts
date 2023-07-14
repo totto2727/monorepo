@@ -1,25 +1,11 @@
 /* eslint-disable no-undef */
 import { defineConfig } from "@pandacss/dev";
+import { panda } from "component/panda"
 
 export default defineConfig({
-  preflight: true,
-  jsxFramework: "react",
-  theme: {
-    extend: {},
-  },
-
-  include: [
-    "./src/**/*.{ts,tsx,js,jsx,astro}",
-    "./pages/**/*.{ts,tsx,js,jsx,astro}",
-    "./node_modules/component/src/**/*.{ts,tsx,js,jsx,astro}",
-    "./node_modules/component/pages/**/*.{ts,tsx,js,jsx,astro}",
-  ],
-  exclude: [],
-  emitPackage: true,
-  outdir: "pandacss",
-
-  optimize: process.env.NODE_ENV === "production",
-  minify: process.env.NODE_ENV === "production",
-  hash: process.env.NODE_ENV === "production",
-  clean: process.env.NODE_ENV === "production",
+  ...panda,
+  include: panda.include.concat(
+    ["./node_modules/component/src/**/*.{ts,tsx,js,jsx,astro}",
+      "./node_modules/component/pages/**/*.{ts,tsx,js,jsx,astro}"
+    ])
 });

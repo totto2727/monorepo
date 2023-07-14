@@ -1,5 +1,4 @@
 ---
-// Write your component code in this file!
 import { styled } from "pandacss/jsx";
 
 import Layout from "../layout/Layout.astro";
@@ -12,7 +11,6 @@ const { prefix } = Astro.props;
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<styled.div color="red">{prefix}</styled.div>
-		<styled.div color="red.100">{prefix}</styled.div>
+		<styled.div color={"red"}>{prefix}</styled.div>
 	</main>
 </Layout>

@@ -5,12 +5,6 @@
             "path": "./"
         },
         {
-            "path": "./packages/public-site"
-        },
-        {
-            "path": "./packages/component"
-        },
-        {
             "path": "./packages/@config/eslint-config"
         },
         {
@@ -21,6 +15,12 @@
         },
         {
             "path": "./packages/template"
+        },
+        {
+            "path": "./packages/component/src"
+        },
+        {
+            "path": "./packages/public-site/src"
         }
     ],
     "settings": {

@@ -12,6 +12,27 @@
     "format": "prettier . --write --cache"
   },
   "type": "module",
+  "files": [
+    "src"
+  ],
+  "exports": {
+    "./page": "./src/page.ts",
+    "./layout": "./src/layout.ts",
+    "./panda": "./src/panda.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "page": [
+        "./src/page.ts"
+      ],
+      "layout": [
+        "./src/layout.ts"
+      ],
+      "panda": [
+        "./src/panda.ts"
+      ]
+    }
+  },
   "dependencies": {
     "@astrojs/react": "^2.2.1",
     "@pandacss/dev": "^0.6.0",
