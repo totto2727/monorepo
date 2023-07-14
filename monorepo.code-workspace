@@ -23,7 +23,10 @@
       "path": "./packages/component"
     },
     {
-      "path": "./packages/public-site"
+      "path": "./packages/www-prod"
+    },
+    {
+      "path": "./packages/www-preview"
     }
   ],
   "settings": {
