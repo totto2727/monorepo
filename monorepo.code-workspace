@@ -1,61 +1,82 @@
 {
-    "folders": [
-        {
-            "name": "root",
-            "path": "./"
-        },
-        {
-            "path": "./packages/@config/eslint-config"
-        },
-        {
-            "path": "./packages/@config/prettier-config"
-        },
-        {
-            "path": "./packages/@config/ts-config"
-        },
-        {
-            "path": "./packages/@config/template"
-        },
-        {
-            "path": "./packages/@config/pandacss-config"
-        },
-        {
-            "path": "./packages/component"
-        },
-        {
-            "path": "./packages/public-site"
-        }
-    ],
-    "settings": {
-        "typescript.tsdk": "node_modules/typescript/lib",
-        "eslint.experimental.useFlatConfig": true,
-        "eslint.validate": [
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
-            "astro",
-        ],
-        "prettier.documentSelectors": [
-            "**/*.astro"
-        ],
-        "[javascript]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "[astro]": {
-            "editor.defaultFormatter": "astro-build.astro-vscode"
-        },
+  "folders": [
+    {
+      "name": "root",
+      "path": "./"
     },
-    "launch": {
-        "version": "0.2.0",
-        "configurations": [],
-        "compounds": []
+    {
+      "path": "./packages/@config/eslint-config"
     },
-    "extensions": {
-        "recommendations": [
-            "astro-build.astro-vscode",
-            "dbaeumer.vscode-eslint",
-            "esbenp.prettier-vscode"
-        ]
+    {
+      "path": "./packages/@config/prettier-config"
+    },
+    {
+      "path": "./packages/@config/ts-config"
+    },
+    {
+      "path": "./packages/@config/template"
+    },
+    {
+      "path": "./packages/@config/pandacss-config"
+    },
+    {
+      "path": "./packages/component"
+    },
+    {
+      "path": "./packages/public-site"
     }
+  ],
+  "settings": {
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "eslint.experimental.useFlatConfig": true,
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "astro"
+    ],
+    "stylelint.validate": ["sass"],
+    "prettier.documentSelectors": ["**/*.astro"],
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "[astro]": {
+      "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+  },
+  "launch": {},
+  "extensions": {
+    "recommendations": [
+      "astro-build.astro-vscode",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"
+    ]
+  }
 }
