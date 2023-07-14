@@ -22,6 +22,11 @@
         "./node_modules/pandacss/**"
       ]
     },
+    "start": {
+      "dependsOn": [
+        "build"
+      ]
+    },
     "dev": {
       "dependsOn": [
         "^prebuild",

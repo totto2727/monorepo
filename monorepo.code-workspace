@@ -14,13 +14,16 @@
             "path": "./packages/@config/ts-config"
         },
         {
-            "path": "./packages/template"
+            "path": "./packages/@config/template"
         },
         {
-            "path": "./packages/component/src"
+            "path": "./packages/@config/pandacss-config"
         },
         {
-            "path": "./packages/public-site/src"
+            "path": "./packages/component"
+        },
+        {
+            "path": "./packages/public-site"
         }
     ],
     "settings": {
