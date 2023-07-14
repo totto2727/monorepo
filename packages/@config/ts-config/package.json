@@ -6,6 +6,12 @@
   },
   "type": "module",
   "dependencies": {
+    "@tsconfig/node18": "^18.2.0",
+    "@tsconfig/strictest": "^2.0.1",
     "astro": "^2.8.1"
+  },
+  "volta": {
+    "node": "18.16.1",
+    "pnpm": "8.6.7"
   }
 }
