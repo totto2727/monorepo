@@ -6,10 +6,9 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "prebuild": "panda codegen",
     "build": "astro build",
-    "preview": "astro preview",
+    "start": "astro preview",
     "astro": "astro",
     "type": "astro check",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
@@ -23,6 +22,7 @@
     "@types/react-dom": "^18.0.6",
     "astro": "^2.8.1",
     "component": "workspace:^",
+    "pandacss-config": "workspace:^",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   }
