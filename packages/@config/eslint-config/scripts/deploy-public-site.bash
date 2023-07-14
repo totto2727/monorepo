@@ -1,6 +1,8 @@
 #!/bin/bash
 
-filter='--filter public-site'
+target=public-site
+
+filter='--filter ${target}'
 if [ "$CF_PAGES_BRANCH" == "main" ]; then
   pnpm -w static-analysis ${filter}
   pnpm -w build ${filter}
