@@ -6,7 +6,7 @@ tasks:
       - bat .env.local | sd '(=)(.+?)(\s#\s.+)?$' '$1$3' > .env.local.example
   deploy-init:
     cmds:
-      - pnpm
+      - pnpm install
       - pnpm build
       - source .env.local
       - pnpm wrangler pages deploy packages/www-prod/dist --project-name www-prod
