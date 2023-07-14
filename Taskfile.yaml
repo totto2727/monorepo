@@ -4,10 +4,12 @@ tasks:
   generate-dotenv-example:
     cmds:
       - bat .env.local | sd '(=)(.+?)(\s#\s.+)?$' '$1$3' > .env.local.example
-  deploy-init:
+  init:
     cmds:
       - pnpm install
       - pnpm build
       - source .env.local
+      - wrangler pages project create --project-name www-prod --production-branch main
+      - wrangler pages project create --project-name www-preview --production-branch main
       - pnpm wrangler pages deploy packages/www-prod/dist --project-name www-prod
       - pnpm wrangler pages deploy packages/www-preview/dist --project-name www-preview
