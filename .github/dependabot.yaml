@@ -43,6 +43,6 @@ updates:
           - "@radix-ui*"
       tsconfig:
         patterns:
-          "@tsconfig*"
+          - "@tsconfig*"
 
 
