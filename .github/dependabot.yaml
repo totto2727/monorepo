@@ -7,13 +7,8 @@ updates:
       interval: 'weekly'
 
     ignore:
-      - dependency-name: "next-auth"
-      - dependency-name: "@next-auth/firebase-adapter"
-      - dependency-name: "siwe"
-      - dependency-name: "@rainbow-me/rainbowkit"
-      - dependency-name: "@rainbow-me/rainbowkit-siwe-next-auth"
-      - dependency-name: "ethers"
-      - dependency-name: "wagmi"
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
 
     groups:
       prettier:
@@ -48,6 +43,6 @@ updates:
           - "@radix-ui*"
       tsconfig:
         patterns:
-          "@tsconfig*"
+          - "@tsconfig*"
 
 
