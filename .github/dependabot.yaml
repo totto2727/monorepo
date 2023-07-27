@@ -31,9 +31,9 @@ updates:
           - "@storybook*"
       test:
         patterns:
-          - "@testing-library*"
           - jest*
-      next:
+          - "@testing-library*"
+      astro:
         patterns:
           - astro
           - "@astro*"
