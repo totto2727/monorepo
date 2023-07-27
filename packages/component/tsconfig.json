@@ -1,4 +1,8 @@
 {
   "extends": "ts-config/astro.json",
-  "include": ["**/*.ts", "**/*.tsx", "**/*.astro"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.astro"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
 }

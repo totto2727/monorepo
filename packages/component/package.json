@@ -17,32 +17,24 @@
   ],
   "main": "./index.ts",
   "exports": {
-    ".": {
-      "types": "./index.ts",
-      "import": "./index.ts",
-      "require": "./index.ts"
+    "./page/*": {
+      "types": "./src/page/*",
+      "import": "./src/page/*",
+      "require": "./src/page/*"
     },
-    "./page": {
-      "types": "./src/page.ts",
-      "import": "./src/page.ts",
-      "require": "./src/page.ts"
-    },
-    "./layout": {
-      "types": "./src/layout.ts",
-      "import": "./src/layout.ts",
-      "require": "./src/layout.ts"
+    "./layout/*": {
+      "types": "./src/layout/*",
+      "import": "./src/layout/*",
+      "require": "./src/layout/*"
     }
   },
   "typesVersions": {
     "*": {
-      "*": [
-        "./index.ts"
+      "page/*": [
+        "./src/page/*"
       ],
-      "page": [
-        "./src/page.ts"
-      ],
-      "layout": [
-        "./src/layout.ts"
+      "layout/*": [
+        "./src/layout/*"
       ]
     }
   },
