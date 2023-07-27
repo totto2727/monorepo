@@ -1,0 +1,53 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    open-pull-requests-limit: 30
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+
+    ignore:
+      - dependency-name: "next-auth"
+      - dependency-name: "@next-auth/firebase-adapter"
+      - dependency-name: "siwe"
+      - dependency-name: "@rainbow-me/rainbowkit"
+      - dependency-name: "@rainbow-me/rainbowkit-siwe-next-auth"
+      - dependency-name: "ethers"
+      - dependency-name: "wagmi"
+
+    groups:
+      prettier:
+        patterns:
+          - prettier*
+      eslint:
+        patterns:
+          - eslint*
+          - "@typescript-eslint*"
+      commitlint:
+        patterns:
+          - commitlint*
+      storybook:
+        patterns:
+          - "@storybook*"
+      test:
+        patterns:
+          - "@testing-library*"
+          - jest*
+      next:
+        patterns:
+          - astro
+          - "@astro*"
+      react:
+        patterns:
+          - react
+          - react-dom
+          - "@types/react"
+          - "@types/react-dom"
+      radix:
+        patterns:
+          - "@radix-ui*"
+      tsconfig:
+        patterns:
+          "@tsconfig*"
+
+
