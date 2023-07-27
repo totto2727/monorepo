@@ -41,9 +41,11 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: build www-prod
+        if: github.ref_name == 'main'
         run: pnpm build --filter www-prod
 
       - name: publish www-prod
+        if: github.ref_name == 'main'
         uses: cloudflare/pages-action@v1
         with:
           workingDirectory: .
@@ -56,9 +58,11 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
       - name: build www-preview
+        if: github.ref_name != 'main'
         run: pnpm build --filter www-preview
 
       - name: publish www-preview
+        if: github.ref_name != 'main'
         uses: cloudflare/pages-action@v1
         with:
           workingDirectory: .
