@@ -4,9 +4,21 @@
     "extends": "../../../package.json"
   },
   "scripts": {
+    "type": "tsc",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
     "format": "prettier . --write --cache"
   },
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "import": "./index.ts",
+      "require": "./index.ts"
+    }
+  },
+  "files": [
+    "index.ts",
+    "src"
+  ],
   "dependencies": {}
 }
