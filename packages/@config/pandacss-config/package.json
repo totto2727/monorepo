@@ -21,6 +21,6 @@
     "src"
   ],
   "dependencies": {
-    "@pandacss/dev": "^0.6.0"
+    "@pandacss/dev": "^0.8.0"
   }
 }
