@@ -125,6 +125,8 @@ importers:
         specifier: ^18.0.0
         version: 18.2.0(react@18.2.0)
 
+  packages/result: {}
+
   packages/www-preview:
     dependencies:
       '@astrojs/react':
