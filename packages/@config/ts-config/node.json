@@ -4,6 +4,7 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "target": "esnext",
-    "noEmit": true
+    "noEmit": true,
+    "exactOptionalPropertyTypes": false
   }
 }
