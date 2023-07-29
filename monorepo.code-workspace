@@ -20,6 +20,12 @@
       "path": "./packages/@config/pandacss-config"
     },
     {
+      "path": "./packages/result"
+    },
+    {
+      "path": "./packages/microcms"
+    },
+    {
       "path": "./packages/component"
     },
     {
