@@ -67,9 +67,12 @@ export type MicroCMSListResponse<T> = Omit<
   contents: T[];
 };
 
-export async function getList<T extends {}, const U extends (keyof T)[]>(
+export async function getList<
+  T extends {},
+  const U extends readonly (keyof T)[]
+>(
   client: MicroCMSClientInstance,
-  fields: Readonly<U>,
+  fields: U,
   { queries, ...getListRequest }: GetListRequestWithoutFields
 ): Promise<AnyhowResult<MicroCMSListResponse<Pick<T, U[number]>>>> {
   return await client
@@ -81,9 +84,12 @@ export async function getList<T extends {}, const U extends (keyof T)[]>(
     .catch((e) => fail(e));
 }
 
-export async function getListDetail<T extends {}, const U extends (keyof T)[]>(
+export async function getListDetail<
+  T extends {},
+  const U extends readonly (keyof T)[]
+>(
   client: MicroCMSClientInstance,
-  fields: Readonly<U>,
+  fields: U,
   { queries, ...getRequest }: GetListDetailRequestWithoutFields
 ): Promise<AnyhowResult<Pick<T, U[number]>>> {
   return await client
