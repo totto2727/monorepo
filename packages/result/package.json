@@ -10,10 +10,13 @@
   },
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./index.ts",
-      "import": "./index.ts",
-      "require": "./index.ts"
+    ".": "./index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./index.ts"
+      ]
     }
   },
   "files": [

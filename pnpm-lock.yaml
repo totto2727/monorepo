@@ -186,6 +186,12 @@ importers:
       component:
         specifier: workspace:^
         version: link:../component
+      microcms:
+        specifier: workspace:^
+        version: link:../microcms
+      microcms-js-sdk:
+        specifier: ^2.5.0
+        version: 2.5.0
       pandacss-config:
         specifier: workspace:^
         version: link:../@config/pandacss-config
@@ -195,6 +201,11 @@ importers:
       react-dom:
         specifier: ^18.0.0
         version: 18.2.0(react@18.2.0)
+      result:
+        specifier: workspace:^
+        version: link:../result
+
+  packages/www-share: {}
 
 packages:
 

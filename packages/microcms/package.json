@@ -1,7 +1,7 @@
 {
   "name": "microcms",
   "volta": {
-    "extends": "../../../package.json"
+    "extends": "../../package.json"
   },
   "scripts": {
     "type": "tsc",
@@ -10,15 +10,17 @@
   },
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./index.ts",
-      "import": "./index.ts",
-      "require": "./index.ts"
-    },
-    "./query": {
-      "types": "./src/query/*",
-      "import": "./src/query/*",
-      "require": "./src/query/*"
+    ".": "./index.ts",
+    "./query/*": "./src/query/*.ts"
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./index.ts"
+      ],
+      "query/*": [
+        "./src/query/*"
+      ]
     }
   },
   "files": [
