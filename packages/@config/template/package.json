@@ -9,16 +9,19 @@
     "format": "prettier . --write --cache"
   },
   "type": "module",
-  "exports": {
-    ".": {
-      "types": "./index.ts",
-      "import": "./index.ts",
-      "require": "./index.ts"
-    }
-  },
   "files": [
     "index.ts",
     "src"
   ],
+  "exports": {
+    ".": "./index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./index.ts"
+      ]
+    }
+  },
   "dependencies": {}
 }
