@@ -1,14 +1,14 @@
 import {
   createClient,
-  type GetListRequest,
-  MicroCMSListResponse as MicroCMSListResponse_,
   GetListDetailRequest,
+  type GetListRequest,
   MicroCMSImage,
   MicroCMSListContent as MicroCMSListContent_,
+  MicroCMSListResponse as MicroCMSListResponse_,
   MicroCMSQueries,
 } from "microcms-js-sdk";
 // import { getRuntime } from "@astrojs/cloudflare/runtime";
-import { succeed, AnyhowResult, fail } from "result";
+import { AnyhowResult, fail, succeed } from "result";
 
 export type MicroCMSClientInstance = ReturnType<typeof createClient>;
 
@@ -22,7 +22,9 @@ export type MicroCMSRichEditorField = string & {
 };
 export type MicroCMSBaseField = MicroCMSImageField | MicroCMSRichEditorField;
 
-export type MicroCMSCustomFieldId = { fieldId: string };
+export type MicroCMSCustomFieldId = {
+  fieldId: string;
+};
 
 export type MicroCMSRepeatedField<T extends MicroCMSCustomFieldId> = T[];
 
@@ -68,7 +70,7 @@ export type MicroCMSListResponse<T> = Omit<
 };
 
 export async function getList<
-  T extends {},
+  T extends object,
   const U extends readonly (keyof T)[]
 >(
   client: MicroCMSClientInstance,
@@ -85,7 +87,7 @@ export async function getList<
 }
 
 export async function getListDetail<
-  T extends {},
+  T extends object,
   const U extends readonly (keyof T)[]
 >(
   client: MicroCMSClientInstance,
