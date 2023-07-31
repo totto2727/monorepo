@@ -1,0 +1,16 @@
+---
+import { getBlogs } from "microcms/query/blogs";
+import { isFailure } from "result";
+
+import { microCMS } from "../config/microcms";
+
+const blogsResponse = await getBlogs(microCMS(), ["id", "eyecatch", "title"]);
+
+if (isFailure(blogsResponse)) {
+  throw blogsResponse.cause;
+}
+
+const props = blogsResponse.value;
+---
+
+<div>{JSON.stringify(props)}</div>
