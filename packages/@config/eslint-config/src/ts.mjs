@@ -19,6 +19,16 @@ export const ts = [
       ...TypeScript.configs["stylistic-type-checked"].rules,
       "@typescript-eslint/ban-ts-comment": "warn",
       "@typescript-eslint/prefer-ts-expect-error": "warn",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+          destructuredArrayIgnorePattern: "^_",
+        },
+      ],
+      "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
     },
   },
 ];
