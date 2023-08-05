@@ -1,6 +1,10 @@
 on:
   push:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+  
 env:
   VOLTA_FEATURE_PNPM: 1
 
@@ -11,6 +15,7 @@ jobs:
     permissions:
       contents: read
     timeout-minutes: 10
+
     steps:
       - name: checkout
         uses: actions/checkout@v3
