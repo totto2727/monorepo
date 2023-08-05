@@ -16,6 +16,7 @@ runs:
       uses: ./.github/actions/setup-pnpm
 
     - name: build www
+      shell: bash
       run: ${{ inputs.build }}
 
     - name: publish www
