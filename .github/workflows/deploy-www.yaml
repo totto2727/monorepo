@@ -28,7 +28,7 @@ jobs:
         uses: ./.github/actions/publish-pages
         with:
           project-name: www-public
-          dist: ./packages/www-prod
+          dist: ./app/www-public
           build: pnpm build --filter www-prod
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -56,7 +56,7 @@ jobs:
         uses: ./.github/actions/publish-pages
         with:
           project-name: www-preview
-          dist: ./packages/www-preview
+          dist: ./app/www-preview
           build: pnpm build --filter www-preview
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -84,7 +84,7 @@ jobs:
         uses: ./.github/actions/publish-pages
         with:
           project-name: www-public
-          dist: ./packages/www-prod
+          dist: ./app/www-public
           build: pnpm build --filter www-prod
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -112,7 +112,7 @@ jobs:
         uses: ./.github/actions/publish-pages
         with:
           project-name: www-preview
-          dist: ./packages/www-preview
+          dist: ./app/www-preview
           build: pnpm build --filter www-preview
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

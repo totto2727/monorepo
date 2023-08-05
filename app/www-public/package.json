@@ -1,5 +1,5 @@
 {
-  "name": "www-prod",
+  "name": "www-public",
   "volta": {
     "extends": "../../package.json"
   },

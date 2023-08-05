@@ -32,10 +32,12 @@
       "path": "./packages/www-share"
     },
     {
-      "path": "./packages/www-prod"
+      "path": "./app/www-prod",
+      "name": "app/www-public"
     },
     {
-      "path": "./packages/www-preview"
+      "path": "./app/www-preview",
+      "name": "app/www-preview"
     }
   ],
   "settings": {
@@ -88,7 +90,8 @@
     "recommendations": [
       "astro-build.astro-vscode",
       "dbaeumer.vscode-eslint",
-      "esbenp.prettier-vscode"
+      "esbenp.prettier-vscode",
+      "github.vscode-github-actions"
     ]
   }
 }
