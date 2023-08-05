@@ -29,6 +29,9 @@
       "path": "./packages/component"
     },
     {
+      "path": "./packages/www-share"
+    },
+    {
       "path": "./packages/www-prod"
     },
     {
