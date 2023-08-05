@@ -26,6 +26,7 @@
     "pandacss-config": "workspace:^",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "result": "workspace:^"
+    "result": "workspace:^",
+    "vite": "^4.4.8"
   }
 }
