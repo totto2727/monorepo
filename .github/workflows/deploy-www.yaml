@@ -28,6 +28,9 @@ jobs:
           project-name: www-public
           dist: ./packages/www-prod
           build: pnpm build --filter www-prod
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
     
   publish-www-preview-production:
@@ -49,6 +52,9 @@ jobs:
           project-name: www-preview
           dist: ./packages/www-preview
           build: pnpm build --filter www-preview
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
   publish-www-public-test:
     if: github.ref_name != 'main'
@@ -69,6 +75,9 @@ jobs:
           project-name: www-public
           dist: ./packages/www-prod
           build: pnpm build --filter www-prod
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     
   publish-www-preview-test:
     if: github.ref_name != 'main'
@@ -89,3 +98,6 @@ jobs:
           project-name: www-preview
           dist: ./packages/www-preview
           build: pnpm build --filter www-preview
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

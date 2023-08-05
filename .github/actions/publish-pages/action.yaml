@@ -1,6 +1,12 @@
 name: publish pages
 description: publish pages
 inputs:
+  gitHubToken:
+    required: true
+  accountId:
+    required: true
+  apiToken:
+    required: true
   project-name:
     required: true
   dist:
@@ -27,6 +33,6 @@ runs:
         projectName: ${{ inputs.project-name }}
         wranglerVersion: "3"
         branch: ${{ github.ref_name }}
-        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        gitHubToken: ${{ inputs.gitHubToken }}
+        accountId: ${{ inputs.accountId }}
+        apiToken: ${{ inputs.apiToken }}
