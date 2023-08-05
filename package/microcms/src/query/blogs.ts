@@ -8,12 +8,14 @@ import {
   MicroCMSListContent,
   MicroCMSQueriesWithoutFields,
   MicroCMSRichEditorField,
+  MicroCMSSingleSelectedField,
 } from "../../index.js";
 
 export type BlogContent = MicroCMSContent<{
   title: string;
   content: MicroCMSRichEditorField;
   eyecatch: MicroCMSImage;
+  status: MicroCMSSingleSelectedField<"公開" | "非公開" | "限定公開">;
 }>;
 
 export type Blog = MicroCMSListContent<MicroCMSContent<BlogContent>>;
