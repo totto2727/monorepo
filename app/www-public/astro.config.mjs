@@ -10,6 +10,7 @@ const env = loadEnv("", process.cwd() + "/../..");
 export default defineConfig({
   integrations: [react(), pandacss()],
   publicDir: "./node_modules/component/public",
+  server: { port: 3001 },
   vite: {
     envDir: env.VITE_LOCAL ? "." : "../../",
   },
