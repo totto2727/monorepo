@@ -1,8 +1,8 @@
-interface ImportMetaEnv {
+type ImportMetaEnv = {
   readonly MICROCMS_SERVICE_DOMAIN: string;
   readonly MICROCMS_API_KEY: string;
-}
+};
 
-interface ImportMeta {
+type ImportMeta = {
   readonly env: ImportMetaEnv;
-}
+};
