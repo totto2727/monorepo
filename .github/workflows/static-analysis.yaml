@@ -19,32 +19,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-
-      - name: setup pnpm
-        uses: ./.github/actions/setup-pnpm
-
-      - name: checkout volta
-        uses: volta-cli/action@v4
-
-      - name: install volta toolchain
-        run: volta install node pnpm
-
-      - name: get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: install dependencies
-        run: pnpm install --frozen-lockfile
-
+      - name: setup turbo
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
       - name: static-analysis
-        run: pnpm build static-analysis
+        run: pnpm format

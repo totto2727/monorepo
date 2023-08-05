@@ -3,11 +3,10 @@
   "globalDependencies": [".env", ".env.local"],
   "pipeline": {
     "prebuild": {
-      "dependsOn": ["^build"],
       "outputs": ["./node_modules/pandacss/**"]
     },
     "build": {
-      "dependsOn": ["prebuild"],
+      "dependsOn": ["^prebuild", "prebuild"],
       "outputs": ["dist/**", "./node_modules/pandacss/**"]
     },
     "start": {
@@ -17,16 +16,15 @@
       "dependsOn": ["^prebuild", "^dev"]
     },
     "type": {
-      "dependsOn": ["prebuild"]
+      "dependsOn": ["^prebuild", "prebuild"]
     },
     "lint": {
-      "outputs": ["./node_modules/.cache/eslint/.eslint-cache"]
+      "outputs": ["./node_modules/.cache/eslint/.eslint-cache"],
+      "dependsOn": ["type"]
     },
     "format": {
-      "outputs": ["./node_modules/.cache/prettier/.prettier-cache"]
-    },
-    "static-analysis": {
-      "dependsOn": ["type", "lint", "format"]
+      "outputs": ["./node_modules/.cache/prettier/.prettier-cache"],
+      "dependsOn": ["lint"]
     }
   }
 }

@@ -14,8 +14,7 @@
     "start": "turbo start",
     "lint": "turbo lint",
     "format": "turbo format",
-    "type": "turbo type",
-    "static-analysis": "turbo static-analysis"
+    "type": "turbo type"
   },
   "type": "module",
   "dependencies": {
