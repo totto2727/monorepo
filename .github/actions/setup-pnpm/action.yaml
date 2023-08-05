@@ -1,0 +1,28 @@
+name: setup pnpm
+description: "setup pnpm with volta"
+
+runs:
+  using: composite
+  steps:
+    - name: checkout volta
+      uses: volta-cli/action@v4
+
+    - name: install volta toolchain
+      run: volta install node pnpm
+
+    - name: get pnpm store directory
+      id: pnpm-cache
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+    - name: setup pnpm cache
+      uses: actions/cache@v3
+      with:
+        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    - name: install dependencies
+      run: pnpm install --frozen-lockfile
