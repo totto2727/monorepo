@@ -1,0 +1,47 @@
+---
+import { BlogWithID } from "component/page/blogs/[id]/BlogWithID";
+import { Blog, getBlogs } from "microcms/query/blogs";
+import { isFailure } from "result";
+
+import { microCMS } from "../../config/microcms";
+
+type Params = { id: string };
+
+type Props = Pick<
+  Blog,
+  "title" | "content" | "updatedAt" | "publishedAt" | "eyecatch"
+>;
+
+export async function getStaticPaths() {
+  const blogs = await getBlogs(
+    microCMS(),
+    [
+      "id",
+      "title",
+      "content",
+      "updatedAt",
+      "publishedAt",
+      "eyecatch",
+      "status",
+    ],
+    {},
+  );
+
+  if (isFailure(blogs)) {
+    throw blogs.cause;
+  }
+
+  const paths: { params: Params; props: Props }[] = blogs.value.contents
+    .filter((v) => v.status[0] !== "非公開")
+    .map(({ id, ...rest }) => ({
+      params: { id },
+      props: rest,
+    }));
+
+  return paths;
+}
+
+const props = Astro.props;
+---
+
+<BlogWithID blog={props} />
