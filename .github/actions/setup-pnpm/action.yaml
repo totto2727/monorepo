@@ -8,6 +8,7 @@ runs:
       uses: volta-cli/action@v4
 
     - name: install volta toolchain
+      shell: bash
       run: volta install node pnpm
 
     - name: get pnpm store directory
@@ -25,4 +26,5 @@ runs:
           ${{ runner.os }}-pnpm-store-
 
     - name: install dependencies
+      shell: bash
       run: pnpm install --frozen-lockfile
