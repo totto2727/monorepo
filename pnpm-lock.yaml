@@ -61,7 +61,7 @@ importers:
         version: 2.8.1(@types/node@20.4.5)
       component:
         specifier: workspace:^
-        version: link:../../packages/component
+        version: link:../../package/component
       pandacss-config:
         specifier: workspace:^
         version: link:../../config/pandacss-config
@@ -94,10 +94,10 @@ importers:
         version: 2.8.1(@types/node@20.4.5)
       component:
         specifier: workspace:^
-        version: link:../../packages/component
+        version: link:../../package/component
       microcms:
         specifier: workspace:^
-        version: link:../../packages/microcms
+        version: link:../../package/microcms
       microcms-js-sdk:
         specifier: ^2.5.0
         version: 2.5.0
@@ -112,7 +112,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       result:
         specifier: workspace:^
-        version: link:../../packages/result
+        version: link:../../package/result
       vite:
         specifier: ^4.4.8
         version: 4.4.8(@types/node@20.4.5)
@@ -173,7 +173,7 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1(@types/node@20.4.5)
 
-  packages/component:
+  package/component:
     dependencies:
       '@astrojs/react':
         specifier: ^2.2.1
@@ -200,7 +200,7 @@ importers:
         specifier: ^18.0.0
         version: 18.2.0(react@18.2.0)
 
-  packages/microcms:
+  package/microcms:
     dependencies:
       microcms-js-sdk:
         specifier: ^2.5.0
@@ -209,9 +209,9 @@ importers:
         specifier: workspace:^
         version: link:../result
 
-  packages/result: {}
+  package/result: {}
 
-  packages/www-share: {}
+  package/www-share: {}
 
 packages:
 
