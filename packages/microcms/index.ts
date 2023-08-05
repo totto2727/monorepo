@@ -102,26 +102,3 @@ export async function getListDetail<
     .then((v) => succeed(v))
     .catch((e) => fail(e));
 }
-
-// function loadEnv(env?: Record<string, unknown>) {
-//   if (
-//     !(
-//       env &&
-//       typeof env.MICROCMS_SERVICE_DOMAIN === "string" &&
-//       typeof env.MICROCMS_API_KEY === "string"
-//     )
-//   )
-//     throw new Error("MicroCMSの環境変数の読み込みに失敗しました");
-//   return {
-//     serviceDomain: env.MICROCMS_SERVICE_DOMAIN,
-//     apiKey: env.MICROCMS_API_KEY,
-//   };
-// }
-
-// const isDev = import.meta.env.DEV ?? false;
-
-// export function microCMS(request?: Request): MicroCMSClientInstance {
-//   if (!request || isDev) return createClient(loadEnv(import.meta.env));
-//   const runtime = getRuntime(request) as { env?: Record<string, unknown> };
-//   return createClient(loadEnv(runtime.env));
-// }
