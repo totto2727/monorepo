@@ -20,11 +20,13 @@ tasks:
 
   create-projects:
     cmds:
-      - pnpm wrangler pages project create --project-name www-prod --production-branch main
-      - pnpm wrangler pages project create --project-name www-preview --production-branch main
+      - cmd: pnpm wrangler pages project create --project-name www-public --production-branch main
+        ignore_error: true
+      - cmd: pnpm wrangler pages project create --project-name www-preview --production-branch main
+        ignore_error: true
 
   deploy-projects:
     cmds:
       - pnpm build
-      - pnpm wrangler pages deploy packages/www-prod/dist --project-name www-prod
+      - pnpm wrangler pages deploy packages/www-public/dist --project-name www-prod
       - pnpm wrangler pages deploy packages/www-preview/dist --project-name www-preview
