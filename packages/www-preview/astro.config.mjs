@@ -6,4 +6,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   integrations: [react(), pandacss()],
   publicDir: "./node_modules/component/public",
+  vite: {
+    envDir: "../../"
+  }
 });

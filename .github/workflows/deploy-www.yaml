@@ -11,7 +11,7 @@ env:
 jobs:
   publish-www-public-production:
     if: github.ref_name == 'main'
-    name: publish www-public
+    name: publish www-public production
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -35,7 +35,7 @@ jobs:
     
   publish-www-preview-production:
     if: github.ref_name == 'main'
-    name: publish www
+    name: publish www-preview production
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -58,7 +58,7 @@ jobs:
 
   publish-www-public-test:
     if: github.ref_name != 'main'
-    name: publish www-public
+    name: publish www-public test
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -81,7 +81,7 @@ jobs:
     
   publish-www-preview-test:
     if: github.ref_name != 'main'
-    name: publish www
+    name: publish www-preview test
     runs-on: ubuntu-latest
     permissions:
       contents: read
