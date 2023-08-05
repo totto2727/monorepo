@@ -12,5 +12,5 @@ export default defineConfig({
   publicDir: "./node_modules/component/public",
   vite: {
     envDir: env.VITE_LOCAL ? "." : "../../",
-  }
+  },
 });
