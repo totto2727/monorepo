@@ -20,7 +20,17 @@ export type MicroCMSImageField = MicroCMSImage;
 export type MicroCMSRichEditorField = string & {
   [richEditoerSymbol]: "rich-editor";
 };
-export type MicroCMSBaseField = MicroCMSImageField | MicroCMSRichEditorField;
+export type MicroCMSSingleSelectedField<T extends string = string> = [T];
+export type MicroCMSMultiSelectedField<T extends string = string> = T[];
+export type MicroCMSSelectedField<T = MicroCMSMultiSelectedField> = T extends
+  | MicroCMSMultiSelectedField<infer _>
+  | MicroCMSSingleSelectedField<infer _>
+  ? T
+  : never;
+export type MicroCMSBaseField =
+  | MicroCMSImageField
+  | MicroCMSRichEditorField
+  | MicroCMSSelectedField;
 
 export type MicroCMSCustomFieldId = {
   fieldId: string;
