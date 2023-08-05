@@ -5,19 +5,19 @@
       "path": "./"
     },
     {
-      "path": "./packages/@config/eslint-config"
+      "path": "./config/eslint-config"
     },
     {
-      "path": "./packages/@config/prettier-config"
+      "path": "./config/prettier-config"
     },
     {
-      "path": "./packages/@config/ts-config"
+      "path": "./config/ts-config"
     },
     {
-      "path": "./packages/@config/template"
+      "path": "./config/template"
     },
     {
-      "path": "./packages/@config/pandacss-config"
+      "path": "./config/pandacss-config"
     },
     {
       "path": "./packages/result"

@@ -1,7 +1,7 @@
 {
-  "name": "pandacss-config",
+  "name": "template",
   "volta": {
-    "extends": "../../../package.json"
+    "extends": "../../package.json"
   },
   "scripts": {
     "type": "tsc",
@@ -9,18 +9,19 @@
     "format": "prettier . --write --cache"
   },
   "type": "module",
-  "exports": {
-    ".": {
-      "types": "./index.ts",
-      "import": "./index.ts",
-      "require": "./index.ts"
-    }
-  },
   "files": [
     "index.ts",
     "src"
   ],
-  "dependencies": {
-    "@pandacss/dev": "^0.6.0"
-  }
+  "exports": {
+    ".": "./index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./index.ts"
+      ]
+    }
+  },
+  "dependencies": {}
 }

@@ -1,7 +1,7 @@
 {
   "name": "ts-config",
   "volta": {
-    "extends": "../../../package.json"
+    "extends": "../../package.json"
   },
   "scripts": {
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
