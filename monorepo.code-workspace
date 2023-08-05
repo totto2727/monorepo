@@ -5,31 +5,40 @@
       "path": "./"
     },
     {
-      "path": "./config/eslint-config"
+      "path": "./config/eslint-config",
+      "name": "config/eslint"
     },
     {
-      "path": "./config/prettier-config"
+      "path": "./config/prettier-config",
+      "name": "config/prettier"
     },
     {
-      "path": "./config/ts-config"
+      "path": "./config/ts-config",
+      "name": "config/ts"
     },
     {
-      "path": "./config/template"
+      "path": "./config/template",
+      "name": "config/template"
     },
     {
-      "path": "./config/pandacss-config"
+      "path": "./config/pandacss-config",
+      "name": "config/pandacss"
     },
     {
-      "path": "./packages/result"
+      "path": "./package/result",
+      "name": "package/result"
     },
     {
-      "path": "./packages/microcms"
+      "path": "./package/microcms",
+      "name": "package/microcms"
     },
     {
-      "path": "./packages/component"
+      "path": "./package/component",
+      "name": "package/component"
     },
     {
-      "path": "./packages/www-share"
+      "path": "./package/www-share",
+      "name": "package/www-share"
     },
     {
       "path": "./app/www-prod",
