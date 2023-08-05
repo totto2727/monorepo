@@ -13,7 +13,7 @@ export type Failure<T> = {
  */
 export type TypedCause<
   TCauseType extends string,
-  TCauseValue = undefined
+  TCauseValue = undefined,
 > = TCauseValue extends object
   ? {
       type: TCauseType;
@@ -58,7 +58,7 @@ export function fail<const T>(cause: T): Failure<T> {
  * @return {result is Failure} - Failか否かの型ガード
  */
 export function isFailure<const T>(
-  result: Result<unknown, T>
+  result: Result<unknown, T>,
 ): result is Failure<T> {
   return result.type === "failure";
 }
@@ -72,7 +72,7 @@ export function isFailure<const T>(
  */
 export function failTyped<const TCauseType extends string, const TCauseValue>(
   type: TCauseType,
-  value?: TCauseValue
+  value?: TCauseValue,
 ): TypedFailure<TypedCause<TCauseType, TCauseValue>> {
   return fail({ type, value }) as TypedFailure<
     TypedCause<TCauseType, TCauseValue>
@@ -101,7 +101,7 @@ export function succeed<const T>(value: T): Success<T> {
  * Result型の結果が成功であることを検証する型ガード関数
  */
 export function isSuccess<const T>(
-  result: Result<T, unknown>
+  result: Result<T, unknown>,
 ): result is Success<T> {
   return result.type === "success";
 }

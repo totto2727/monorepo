@@ -4,13 +4,13 @@ import { styled } from "pandacss/jsx";
 import Layout from "../layout/Layout.astro";
 
 export interface Props {
-	prefix: string;
+  prefix: string;
 }
 const { prefix } = Astro.props;
 ---
 
 <Layout title={prefix}>
-	<main>
-		<styled.div color="blue">{prefix}-Blue</styled.div>
-	</main>
+  <main>
+    <styled.div color="blue">{prefix}-Blue</styled.div>
+  </main>
 </Layout>

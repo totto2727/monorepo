@@ -23,7 +23,7 @@ const endpoint = "blogs";
 export async function getBlogs<const T extends readonly (keyof Blog)[]>(
   client: MicroCMSClientInstance,
   fieldId: T,
-  queries?: MicroCMSQueriesWithoutFields
+  queries?: MicroCMSQueriesWithoutFields,
 ) {
   return await getList<Blog, T>(client, fieldId, { endpoint, queries });
 }
@@ -32,7 +32,7 @@ export const getBlog = async <const T extends readonly (keyof Blog)[]>(
   client: MicroCMSClientInstance,
   contentId: string,
   fieldId: T,
-  queries?: MicroCMSQueriesWithoutFields
+  queries?: MicroCMSQueriesWithoutFields,
 ) => {
   return await getListDetail<Blog, T>(client, fieldId, {
     endpoint,
