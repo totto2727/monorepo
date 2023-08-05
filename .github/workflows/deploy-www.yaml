@@ -17,6 +17,8 @@ jobs:
       contents: read
       deployments: write
     timeout-minutes: 10
+    environment:
+      name: "www production"
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -31,7 +33,9 @@ jobs:
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-
+        env:
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN_PUBLIC }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY_PUBLIC }}
     
   publish-www-preview-production:
     if: github.ref_name == 'main'
@@ -41,6 +45,8 @@ jobs:
       contents: read
       deployments: write
     timeout-minutes: 10
+    environment:
+      name: "www production"
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -55,6 +61,9 @@ jobs:
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        env:
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN_PREVIEW }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY_PREVIEW }}
 
   publish-www-public-staging:
     if: github.ref_name != 'main'
@@ -64,6 +73,8 @@ jobs:
       contents: read
       deployments: write
     timeout-minutes: 10
+    environment:
+      name: "www staging"
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -78,6 +89,9 @@ jobs:
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        env:
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN_PUBLIC }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY_PUBLIC }}
     
   publish-www-preview-staging:
     if: github.ref_name != 'main'
@@ -87,6 +101,8 @@ jobs:
       contents: read
       deployments: write
     timeout-minutes: 10
+    environment:
+      name: "www staging"
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -101,3 +117,6 @@ jobs:
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        env:
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN_PREVIEW }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY_PREVIEW }}

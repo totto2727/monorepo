@@ -21,20 +21,20 @@
 - GitHub Actions www-public,www-preview
   - MICROCMS_SERVICE_DOMAIN_PREVIEW
     - www-preview -> MICROCMS_SERVICE_DOMAIN
-    - production
-    - staging
+    - www production
+    - www staging
   - MICROCMS_API_KEY_PREVIEW: 下書き権限あり
     - www-preview -> MICROCMS_API_KEY
-    - production
-    - staging
+    - www production
+    - www staging
   - MICROCMS_SERVICE_DOMAIN_PUBLIC
     - www-public -> MICROCMS_SERVICE_DOMAIN
-    - production
-    - staging
+    - www production
+    - www staging
   - MICROCMS_API_KEY_PUBLIC: 下書き権限あり
     - www-public -> MICROCMS_API_KEY
-    - production
-    - staging
+    - www production
+    - www staging
 - Local
   - root
     - VITE_LOCAL=true
