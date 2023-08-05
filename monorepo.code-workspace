@@ -41,7 +41,7 @@
       "name": "package/www-share"
     },
     {
-      "path": "./app/www-prod",
+      "path": "./app/www-public",
       "name": "app/www-public"
     },
     {
