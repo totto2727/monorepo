@@ -1,10 +1,10 @@
 version: 2
 updates:
-  - package-ecosystem: 'npm'
+  - package-ecosystem: "npm"
     open-pull-requests-limit: 30
-    directory: '/'
+    directory: "/"
     schedule:
-      interval: 'weekly'
+      interval: "weekly"
 
     ignore:
       - dependency-name: "*"
@@ -44,5 +44,3 @@ updates:
       tsconfig:
         patterns:
           - "@tsconfig*"
-
-

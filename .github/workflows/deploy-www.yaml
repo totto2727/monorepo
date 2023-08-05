@@ -36,7 +36,7 @@ jobs:
         env:
           MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN_PUBLIC }}
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY_PUBLIC }}
-    
+
   publish-www-preview-production:
     if: github.ref_name == 'main'
     name: publish www-preview production
@@ -92,7 +92,7 @@ jobs:
         env:
           MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN_PUBLIC }}
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY_PUBLIC }}
-    
+
   publish-www-preview-staging:
     if: github.ref_name != 'main'
     name: publish www-preview staging

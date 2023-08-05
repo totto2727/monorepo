@@ -8,7 +8,7 @@
   "scripts": {
     "root": "run-s root:*",
     "root:lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
-    "root:format": "prettier --write --cache . '!pnpm-lock.yaml' '!packages'",
+    "root:format": "prettier --write --cache . '!pnpm-lock.yaml' '!package' '!config' '!app'",
     "dev": "turbo dev",
     "build": "turbo build",
     "start": "turbo start",
