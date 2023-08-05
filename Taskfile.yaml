@@ -5,28 +5,28 @@ dotenv:
   - .env.local
 
 tasks:
-  generate-dotenv-example:
-    cmds:
-      - bat .env.local | sd '(=)(.+?)(\s#\s.+)?$' '$1$3' > .env.local.example
+  www-init:
+    - task: www-prepare
+    - task: www-create-projects
+    - task: www-deploy-projects
 
-  init:
-    - task: prepare
-    - task: create-projects
-    - task: deploy-projects
-
-  prepare:
+  www-prepare:
     cmds:
       - pnpm install
 
-  create-projects:
+  www-create-projects:
     cmds:
       - cmd: pnpm wrangler pages project create --project-name www-public --production-branch main
         ignore_error: true
       - cmd: pnpm wrangler pages project create --project-name www-preview --production-branch main
         ignore_error: true
 
-  deploy-projects:
+  www-deploy-projects:
     cmds:
-      - pnpm build
-      - pnpm wrangler pages deploy packages/www-public/dist --project-name www-prod
-      - pnpm wrangler pages deploy packages/www-preview/dist --project-name www-preview
+      - pnpm build --filter www-public
+      - cmd: pnpm wrangler pages deploy packages/www-public/dist --project-name www-public
+        ignore_error: true
+      - pnpm build --filter www-preview
+      - cmd: pnpm wrangler pages deploy packages/www-preview/dist --project-name www-preview
+        ignore_error: true
+
