@@ -13,7 +13,7 @@ runs:
   using: composite
   steps:
     - name: setup pnpm
-      uses: ./.github/actions/setup-pnpm.yaml
+      uses: ./.github/actions/setup-pnpm
 
     - name: build www
       run: ${{ inputs.build }}
