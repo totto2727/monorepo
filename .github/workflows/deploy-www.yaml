@@ -56,9 +56,9 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
-  publish-www-public-test:
+  publish-www-public-staging:
     if: github.ref_name != 'main'
-    name: publish www-public test
+    name: publish www-public staging
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -79,9 +79,9 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     
-  publish-www-preview-test:
+  publish-www-preview-staging:
     if: github.ref_name != 'main'
-    name: publish www-preview test
+    name: publish www-preview staging
     runs-on: ubuntu-latest
     permissions:
       contents: read
