@@ -5,72 +5,83 @@ env:
   VOLTA_FEATURE_PNPM: 1
 
 jobs:
-  publish:
+  publish-www-public-production:
+    if: github.ref_name == 'main'
+    name: publish www-public
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    timeout-minutes: 10
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup turbo
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+      - name: publish-pages
+        uses: ./.github/actions/publish-pages
+        with:
+          project-name: www-public
+          dist: ./packages/www-prod
+          build: pnpm build --filter www-prod
+
+    
+  publish-www-preview-production:
+    if: github.ref_name == 'main'
     name: publish www
     runs-on: ubuntu-latest
     permissions:
       contents: read
       deployments: write
-    environment:
-      name: "www-production-build"
     timeout-minutes: 10
     steps:
       - name: checkout
         uses: actions/checkout@v3
-
-      - name: checkout volta
-        uses: volta-cli/action@v4
-
-      - name: install volta toolchain
-        run: volta install node pnpm
-
-      - name: get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: setup pnpm cache
-        uses: actions/cache@v3
+      - name: setup turbo
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+      - name: publish-pages
+        uses: ./.github/actions/publish-pages
         with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          project-name: www-preview
+          dist: ./packages/www-preview
+          build: pnpm build --filter www-preview
 
-      - name: install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: build www-prod
-        if: github.ref_name == 'main'
-        run: pnpm build --filter www-prod
-
-      - name: publish www-prod
-        if: github.ref_name == 'main'
-        uses: cloudflare/pages-action@v1
+  publish-www-public-test:
+    if: github.ref_name != 'main'
+    name: publish www-public
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    timeout-minutes: 10
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup turbo
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+      - name: publish-pages
+        uses: ./.github/actions/publish-pages
         with:
-          workingDirectory: .
-          directory: ./packages/www-prod/dist
-          wranglerVersion: "3"
-          branch: ${{ github.ref_name }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: www-prod
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-
-      - name: build www-preview
-        if: github.ref_name != 'main'
-        run: pnpm build --filter www-preview
-
-      - name: publish www-preview
-        if: github.ref_name != 'main'
-        uses: cloudflare/pages-action@v1
+          project-name: www-public
+          dist: ./packages/www-prod
+          build: pnpm build --filter www-prod
+    
+  publish-www-preview-test:
+    if: github.ref_name != 'main'
+    name: publish www
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    timeout-minutes: 10
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup turbo
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+      - name: publish-pages
+        uses: ./.github/actions/publish-pages
         with:
-          workingDirectory: .
-          directory: ./packages/www-preview/dist
-          wranglerVersion: "3"
-          branch: ${{ github.ref_name }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: www-preview
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          project-name: www-preview
+          dist: ./packages/www-preview
+          build: pnpm build --filter www-preview

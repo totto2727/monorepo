@@ -1,0 +1,31 @@
+name: publish pages
+description: publish pages
+inputs:
+  project-name:
+    required: true
+  dist:
+    required: true
+  build:
+    default: pnpm build
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: setup pnpm
+      uses: ./.github/actions/setup-pnpm.yaml
+
+    - name: build www
+      run: ${{ inputs.build }}
+
+    - name: publish www
+      uses: cloudflare/pages-action@v1
+      with:
+        workingDirectory: .
+        directory: ${{ inputs.dist }}
+        projectName: ${{ inputs.project-name }}
+        wranglerVersion: "3"
+        branch: ${{ github.ref_name }}
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
