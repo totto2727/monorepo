@@ -34,6 +34,7 @@ export const base = [
     },
   },
   ...conpat.extends("prettier"),
+  { env: { browser: true, node: true, es2024: true, worker: true } },
   {
     ignores: ["**/dist/*"],
   },
