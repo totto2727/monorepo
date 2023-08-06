@@ -31,12 +31,12 @@ export async function getStaticPaths() {
     throw blogs.cause;
   }
 
-  const paths: { params: Params; props: Props }[] = blogs.value.contents
-    .filter((v) => v.status[0] !== "非公開")
-    .map(({ id, ...rest }) => ({
+  const paths: { params: Params; props: Props }[] = blogs.value.contents.map(
+    ({ id, ...rest }) => ({
       params: { id },
       props: rest,
-    }));
+    }),
+  );
 
   return paths;
 }

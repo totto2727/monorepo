@@ -15,7 +15,7 @@ export type BlogContent = MicroCMSContent<{
   title: string;
   content: MicroCMSRichEditorField;
   eyecatch: MicroCMSImage;
-  status: MicroCMSSingleSelectedField<"公開" | "非公開" | "限定公開">;
+  status: MicroCMSSingleSelectedField<"公開" | "限定公開">;
 }>;
 
 export type Blog = MicroCMSListContent<MicroCMSContent<BlogContent>>;
