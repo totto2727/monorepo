@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 export const base = {
   preflight: true,
-  jsxFramework: "react",
   theme: {
     extend: {},
   },

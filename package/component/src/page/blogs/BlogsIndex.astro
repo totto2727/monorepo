@@ -1,7 +1,7 @@
 ---
 import { intlFormat } from "date-fns";
 import type { Blog } from "microcms/query/blogs";
-import { Container, styled } from "pandacss/jsx";
+import { css } from "pandacss/css";
 
 import BaseLayout from "../../layout/BaseLayout.astro";
 
@@ -12,37 +12,43 @@ const blogs = Astro.props.blogs;
 ---
 
 <BaseLayout title="blogs">
-  <Container
-    maxWidth={"80rem"}
-    paddingX={0}
-    display={"flex"}
-    flexDirection={"column"}
-    justifyContent={"center"}
-    alignItems={"center"}
+  <div
+    class={css({
+      maxWidth: "80rem",
+      paddingX: 0,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+    })}
   >
     {
       blogs.map((v) => (
-        <styled.a
+        <a
           href={`/blogs/${v.id}`}
-          width={"100%"}
-          display={"grid"}
-          gridTemplateColumns={"auto auto"}
-          gridTemplateRows={"auto auto"}
-          gridTemplateAreas={'"image image" "title publishAt"'}
-          placeItems={"center"}
+          class={css({
+            width: "100%",
+            display: "grid",
+            gridTemplateColumns: "auto auto",
+            gridTemplateRows: "auto auto",
+            gridTemplateAreas: '"image image" "title publishAt"',
+            placeItems: "center",
+          })}
         >
-          <styled.img
+          <img
             src={v.eyecatch.url}
             alt=""
-            maxWidth={"40rem"}
-            maxHeight={"30rem"}
-            objectFit={"contain"}
-            width={v.eyecatch.width}
-            height={v.eyecatch.height}
-            gridArea={"image"}
+            class={css({
+              maxWidth: "40rem",
+              maxHeight: "30rem",
+              objectFit: "contain",
+              width: v.eyecatch.width,
+              height: v.eyecatch.height,
+              gridArea: "image",
+            })}
           />
-          <styled.div gridArea={"title"}>{v.title}</styled.div>
-          <styled.div gridArea={"publishAt"}>
+          <div class={css({ gridArea: "title" })}>{v.title}</div>
+          <div class={css({ gridArea: "publishAt" })}>
             {intlFormat(
               new Date(v.publishedAt ?? ""),
               {
@@ -55,9 +61,9 @@ const blogs = Astro.props.blogs;
               },
               { locale: "ja" },
             )}
-          </styled.div>
-        </styled.a>
+          </div>
+        </a>
       ))
     }
-  </Container>
+  </div>
 </BaseLayout>
