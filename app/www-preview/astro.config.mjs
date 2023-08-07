@@ -7,17 +7,16 @@ import { loadEnv } from "vite";
 // eslint-disable-next-line no-undef
 const env = loadEnv("", process.cwd() + "/../..");
 
-
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), pandacss()],
   publicDir: "./node_modules/component/public",
   server: {
-    port: 3002
+    port: 3002,
   },
   vite: {
-    envDir: env.VITE_LOCAL ? "." : "../../"
+    envDir: env.VITE_LOCAL ? "." : "../../",
   },
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare(),
 });
