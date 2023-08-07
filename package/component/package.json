@@ -42,7 +42,7 @@
     "@pandacss/dev": "^0.9.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
-    "astro": "^2.8.1",
+    "astro": "^2.10.1",
     "date-fns": "^2.30.0",
     "microcms": "workspace:^",
     "pandacss-config": "workspace:^",
