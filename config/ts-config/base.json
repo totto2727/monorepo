@@ -1,14 +1,14 @@
 {
-  "extends": "astro/tsconfigs/strictest",
+  "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
+    "moduleResolution": "nodenext",
     "noEmit": true,
     "exactOptionalPropertyTypes": false,
     "incremental": true,
     "resolveJsonModule": true,
-    "allowJs": true
+    "allowJs": true,
+    "isolatedModules": true
   }
 }
