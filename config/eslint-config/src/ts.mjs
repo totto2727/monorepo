@@ -17,8 +17,8 @@ export const ts = [
     rules: {
       ...TypeScript.configs["strict-type-checked"].rules,
       ...TypeScript.configs["stylistic-type-checked"].rules,
+      "@typescript-eslint/ban-types": "warn",
       "@typescript-eslint/ban-ts-comment": "warn",
-      "@typescript-eslint/prefer-ts-expect-error": "warn",
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {
@@ -29,6 +29,9 @@ export const ts = [
         },
       ],
       "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+      // Qwikの公式から
+      "@typescript-eslint/no-explicit-any": "warn",
+      "no-console": "warn",
     },
   },
 ];
