@@ -2,6 +2,7 @@ import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
 import SimpleImportSort from "eslint-plugin-simple-import-sort";
 import UnusedImports from "eslint-plugin-unused-imports";
+import globals from "globals";
 
 const conpat = new FlatCompat();
 
@@ -34,7 +35,16 @@ export const base = [
     },
   },
   ...conpat.extends("prettier"),
-  { env: { browser: true, node: true, es2024: true, worker: true } },
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.es2021,
+        ...globals.worker,
+      },
+    },
+  },
   {
     ignores: ["**/dist/*"],
   },
