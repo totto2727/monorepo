@@ -1,0 +1,10 @@
+{
+  "extends": "ts-config/qwik",
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "noPropertyAccessFromIndexSignature": false
+  },
+  "include": ["src", "./**/*.d.ts", "./**/*.config.ts"]
+}

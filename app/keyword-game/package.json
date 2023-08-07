@@ -1,0 +1,31 @@
+{
+  "name": "keyword-game",
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "scripts": {
+    "qwik": "qwik",
+    "dev": "vite --mode ssr",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "prebuild": "panda codegen",
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.types": "tsc",
+    "start": "vite --open --mode ssr",
+    "preview": "qwik build preview && vite preview --open",
+    "type": "tsc",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
+    "format": "prettier . --write --cache **/*.{js,jsx,mjs,cjs,ts,tsx,json,md,html,css,scss,astro,svelte} --no-error-on-unmatched-pattern"
+  },
+  "type": "module",
+  "dependencies": {
+    "@builder.io/qwik": "^1.2.6",
+    "@builder.io/qwik-city": "^1.2.6",
+    "@pandacss/dev": "^0.9.0",
+    "pandacss-config": "workspace:^",
+    "undici": "5.22.1",
+    "vite": "4.4.8",
+    "vite-tsconfig-paths": "4.2.0"
+  }
+}
