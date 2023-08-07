@@ -1,24 +1,33 @@
-# build output
+# Build
 dist/
+server/
 functions/\[\[path]].js
 
 # generated types
 .astro/
 
-# dependencies
+# Development
 node_modules/
+*.local
 
-# logs
+# Cache
+tmp/
+.cache
+.mf
+.rollup.cache
+tsconfig.tsbuildinfo
+
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-
-# environment variables
-.env*.local
+lerna-debug.log*
 
 # macOS-specific files
 .DS_Store
 
 # turborepo logs
-**/.turbo
+.turbo
