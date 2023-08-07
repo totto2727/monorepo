@@ -47,9 +47,14 @@
     {
       "path": "./app/www-preview",
       "name": "app/www-preview"
+    },
+    {
+      "path": "./app/keyword-game",
+      "name": "app/keyword-game"
     }
   ],
   "settings": {
+    "material-icon-theme.activeIconPack": "qwik",
     "typescript.tsdk": "node_modules/typescript/lib",
     "eslint.experimental.useFlatConfig": true,
     "eslint.validate": [
@@ -94,13 +99,27 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
   },
-  "launch": {},
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "name": "keyword-game dev.debug",
+        "request": "launch",
+        "skipFiles": ["<node_internals>/**"],
+        "cwd": "${workspaceFolder}/app/keyword-game",
+        "program": "${workspaceFolder}/app/keyword-game/node_modules/vite/bin/vite.js",
+        "args": ["--mode", "ssr", "--force"]
+      }
+    ]
+  },
   "extensions": {
     "recommendations": [
       "astro-build.astro-vscode",
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",
-      "github.vscode-github-actions"
+      "github.vscode-github-actions",
+      "unifiedjs.vscode-mdx"
     ]
   }
 }
