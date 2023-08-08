@@ -23,6 +23,7 @@ updates:
           - commitlint*
       storybook:
         patterns:
+          - storybook
           - "@storybook*"
       test:
         patterns:
