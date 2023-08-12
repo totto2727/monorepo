@@ -5,14 +5,30 @@ dotenv:
   - .env.local
 
 tasks:
-  www-init:
-    - task: www-prepare
-    - task: www-create-projects
-    - task: www-deploy-projects
-
-  www-prepare:
+  prepare:
     cmds:
       - pnpm install
+
+  keyword-game-init:
+    - task: prepare
+    - task: keyword-game-create
+    - task: keyword-game-deploy
+
+  keyword-game-create:
+    cmds:
+      - cmd: pnpm wrangler pages project create --project-name keyword-game --production-branch main
+        ignore_error: true
+
+  keyword-game-deploy:
+    cmds:
+      - pnpm build --filter keyword-game
+      - cmd: pnpm wrangler pages deploy app/keyword-game/dist --project-name keyword-game
+        ignore_error: true
+
+  www-init:
+    - task: prepare
+    - task: www-create-projects
+    - task: www-deploy-projects
 
   www-create-projects:
     cmds:
@@ -24,9 +40,8 @@ tasks:
   www-deploy-projects:
     cmds:
       - pnpm build --filter www-public
-      - cmd: pnpm wrangler pages deploy packages/www-public/dist --project-name www-public
+      - cmd: pnpm wrangler pages deploy app/www-public/dist --project-name www-public
         ignore_error: true
       - pnpm build --filter www-preview
-      - cmd: pnpm wrangler pages deploy packages/www-preview/dist --project-name www-preview
+      - cmd: pnpm wrangler pages deploy app/www-preview/dist --project-name www-preview
         ignore_error: true
-

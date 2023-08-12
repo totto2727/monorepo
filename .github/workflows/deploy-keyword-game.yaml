@@ -1,0 +1,61 @@
+on:
+  workflow_dispatch:
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: true
+
+env:
+  VOLTA_FEATURE_PNPM: 1
+
+jobs:
+  publish-keyword-game-production:
+    if: github.ref_name == 'main'
+    name: publish keyword-game production
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    timeout-minutes: 10
+    environment:
+      name: "keyword-game production"
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup turbo
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+      - name: publish-pages
+        uses: ./.github/actions/publish-pages
+        with:
+          project-name: keyword-game
+          dist: ./app/keyword-game/dist
+          build: pnpm build --filter keyword-game
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+  publish-keyword-game-staging:
+    if: github.ref_name != 'main'
+    name: publish keyword-game staging
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    timeout-minutes: 10
+    environment:
+      name: "keyword-game preview"
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup turbo
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+      - name: publish-pages
+        uses: ./.github/actions/publish-pages
+        with:
+          project-name: keyword-game
+          dist: ./app/keyword-game/dist
+          build: pnpm build --filter keyword-game
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
