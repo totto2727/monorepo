@@ -6,20 +6,23 @@ export default component$(() => {
   return (
     <>
       <div class={vstack()}>
-        <h1>バトル前フェーズ</h1>
+        <h1>推理前フェーズ</h1>
         <h2>各チームの登録ワード</h2>
         <div>隠す</div>
         <ul>
           <li>
             <h3>チーム1</h3>
+            <div>コピー</div>
             <div>わたし</div>
           </li>
           <li>
             <h3>チーム2</h3>
+            <div>コピー</div>
             <div>自分</div>
           </li>
           <li>
             <h3>チーム3</h3>
+            <div>コピー</div>
             <div>ゆめみ</div>
           </li>
         </ul>
@@ -50,7 +53,7 @@ export default component$(() => {
             </ul>
           </li>
         </ul>
-        <button>バトルを開始する</button>
+        <button>推理を開始する</button>
       </div>
     </>
   );
