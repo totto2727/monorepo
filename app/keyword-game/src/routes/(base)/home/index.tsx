@@ -1,22 +1,21 @@
 import { component$ } from "@builder.io/qwik";
-import { Link, type DocumentHead } from "@builder.io/qwik-city";
+import { Link } from "@builder.io/qwik-city";
 import { vstack } from "pandacss/patterns";
-
-export const head: DocumentHead = {
-  title: "home",
-  meta: [
-    {
-      name: "description",
-      content: "キーワード当てゲームのホーム",
-    },
-  ],
-};
 
 export default component$(() => {
   return (
     <>
       <div class={vstack()}>
-        <Link href="/game">game</Link>
+        <h1>キーワード当てゲーム</h1>
+        <div>
+          <h2>ゲームマスター</h2>
+          <Link href="/masters/games/">ルームを作成する</Link>
+          <Link href="/accounts/login/">ログイン</Link>
+        </div>
+        <div>
+          <h2>プレイヤー</h2>
+          <Link href="/players/games/">ルームに参加する</Link>
+        </div>
       </div>
     </>
   );
