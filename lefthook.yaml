@@ -1,0 +1,7 @@
+pre-push:
+  commands:
+    format:
+      run: pnpm run format
+    build:
+      run: pnpm run build
+      
