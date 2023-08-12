@@ -11,7 +11,7 @@
     "deploy": "wrangler pages publish ./dist",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
-    "format": "prettier . --write --cache **/*.{js,jsx,mjs,cjs,ts,tsx,json,md,html,css,scss,astro,svelte} --no-error-on-unmatched-pattern",
+    "format": "prettier . --write --cache **/*.{js,jsx,mjs,cjs,ts,tsx,json,md,html,css,scss,astro,svelte} --no-error-on-unmatched-pattern --ignore-path ../../.gitignore",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
     "prebuild": "panda codegen",
     "preview": "qwik build preview && vite preview --open",

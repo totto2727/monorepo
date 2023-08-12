@@ -6,6 +6,8 @@
     "moduleResolution": "nodenext",
     "noEmit": true,
     "exactOptionalPropertyTypes": false,
+    "noUnusedLocals": false,
+    "noUnusedParameter": false,
     "incremental": true,
     "resolveJsonModule": true,
     "allowJs": true,

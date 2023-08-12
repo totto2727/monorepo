@@ -44,6 +44,6 @@ export const base = [
     },
   },
   {
-    ignores: ["**/dist/*"],
+    ignores: ["**/dist/*", "**/server/*", "**/tmp/*"],
   },
 ];
