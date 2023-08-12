@@ -7,7 +7,7 @@
     "noEmit": true,
     "exactOptionalPropertyTypes": false,
     "noUnusedLocals": false,
-    "noUnusedParameter": false,
+    "noUnusedParameters": false,
     "incremental": true,
     "resolveJsonModule": true,
     "allowJs": true,
