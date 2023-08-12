@@ -39,8 +39,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       wrangler:
-        specifier: ^3.4.0
-        version: 3.4.0
+        specifier: ^3.1.1
+        version: 3.1.1
 
   app/keyword-game:
     dependencies:
@@ -66,8 +66,8 @@ importers:
         specifier: 4.2.0
         version: 4.2.0(typescript@5.1.6)(vite@4.4.8)
       wrangler:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^3.1.1
+        version: 3.1.1
 
   app/www-preview:
     dependencies:
@@ -3894,11 +3894,6 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /detect-libc@2.0.1:
-    resolution: {integrity: sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w==}
-    engines: {node: '>=8'}
-    dev: false
-
   /detect-libc@2.0.2:
     resolution: {integrity: sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==}
     engines: {node: '>=8'}
@@ -6827,7 +6822,7 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      detect-libc: 2.0.1
+      detect-libc: 2.0.2
       expand-template: 2.0.3
       github-from-package: 0.0.0
       minimist: 1.2.8
@@ -8302,33 +8297,8 @@ packages:
       '@cloudflare/workerd-windows-64': 1.20230724.0
     dev: false
 
-  /wrangler@3.0.0:
-    resolution: {integrity: sha512-azppXJjEQeaVg3wxFZJOGDGtpR8e9clHr2aHuanGHOk9vX3gvesCv97BF/n8qh1Y1d7vDKOBdfQW3UOYZNFGNw==}
-    engines: {node: '>=16.13.0'}
-    hasBin: true
-    dependencies:
-      '@cloudflare/kv-asset-handler': 0.2.0
-      '@esbuild-plugins/node-globals-polyfill': 0.1.1(esbuild@0.16.3)
-      '@esbuild-plugins/node-modules-polyfill': 0.1.4(esbuild@0.16.3)
-      blake3-wasm: 2.1.5
-      chokidar: 3.5.3
-      esbuild: 0.16.3
-      miniflare: 3.20230724.0
-      nanoid: 3.3.6
-      path-to-regexp: 6.2.1
-      selfsigned: 2.1.1
-      source-map: 0.7.4
-      xxhash-wasm: 1.0.2
-    optionalDependencies:
-      fsevents: 2.3.2
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
-    dev: false
-
-  /wrangler@3.4.0:
-    resolution: {integrity: sha512-sATQ84zH/zFUHSaa4hY3V24TBrad3R9HhGV47U6Ek7XRQDLQHBm0jt84mJD3sSV/hhaq5s+xidIYulhm+m1/Tg==}
+  /wrangler@3.1.1:
+    resolution: {integrity: sha512-iG6QGOt+qgSm7UroJ8IJ+JdXEcDcW7yp9ilP0V7alCGhKm8shqa/M1iyMOpukZSCSZo8Vmn5nH2C9OY1PR3dQQ==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     dependencies:
