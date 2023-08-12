@@ -1,10 +1,8 @@
-import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
+import eslintConfigPrettier from "eslint-config-prettier";
 import SimpleImportSort from "eslint-plugin-simple-import-sort";
 import UnusedImports from "eslint-plugin-unused-imports";
 import globals from "globals";
-
-const conpat = new FlatCompat();
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export const base = [
@@ -34,7 +32,7 @@ export const base = [
       "simple-import-sort/exports": "warn",
     },
   },
-  ...conpat.extends("prettier"),
+  eslintConfigPrettier,
   {
     languageOptions: {
       globals: {
