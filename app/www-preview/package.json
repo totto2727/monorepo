@@ -15,7 +15,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@astrojs/cloudflare": "^6.7.0",
+    "@astrojs/cloudflare": "^6.8.0",
     "@astrojs/react": "^2.2.1",
     "@pandacss/dev": "^0.10.0",
     "@types/react": "^18.0.21",
