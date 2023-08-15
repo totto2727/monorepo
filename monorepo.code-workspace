@@ -42,11 +42,7 @@
     },
     {
       "path": "./app/www-public",
-      "name": "app/www-public"
-    },
-    {
-      "path": "./app/www-preview",
-      "name": "app/www-preview"
+      "name": "app/www"
     },
     {
       "path": "./app/keyword-game",
