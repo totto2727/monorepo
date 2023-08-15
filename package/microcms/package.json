@@ -28,7 +28,6 @@
     "src"
   ],
   "dependencies": {
-    "microcms-js-sdk": "^2.5.0",
-    "result": "workspace:^"
+    "microcms-js-sdk": "^2.5.0"
   }
 }

@@ -45,3 +45,6 @@ updates:
       tsconfig:
         patterns:
           - "@tsconfig*"
+      qwik:
+        patterns:
+          - *qwik*

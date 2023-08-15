@@ -16,7 +16,6 @@
   "type": "module",
   "dependencies": {
     "@astrojs/react": "^2.2.1",
-    "@pandacss/dev": "^0.10.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^2.10.5",
@@ -24,8 +23,6 @@
     "microcms-js-sdk": "^2.5.0",
     "pandacss-config": "workspace:^",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "result": "workspace:^",
-    "vite": "^4.4.8"
+    "react-dom": "^18.0.0"
   }
 }
