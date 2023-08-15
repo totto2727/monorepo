@@ -1,8 +1,6 @@
 import type { MicroCMSImage } from "microcms-js-sdk";
 
-import {
-  getList,
-  getListDetail,
+import type {
   MicroCMSClientInstance,
   MicroCMSContent,
   MicroCMSListContent,
@@ -10,6 +8,7 @@ import {
   MicroCMSRichEditorField,
   MicroCMSSingleSelectedField,
 } from "../../index.js";
+import { getList, getListDetail } from "../../index.js";
 
 export type BlogContent = MicroCMSContent<{
   title: string;

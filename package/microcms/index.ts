@@ -1,14 +1,14 @@
-import {
+import type {
   createClient,
   GetListDetailRequest,
-  type GetListRequest,
+  GetListRequest,
   MicroCMSImage,
   MicroCMSListContent as MicroCMSListContent_,
   MicroCMSListResponse as MicroCMSListResponse_,
   MicroCMSQueries,
 } from "microcms-js-sdk";
-// import { getRuntime } from "@astrojs/cloudflare/runtime";
-import { AnyhowResult, fail, succeed } from "result";
+import type { AnyhowResult } from "result";
+import { fail, succeed } from "result";
 
 export type MicroCMSClientInstance = ReturnType<typeof createClient>;
 

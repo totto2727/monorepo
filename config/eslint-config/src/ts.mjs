@@ -32,6 +32,7 @@ export const ts = [
       // Qwikの公式から
       "@typescript-eslint/no-explicit-any": "warn",
       "no-console": "warn",
+      "@typescript-eslint/consistent-type-imports": "warn",
     },
   },
 ];
