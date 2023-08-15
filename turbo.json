@@ -21,12 +21,12 @@
       "outputs": [".ts-cache/**"]
     },
     "lint": {
-      "outputs": ["./node_modules/.cache/eslint/.eslint-cache"],
-      "dependsOn": ["type"]
+      "dependsOn": ["type"],
+      "outputs": ["./node_modules/.cache/eslint/.eslint-cache"]
     },
     "format": {
-      "outputs": ["./node_modules/.cache/prettier/.prettier-cache"],
-      "dependsOn": ["lint"]
+      "dependsOn": ["lint"],
+      "outputs": ["./node_modules/.cache/prettier/.prettier-cache"]
     }
   }
 }
