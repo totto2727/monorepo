@@ -3,20 +3,22 @@
   "globalDependencies": [".env", ".env.local"],
   "pipeline": {
     "prebuild": {
+      "dependsOn": ["^prebuild"],
       "outputs": ["./node_modules/pandacss/**"]
     },
     "build": {
-      "dependsOn": ["^prebuild", "prebuild"],
-      "outputs": ["dist/**", "./node_modules/pandacss/**"]
+      "dependsOn": ["^build", "prebuild"],
+      "outputs": ["dist/**"]
     },
     "start": {
       "dependsOn": ["build"]
     },
     "dev": {
-      "dependsOn": ["^prebuild", "^dev"]
+      "dependsOn": ["prebuild", "^dev"]
     },
     "type": {
-      "dependsOn": ["^prebuild", "prebuild"]
+      "dependsOn": ["prebuild"],
+      "outputs": [".ts-cache/**"]
     },
     "lint": {
       "outputs": ["./node_modules/.cache/eslint/.eslint-cache"],

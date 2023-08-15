@@ -5,7 +5,6 @@
     "lib": ["es2022", "DOM", "WebWorker", "DOM.Iterable"],
     "jsx": "react-jsx",
     "jsxImportSource": "@builder.io/qwik",
-    "outDir": "tmp",
     "types": ["node", "vite/client"]
   }
 }

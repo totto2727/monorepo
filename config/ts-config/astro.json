@@ -5,9 +5,9 @@
     "module": "esnext",
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "noEmit": true,
-    "exactOptionalPropertyTypes": false,
+    "noEmit": false,
     "incremental": true,
+    "exactOptionalPropertyTypes": false,
     "resolveJsonModule": true,
     "allowJs": true
   }

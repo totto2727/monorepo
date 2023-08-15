@@ -9,7 +9,7 @@
     "build": "astro build",
     "start": "astro preview",
     "astro": "astro",
-    "type": "astro check",
+    "type": "astro check && tsc",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
     "format": "prettier . --write --cache **/*.{js,jsx,mjs,cjs,ts,tsx,json,md,html,css,scss,astro,svelte} --no-error-on-unmatched-pattern"
   },

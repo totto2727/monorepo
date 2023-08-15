@@ -4,7 +4,8 @@
     "paths": {
       "~/*": ["./src/*"]
     },
-    "noPropertyAccessFromIndexSignature": false
+    "noPropertyAccessFromIndexSignature": false,
+    "outDir": "./.ts-cache/"
   },
   "include": ["src", "./**/*.d.ts", "./**/*.config.ts"]
 }

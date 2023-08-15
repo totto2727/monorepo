@@ -16,6 +16,7 @@ tmp/
 .mf
 .rollup.cache
 tsconfig.tsbuildinfo
+.ts-cache
 
 # Logs
 logs

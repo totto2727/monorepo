@@ -1,4 +1,7 @@
 {
   "extends": "ts-config/node.json",
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts"],
+  "compilerOptions": {
+    "outDir": "./.ts-cache/"
+  }
 }
