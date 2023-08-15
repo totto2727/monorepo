@@ -17,13 +17,20 @@
   "dependencies": {
     "@astrojs/react": "^2.2.1",
     "@pandacss/astro": "^0.11.0",
+    "@pandacss/dev": "^0.11.0",
+    "@types/node": "^20.5.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^2.10.5",
+    "date-fns": "^2.30.0",
     "microcms": "workspace:^",
     "microcms-js-sdk": "^2.5.0",
     "pandacss-config": "workspace:^",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "result": "workspace:^",
+    "ts-config": "workspace:^",
+    "typescript": "^5.1.6",
+    "vite": "4.4.8"
   }
 }

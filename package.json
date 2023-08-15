@@ -18,21 +18,13 @@
   },
   "type": "module",
   "dependencies": {
-    "@pandacss/dev": "^0.11.0",
-    "@types/node": "^20.5.0",
-    "date-fns": "^2.30.0",
-    "eslint": "^8.46.0",
+    "eslint": "^8.47.0",
     "eslint-config": "workspace:^",
     "lefthook": "^1.4.8",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.0.1",
     "prettier-config": "workspace:^",
-    "result": "workspace:^",
-    "ts-config": "workspace:^",
     "turbo": "^1.10.7",
-    "typescript": "^5.1.6",
-    "vite": "4.4.8",
-    "vite-tsconfig-paths": "4.2.0",
     "wrangler": "^3.5.0"
   }
 }

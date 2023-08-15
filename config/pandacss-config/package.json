@@ -20,5 +20,10 @@
     "index.ts",
     "src"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "@pandacss/dev": "^0.11.0",
+    "@types/node": "^20.5.0",
+    "ts-config": "workspace:^",
+    "typescript": "^5.1.6"
+  }
 }
