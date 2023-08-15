@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@pandacss/dev':
         specifier: ^0.11.0
-        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.4.5)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
+        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
       '@types/node':
-        specifier: ^20.4.5
-        version: 20.4.5
+        specifier: ^20.5.0
+        version: 20.5.0
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -49,13 +49,13 @@ importers:
         version: 5.1.6
       vite:
         specifier: 4.4.8
-        version: 4.4.8(@types/node@20.4.5)
+        version: 4.4.8(@types/node@20.5.0)
       vite-tsconfig-paths:
         specifier: 4.2.0
         version: 4.2.0(typescript@5.1.6)(vite@4.4.8)
       wrangler:
-        specifier: ^3.4.0
-        version: 3.4.0
+        specifier: ^3.5.0
+        version: 3.5.0
 
   app/keyword-game:
     dependencies:
@@ -88,7 +88,7 @@ importers:
         version: 18.2.6
       astro:
         specifier: ^2.10.5
-        version: 2.10.5(@types/node@20.4.5)
+        version: 2.10.5(@types/node@20.5.0)
       microcms:
         specifier: workspace:^
         version: link:../../package/microcms
@@ -138,14 +138,14 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0(@typescript-eslint/eslint-plugin@6.3.0)(eslint@8.47.0)
       globals:
-        specifier: ^13.20.0
-        version: 13.20.0
+        specifier: ^13.21.0
+        version: 13.21.0
 
   config/pandacss-config:
     dependencies:
       '@pandacss/dev':
         specifier: ^0.10.0
-        version: 0.10.0(@internationalized/date@3.4.0)(@types/node@20.4.5)(@types/react-dom@18.2.7)(@types/react@18.2.20)(astro@2.10.7)(typescript@5.1.6)
+        version: 0.10.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(astro@2.10.7)(typescript@5.1.6)
 
   config/prettier-config:
     dependencies:
@@ -165,7 +165,7 @@ importers:
         version: 2.0.1
       astro:
         specifier: ^2.10.5
-        version: 2.10.5(@types/node@20.4.5)
+        version: 2.10.5(@types/node@20.5.0)
 
   package/microcms:
     dependencies:
@@ -268,7 +268,7 @@ packages:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.10.5(@types/node@20.4.5)
+      astro: 2.10.5(@types/node@20.5.0)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -291,7 +291,7 @@ packages:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.10.7(@types/node@20.4.5)
+      astro: 2.10.7(@types/node@20.5.0)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -314,7 +314,7 @@ packages:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.9.6(@types/node@20.4.5)
+      astro: 2.9.6(@types/node@20.5.0)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -665,8 +665,8 @@ packages:
       mime: 3.0.0
     dev: false
 
-  /@cloudflare/workerd-darwin-64@1.20230724.0:
-    resolution: {integrity: sha512-DQmFZWHhs8waQFYRb/Z8QmbitAvBMXnbUMUentp+3lS4eCYI0/iurTaQDiz5+ldUn9FTxD+1XuYZlTHzVNxoHw==}
+  /@cloudflare/workerd-darwin-64@1.20230814.1:
+    resolution: {integrity: sha512-aQUO7q7qXl+SVtOiMMlVKLNOSeL6GX43RKeflwzsD74dGgyHPiSfw5KCvXhkVbyN7u+yYF6HyFdaIvHLfn5jyA==}
     engines: {node: '>=16'}
     cpu: [x64]
     os: [darwin]
@@ -674,8 +674,8 @@ packages:
     dev: false
     optional: true
 
-  /@cloudflare/workerd-darwin-arm64@1.20230724.0:
-    resolution: {integrity: sha512-C7T0v/lMjEX7c4iROSZKgIF1eGw3+sj/gFpBD6xwxfbIcrKBjncMypeLQNpRTCdBQr1W3sNpg9jagwuVX5ByZQ==}
+  /@cloudflare/workerd-darwin-arm64@1.20230814.1:
+    resolution: {integrity: sha512-U2mcgi+AiuI/4EY5Wk/GmygiNoCNw/V2mcHmxESqe4r6XbJYOzBdEsjnqJ05rqd0JlEM8m64jRtE6/qBnQHygg==}
     engines: {node: '>=16'}
     cpu: [arm64]
     os: [darwin]
@@ -683,8 +683,8 @@ packages:
     dev: false
     optional: true
 
-  /@cloudflare/workerd-linux-64@1.20230724.0:
-    resolution: {integrity: sha512-o0F/hj73UXOQwkPkYqZuIxpjG8gAs2eoAGqxX1HSIYRf7iUhfFcPrupwjqlNqf7Oo1h46M+sClSFjr/ZU/LCjg==}
+  /@cloudflare/workerd-linux-64@1.20230814.1:
+    resolution: {integrity: sha512-Q4kITXLTCuG2i2Z01fbb5AjVRRIf3+lS4ZVsFbTbIwtcOOG4Ozcw7ee7tKsFES7hFqR4Eg9gMG4/aS0mmi+L2g==}
     engines: {node: '>=16'}
     cpu: [x64]
     os: [linux]
@@ -692,8 +692,8 @@ packages:
     dev: false
     optional: true
 
-  /@cloudflare/workerd-linux-arm64@1.20230724.0:
-    resolution: {integrity: sha512-UpzCoo7LOuPWxFPw84TZQTPIawIDQNSb3XnC6ffMjUH/FVwHmHdngIFZxW+xjLHKMIzGNAqSn3eRHekKgO3QqA==}
+  /@cloudflare/workerd-linux-arm64@1.20230814.1:
+    resolution: {integrity: sha512-BX5SaksXw+pkREVw3Rw2eSNXplqZw+14CcwW/5x/4oq/C6yn5qCvKxJfM7pukJGMI4wkJPOYops7B3g27FB/HA==}
     engines: {node: '>=16'}
     cpu: [arm64]
     os: [linux]
@@ -701,8 +701,8 @@ packages:
     dev: false
     optional: true
 
-  /@cloudflare/workerd-windows-64@1.20230724.0:
-    resolution: {integrity: sha512-wVpPNu19fnvgsD8V6NiGPSuET0bzKmgn3wJ6RwAwQA+GQ0hdDIDVYd13aImhgO6jLfQvkduCDxeZluGZ7PPojQ==}
+  /@cloudflare/workerd-windows-64@1.20230814.1:
+    resolution: {integrity: sha512-GWHqfyhsG/1wm2W8afkYX3q3fWXUWWD8NGtHfAs6ZVTHdW3mmYyMhKR0lc6ptBwz5i5aXRlP2S+CxxxwwDbKpw==}
     engines: {node: '>=16'}
     cpu: [x64]
     os: [win32]
@@ -1370,7 +1370,7 @@ packages:
       ajv: 6.12.6
       debug: 4.3.4
       espree: 9.6.1
-      globals: 13.20.0
+      globals: 13.21.0
       ignore: 5.2.4
       import-fresh: 3.3.0
       js-yaml: 4.1.0
@@ -1524,7 +1524,7 @@ packages:
       astro: '>=2.x'
     dependencies:
       '@pandacss/postcss': 0.10.0(typescript@5.1.6)
-      astro: 2.10.7(@types/node@20.4.5)
+      astro: 2.10.7(@types/node@20.5.0)
       autoprefixer: 10.4.14(postcss@8.4.27)
       postcss: 8.4.27
       postcss-load-config: 4.0.1(postcss@8.4.27)
@@ -1540,7 +1540,7 @@ packages:
       astro: '>=2.x'
     dependencies:
       '@pandacss/postcss': 0.11.0(typescript@5.1.6)
-      astro: 2.10.5(@types/node@20.4.5)
+      astro: 2.10.5(@types/node@20.5.0)
       autoprefixer: 10.4.14(postcss@8.4.27)
       postcss: 8.4.27
       postcss-load-config: 4.0.1(postcss@8.4.27)
@@ -1622,7 +1622,7 @@ packages:
       ts-pattern: 5.0.4
     dev: false
 
-  /@pandacss/dev@0.10.0(@internationalized/date@3.4.0)(@types/node@20.4.5)(@types/react-dom@18.2.7)(@types/react@18.2.20)(astro@2.10.7)(typescript@5.1.6):
+  /@pandacss/dev@0.10.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(astro@2.10.7)(typescript@5.1.6):
     resolution: {integrity: sha512-NznJ4d8qW5KM9fGri4R2nrTThNgfsbzJqvoIQNtWrLj5b3VbnkdDXYmQAHG30eUTLd5yqAbclWuFb6vZe+MBfA==}
     hasBin: true
     peerDependencies:
@@ -1639,10 +1639,10 @@ packages:
       '@pandacss/postcss': 0.10.0(typescript@5.1.6)
       '@pandacss/preset-panda': 0.10.0
       '@pandacss/shared': 0.10.0
-      '@pandacss/studio': 0.10.0(@internationalized/date@3.4.0)(@types/node@20.4.5)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
+      '@pandacss/studio': 0.10.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
       '@pandacss/token-dictionary': 0.10.0
       '@pandacss/types': 0.10.0
-      astro: 2.10.7(@types/node@20.4.5)
+      astro: 2.10.7(@types/node@20.5.0)
       cac: 6.7.14
       pathe: 1.1.1
       perfect-debounce: 1.0.0
@@ -1664,7 +1664,7 @@ packages:
       - typescript
     dev: false
 
-  /@pandacss/dev@0.11.0(@internationalized/date@3.4.0)(@types/node@20.4.5)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6):
+  /@pandacss/dev@0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6):
     resolution: {integrity: sha512-3HJQjd+oHyOrwSPlEtsdeKvygHQxe7oc7K+XI2vmhNrREzwGaaZWX0DGeoqMC0ueXwKOk0JL0EVUXWelF8D9VQ==}
     hasBin: true
     dependencies:
@@ -1675,7 +1675,7 @@ packages:
       '@pandacss/postcss': 0.11.0(typescript@5.1.6)
       '@pandacss/preset-panda': 0.11.0
       '@pandacss/shared': 0.11.0
-      '@pandacss/studio': 0.11.0(@internationalized/date@3.4.0)(@types/node@20.4.5)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
+      '@pandacss/studio': 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
       '@pandacss/token-dictionary': 0.11.0
       '@pandacss/types': 0.11.0
       cac: 6.7.14
@@ -1954,7 +1954,7 @@ packages:
     resolution: {integrity: sha512-WOz5fwdDjvm1CWMaStsfeR9wkZjsObcKdh8RFguN914GJnoRjQ4+WpYZj7/36HR01qqua2Y46B7YH3f3Zam3UQ==}
     dev: false
 
-  /@pandacss/studio@0.10.0(@internationalized/date@3.4.0)(@types/node@20.4.5)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6):
+  /@pandacss/studio@0.10.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6):
     resolution: {integrity: sha512-clEht36qwDL7YK5SEWTT6FfNtfAr6Xr7JfeO8lt21Ep7ODBlzSEXZ++zrF+pUXe+bI2FPcXSm55gGo/Q84pKcQ==}
     dependencies:
       '@ark-ui/react': 0.9.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
@@ -1965,11 +1965,11 @@ packages:
       '@pandacss/shared': 0.10.0
       '@pandacss/token-dictionary': 0.10.0
       '@pandacss/types': 0.10.0
-      astro: 2.9.6(@types/node@20.4.5)
+      astro: 2.9.6(@types/node@20.5.0)
       javascript-stringify: 2.1.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      vite: 4.4.8(@types/node@20.4.5)
+      vite: 4.4.8(@types/node@20.5.0)
     transitivePeerDependencies:
       - '@internationalized/date'
       - '@types/node'
@@ -1987,7 +1987,7 @@ packages:
       - typescript
     dev: false
 
-  /@pandacss/studio@0.11.0(@internationalized/date@3.4.0)(@types/node@20.4.5)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6):
+  /@pandacss/studio@0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6):
     resolution: {integrity: sha512-j5M+v3ao7Ek654WGnRWSIW7yFaYPrmxENAIEeL3uwvjPGdPHn32mZ34ZWpc89Sc+KHg5ZIvgKnvzrzyR6cjPbw==}
     dependencies:
       '@ark-ui/react': 0.9.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
@@ -1998,11 +1998,11 @@ packages:
       '@pandacss/shared': 0.11.0
       '@pandacss/token-dictionary': 0.11.0
       '@pandacss/types': 0.11.0
-      astro: 2.9.6(@types/node@20.4.5)
+      astro: 2.9.6(@types/node@20.5.0)
       javascript-stringify: 2.1.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      vite: 4.4.8(@types/node@20.4.5)
+      vite: 4.4.8(@types/node@20.5.0)
     transitivePeerDependencies:
       - '@internationalized/date'
       - '@types/node'
@@ -2195,8 +2195,8 @@ packages:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: false
 
-  /@types/node@20.4.5:
-    resolution: {integrity: sha512-rt40Nk13II9JwQBdeYqmbn2Q6IVTA5uPhvSO+JVqdXw/6/4glI6oR9ezty/A9Hg5u7JH4OmYmuQ+XvjKm0Datg==}
+  /@types/node@20.5.0:
+    resolution: {integrity: sha512-Mgq7eCtoTjT89FqNoTzzXg2XvCi5VMhRV6+I2aYanc6kQCBImeNaAYRs/DyoVqk1YEUJK5gN9VO7HRIdz4Wo3Q==}
     dev: false
 
   /@types/parse5@6.0.3:
@@ -3183,7 +3183,7 @@ packages:
       - supports-color
     dev: false
 
-  /astro@2.10.5(@types/node@20.4.5):
+  /astro@2.10.5(@types/node@20.5.0):
     resolution: {integrity: sha512-/GlDb0iHq9smACrCqVu/AaNi5+fqJuPOVTthm5fFNi+OBRprY0DW8juaov8o+M1X6SvIyIbOcd04+ZsYrIF0Sg==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
@@ -3246,7 +3246,7 @@ packages:
       typescript: 5.1.6
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.4.8(@types/node@20.4.5)
+      vite: 4.4.8(@types/node@20.5.0)
       vitefu: 0.2.4(vite@4.4.8)
       which-pm: 2.0.0
       yargs-parser: 21.1.1
@@ -3262,7 +3262,7 @@ packages:
       - terser
     dev: false
 
-  /astro@2.10.7(@types/node@20.4.5):
+  /astro@2.10.7(@types/node@20.5.0):
     resolution: {integrity: sha512-R8aF4yphrsbhxW2UxHZ1DslBn8e8vPQ23+Z/OnajNE1Q4HEZCOZ4CAbHJx2PDwq2p+CRWArNalpr3+rTqyOYBQ==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
@@ -3325,7 +3325,7 @@ packages:
       typescript: 5.1.6
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.4.8(@types/node@20.4.5)
+      vite: 4.4.8(@types/node@20.5.0)
       vitefu: 0.2.4(vite@4.4.8)
       which-pm: 2.0.0
       yargs-parser: 21.1.1
@@ -3341,7 +3341,7 @@ packages:
       - terser
     dev: false
 
-  /astro@2.9.6(@types/node@20.4.5):
+  /astro@2.9.6(@types/node@20.5.0):
     resolution: {integrity: sha512-yvbZQ6YOWYLejyQ4nAcgZLDYQ34enQJ5/LWlXKtUzXzpsUHB75vJMj+XmEq5Q2eVlZOlQrp0lU+nhSRGaOsOUQ==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
@@ -3404,7 +3404,7 @@ packages:
       typescript: 5.1.6
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.4.8(@types/node@20.4.5)
+      vite: 4.4.8(@types/node@20.5.0)
       vitefu: 0.2.4(vite@4.4.8)
       which-pm: 2.0.0
       yargs-parser: 21.1.1
@@ -4020,11 +4020,6 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /detect-libc@2.0.1:
-    resolution: {integrity: sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w==}
-    engines: {node: '>=8'}
-    dev: false
-
   /detect-libc@2.0.2:
     resolution: {integrity: sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==}
     engines: {node: '>=8'}
@@ -4561,7 +4556,7 @@ packages:
       file-entry-cache: 6.0.1
       find-up: 5.0.0
       glob-parent: 6.0.2
-      globals: 13.20.0
+      globals: 13.21.0
       graphemer: 1.4.0
       ignore: 5.2.4
       imurmurhash: 0.1.4
@@ -5019,13 +5014,6 @@ packages:
   /globals@11.12.0:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
     engines: {node: '>=4'}
-    dev: false
-
-  /globals@13.20.0:
-    resolution: {integrity: sha512-Qg5QtVkCy/kv3FUSlu4ukeZDVf9ee0iXLAUYX13gbR17bnejFTzr4iS9bY7kwCf1NztRNm1t91fjOiyx4CSwPQ==}
-    engines: {node: '>=8'}
-    dependencies:
-      type-fest: 0.20.2
     dev: false
 
   /globals@13.21.0:
@@ -6470,8 +6458,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /miniflare@3.20230724.0:
-    resolution: {integrity: sha512-YU8yUwoVJCiuzY2i9ZBJ+McjL/mqwKnMJfn23QedSCvx82Mys8GAlkHCH69mqSqzlSw8IVcdxec330meRRf9bg==}
+  /miniflare@3.20230801.0:
+    resolution: {integrity: sha512-jXl++AYc3PDMu9cxeMbFgzrnbgwU8VIkw49cdpOaIAz7jQgPcLuNLOyAw3G+uaLELnILHs81MM67fGR1hAc62A==}
     engines: {node: '>=16.13'}
     dependencies:
       acorn: 8.10.0
@@ -6486,10 +6474,10 @@ packages:
       source-map-support: 0.5.21
       stoppable: 1.1.0
       undici: 5.23.0
-      workerd: 1.20230724.0
+      workerd: 1.20230814.1
       ws: 8.13.0
       youch: 3.2.3
-      zod: 3.21.4
+      zod: 3.22.0
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -7086,7 +7074,7 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      detect-libc: 2.0.1
+      detect-libc: 2.0.2
       expand-template: 2.0.3
       github-from-package: 0.0.0
       minimist: 1.2.8
@@ -8336,13 +8324,13 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 2.1.2(typescript@5.1.6)
-      vite: 4.4.8(@types/node@20.4.5)
+      vite: 4.4.8(@types/node@20.5.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
     dev: false
 
-  /vite@4.4.8(@types/node@20.4.5):
+  /vite@4.4.8(@types/node@20.5.0):
     resolution: {integrity: sha512-LONawOUUjxQridNWGQlNizfKH89qPigK36XhMI7COMGztz8KNY0JHim7/xDd71CZwGT4HtSRgI7Hy+RlhG0Gvg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -8370,7 +8358,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.4.5
+      '@types/node': 20.5.0
       esbuild: 0.18.17
       postcss: 8.4.27
       rollup: 3.26.3
@@ -8386,7 +8374,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.8(@types/node@20.4.5)
+      vite: 4.4.8(@types/node@20.5.0)
     dev: false
 
   /vscode-css-languageservice@6.2.6:
@@ -8528,21 +8516,21 @@ packages:
       string-width: 5.1.2
     dev: false
 
-  /workerd@1.20230724.0:
-    resolution: {integrity: sha512-++D7JqS4/dk7zvtGpk+i/7G9bZtEl6lTtgAsIoSSGR1qJAxxEu21ktm9+FH0EYh7uKfizuM5H9lrTsR+3u44PA==}
+  /workerd@1.20230814.1:
+    resolution: {integrity: sha512-zJeSEteXuAD+bpYJT8WvzTAHvIAkKPVxOV+Jy6zCLKz5e08N3OUbAF+wrvGWc8b2aB1sj+IYsdXfkv4puH+qXQ==}
     engines: {node: '>=16'}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      '@cloudflare/workerd-darwin-64': 1.20230724.0
-      '@cloudflare/workerd-darwin-arm64': 1.20230724.0
-      '@cloudflare/workerd-linux-64': 1.20230724.0
-      '@cloudflare/workerd-linux-arm64': 1.20230724.0
-      '@cloudflare/workerd-windows-64': 1.20230724.0
+      '@cloudflare/workerd-darwin-64': 1.20230814.1
+      '@cloudflare/workerd-darwin-arm64': 1.20230814.1
+      '@cloudflare/workerd-linux-64': 1.20230814.1
+      '@cloudflare/workerd-linux-arm64': 1.20230814.1
+      '@cloudflare/workerd-windows-64': 1.20230814.1
     dev: false
 
-  /wrangler@3.4.0:
-    resolution: {integrity: sha512-sATQ84zH/zFUHSaa4hY3V24TBrad3R9HhGV47U6Ek7XRQDLQHBm0jt84mJD3sSV/hhaq5s+xidIYulhm+m1/Tg==}
+  /wrangler@3.5.0:
+    resolution: {integrity: sha512-lvYo2JUxRXdobzd0hs96FT354DvKAYoAiPslceEpKmr0oHCreMWhU5AStfZwg1PEaJJZCwP17LqA5GgjvQ6zyg==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     dependencies:
@@ -8552,7 +8540,7 @@ packages:
       blake3-wasm: 2.1.5
       chokidar: 3.5.3
       esbuild: 0.16.3
-      miniflare: 3.20230724.0
+      miniflare: 3.20230801.0
       nanoid: 3.3.6
       path-to-regexp: 6.2.1
       selfsigned: 2.1.1

@@ -22,6 +22,6 @@
     "eslint-plugin-qwik": "^1.2.6",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
-    "globals": "^13.20.0"
+    "globals": "^13.21.0"
   }
 }
