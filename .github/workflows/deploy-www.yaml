@@ -10,9 +10,9 @@ env:
   VOLTA_FEATURE_PNPM: 1
 
 jobs:
-  publish-www-public-production:
+  publish-www-production:
     if: github.ref_name == 'main'
-    name: publish www-public production
+    name: publish www production
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -28,47 +28,19 @@ jobs:
       - name: publish-pages
         uses: ./.github/actions/publish-pages
         with:
-          project-name: www-public
-          dist: ./app/www-public/dist
-          build: pnpm build --filter www-public
+          project-name: www
+          dist: ./app/www/dist
+          build: pnpm build --filter www
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         env:
-          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN_PUBLIC }}
-          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY_PUBLIC }}
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
 
-  publish-www-preview-production:
-    if: github.ref_name == 'main'
-    name: publish www-preview production
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    timeout-minutes: 10
-    environment:
-      name: "www production"
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: setup turbo
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
-      - name: publish-pages
-        uses: ./.github/actions/publish-pages
-        with:
-          project-name: www-preview
-          dist: ./app/www-preview/dist
-          build: pnpm build --filter www-preview
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        env:
-          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN_PREVIEW }}
-          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY_PREVIEW }}
-
-  publish-www-public-staging:
+  publish-www-staging:
     if: github.ref_name != 'main'
-    name: publish www-public staging
+    name: publish www staging
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -84,40 +56,13 @@ jobs:
       - name: publish-pages
         uses: ./.github/actions/publish-pages
         with:
-          project-name: www-public
-          dist: ./app/www-public/dist
-          build: pnpm build --filter www-public
+          project-name: www
+          dist: ./app/www/dist
+          build: pnpm build --filter www
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         env:
-          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN_PUBLIC }}
-          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY_PUBLIC }}
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
 
-  publish-www-preview-staging:
-    if: github.ref_name != 'main'
-    name: publish www-preview staging
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    timeout-minutes: 10
-    environment:
-      name: "www staging"
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: setup turbo
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
-      - name: publish-pages
-        uses: ./.github/actions/publish-pages
-        with:
-          project-name: www-preview
-          dist: ./app/www-preview/dist
-          build: pnpm build --filter www-preview
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        env:
-          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN_PREVIEW }}
-          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY_PREVIEW }}

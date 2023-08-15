@@ -37,11 +37,7 @@
       "name": "package/component"
     },
     {
-      "path": "./package/www-share",
-      "name": "package/www-share"
-    },
-    {
-      "path": "./app/www-public",
+      "path": "./app/www",
       "name": "app/www"
     },
     {

@@ -32,16 +32,11 @@ tasks:
 
   www-create-projects:
     cmds:
-      - cmd: pnpm wrangler pages project create --project-name www-public --production-branch main
-        ignore_error: true
-      - cmd: pnpm wrangler pages project create --project-name www-preview --production-branch main
+      - cmd: pnpm wrangler pages project create --project-name www --production-branch main
         ignore_error: true
 
   www-deploy-projects:
     cmds:
-      - pnpm build --filter www-public
-      - cmd: pnpm wrangler pages deploy app/www-public/dist --project-name www-public
-        ignore_error: true
-      - pnpm build --filter www-preview
-      - cmd: pnpm wrangler pages deploy app/www-preview/dist --project-name www-preview
+      - pnpm build --filter www
+      - cmd: pnpm wrangler pages deploy app/www/dist --project-name www
         ignore_error: true
