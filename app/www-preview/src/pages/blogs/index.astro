@@ -5,7 +5,7 @@ import { isFailure } from "result";
 
 import { microCMS } from "../../config/microcms";
 
-const blogsResponse = await getBlogs(microCMS(Astro.request), [
+const blogsResponse = await getBlogs(microCMS(Astro.locals), [
   "id",
   "eyecatch",
   "title",
