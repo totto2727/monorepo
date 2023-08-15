@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "~/component/layout/BaseLayout.astro";
 import { intlFormat } from "date-fns";
 import { getBlogs } from "microcms/query/blogs";
 import { css } from "pandacss/css";
 import { isFailure } from "result";
 
+import BaseLayout from "~/component/layout/BaseLayout.astro";
 import { microCMS } from "~/config/microcms";
 
 const blogsResponse = await getBlogs(microCMS(), [

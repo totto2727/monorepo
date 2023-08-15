@@ -1,7 +1,7 @@
-pre-push:
+pre-commit:
   commands:
-    format-root:
+    format:root:
       run: pnpm run format
-    format-packages:
+    format:packages:
       run: pnpm run format
       
