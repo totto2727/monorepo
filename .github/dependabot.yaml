@@ -47,4 +47,7 @@ updates:
           - "@tsconfig*"
       qwik:
         patterns:
-          - *qwik*
+          - "*qwik*"
+      pandacss:
+        patterns:
+          - "@pandacss/*"

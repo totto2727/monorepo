@@ -1,5 +1,5 @@
 import react from "@astrojs/react";
-import pandacss from "@pandacss/dev/astro";
+import pandacss from "@pandacss/astro";
 import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
 
