@@ -33,10 +33,6 @@
       "name": "package/microcms"
     },
     {
-      "path": "./package/component",
-      "name": "package/component"
-    },
-    {
       "path": "./app/www",
       "name": "app/www"
     },

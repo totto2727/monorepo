@@ -20,7 +20,6 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^2.10.5",
-    "component": "workspace:^",
     "microcms": "workspace:^",
     "microcms-js-sdk": "^2.5.0",
     "pandacss-config": "workspace:^",

@@ -1,4 +1,0 @@
-{
-  "extends": "ts-config/astro.json",
-  "include": ["**/*.ts", "**/*.tsx", "**/*.astro"]
-}

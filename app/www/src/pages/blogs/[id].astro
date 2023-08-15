@@ -1,9 +1,9 @@
 ---
-import { BlogWithID } from "component/page/blogs/[id]/BlogWithID";
 import { Blog, getBlogs } from "microcms/query/blogs";
 import { isFailure } from "result";
 
-import { microCMS } from "../../config/microcms";
+import BaseLayout from "~/component/layout/BaseLayout.astro";
+import { microCMS } from "~/config/microcms";
 
 type Params = { id: string };
 
@@ -44,4 +44,6 @@ export async function getStaticPaths() {
 const props = Astro.props;
 ---
 
-<BlogWithID blog={props} />
+<BaseLayout title={props.title}>
+  <div set:html={props.content} />
+</BaseLayout>

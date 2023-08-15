@@ -1,5 +1,10 @@
 ---
-import { Error404 } from "component/page/404";
+import BaseLayout from "~/component/layout/BaseLayout.astro";
 ---
 
-<Error404 />
+<BaseLayout title="404">
+  <main>
+    <div>404 Error</div>
+    <div>ページを発見することができません</div>
+  </main>
+</BaseLayout>

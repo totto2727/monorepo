@@ -1,4 +1,10 @@
 {
   "extends": "ts-config/astro.json",
-  "include": ["**/*.ts", "**/*.tsx", "**/*.astro"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.astro"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  }
 }

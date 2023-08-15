@@ -11,6 +11,9 @@ importers:
       '@types/node':
         specifier: ^20.4.5
         version: 20.4.5
+      date-fns:
+        specifier: ^2.30.0
+        version: 2.30.0
       eslint:
         specifier: ^8.46.0
         version: 8.46.0
@@ -89,9 +92,6 @@ importers:
       astro:
         specifier: ^2.10.5
         version: 2.10.5(@types/node@20.4.5)
-      component:
-        specifier: workspace:^
-        version: link:../../package/component
       microcms:
         specifier: workspace:^
         version: link:../../package/microcms
@@ -175,39 +175,6 @@ importers:
       astro:
         specifier: ^2.10.5
         version: 2.10.5(@types/node@20.4.5)
-
-  package/component:
-    dependencies:
-      '@astrojs/react':
-        specifier: ^2.2.1
-        version: 2.2.1(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
-      '@pandacss/dev':
-        specifier: ^0.10.0
-        version: 0.10.0(@internationalized/date@3.4.0)(@types/node@20.4.5)(@types/react-dom@18.2.6)(@types/react@18.2.14)(astro@2.10.5)(typescript@5.1.6)
-      '@types/react':
-        specifier: ^18.0.21
-        version: 18.2.14
-      '@types/react-dom':
-        specifier: ^18.0.6
-        version: 18.2.6
-      astro:
-        specifier: ^2.10.5
-        version: 2.10.5(@types/node@20.4.5)
-      date-fns:
-        specifier: ^2.30.0
-        version: 2.30.0
-      microcms:
-        specifier: workspace:^
-        version: link:../microcms
-      pandacss-config:
-        specifier: workspace:^
-        version: link:../../config/pandacss-config
-      react:
-        specifier: ^18.0.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.0.0
-        version: 18.2.0(react@18.2.0)
 
   package/microcms:
     dependencies:

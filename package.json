@@ -19,6 +19,7 @@
   "type": "module",
   "dependencies": {
     "@types/node": "^20.4.5",
+    "date-fns": "^2.30.0",
     "eslint": "^8.46.0",
     "eslint-config": "workspace:^",
     "lefthook": "^1.4.8",
