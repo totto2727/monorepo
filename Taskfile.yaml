@@ -5,38 +5,14 @@ dotenv:
   - .env.local
 
 tasks:
-  prepare:
+  cloudflare-init:
     cmds:
       - pnpm install
-
-  keyword-game-init:
-    - task: prepare
-    - task: keyword-game-create
-    - task: keyword-game-deploy
-
-  keyword-game-create:
-    cmds:
-      - cmd: pnpm wrangler pages project create --project-name keyword-game --production-branch main
+      - cmd: pnpm --filter infra init
         ignore_error: true
+      - pnpm --filter plan
+      - pnpm --filter apply
+      - pnpm --filter show
+      - pnpm wrangler pages deploy app/keyword-game/dist --project-name keyword-game
+      - pnpm wrangler pages deploy app/www/dist --project-name www
 
-  keyword-game-deploy:
-    cmds:
-      - pnpm build --filter keyword-game
-      - cmd: pnpm wrangler pages deploy app/keyword-game/dist --project-name keyword-game
-        ignore_error: true
-
-  www-init:
-    - task: prepare
-    - task: www-create-projects
-    - task: www-deploy-projects
-
-  www-create-projects:
-    cmds:
-      - cmd: pnpm wrangler pages project create --project-name www --production-branch main
-        ignore_error: true
-
-  www-deploy-projects:
-    cmds:
-      - pnpm build --filter www
-      - cmd: pnpm wrangler pages deploy app/www/dist --project-name www
-        ignore_error: true
