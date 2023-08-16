@@ -8,6 +8,20 @@ functions/\[\[path]].js
 
 # Development
 node_modules/
+**/.terraform/*
+local.tfvars
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+*.tfvars
+*.tfvars.json
 *.local
 
 # Cache

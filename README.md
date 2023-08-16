@@ -1,17 +1,30 @@
 # totto2727 のモノレポ
 
+## 導入ツール
+
+```bash
+brew install volta go-task terraform
+```
+
 ## 環境変数
 
 - Local
   - rootはプロジェクトルートの.env.localに記述
   - その他は各プロジェクトルートの.env.localに記述
   - root
-    - VITE_LOCAL=true
     - CLOUDFLARE_ACCOUNT_ID
-      - 初回の環境作成のみ必要
+      - wwwの初回の環境作成
+      - notionのデプロイ
+    - VITE_LOCAL=true
   - www
     - MICROCMS_API_KEY: 下書き権限なし
     - MICROCMS_SERVICE_DOMAIN
+  - infra
+    - local.tfvars
+      - TF_VAR_CLOUDFLARE_DOMAIN
+      - TF_VAR_CLOUDFLARE_ZONE_ID
+      - TF_VAR_CLOUDFLARE_ACCOUNT_ID
+      - TF_VAR_CLOUDFLARE_API_KEY
 - GitHub Actions Global(Dependabot)
   - Dependabot込みでプロジェクト全体のSecretsに適用する環境変数
   - CLOUDFLARE_ACCOUNT_ID
@@ -35,14 +48,24 @@
 ## アクセス制限
 
 ```txt
-www.totto.page
+www.totto2727.dev
   - 誰でも
-www*.pages.dev
-  - www.totto.pageへリダイレクト
+www*.page.dev
+  - www.totto2727.devへリダイレクト
 *.www*.pages.dev
   - 開発者のみ
+notion.totto2727.dev
+  - 誰でも
 ```
 
 ## www
 
 [ドキュメント](./docs/www.md)
+
+## keyword-game
+
+[ドキュメント](./docs/keyword-game.md)
+
+## notion
+
+[ドキュメント](./docs/notion.md)

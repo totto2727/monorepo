@@ -1,0 +1,6 @@
+name = "notion"
+main = "index.js"
+compatibility_date = "2023-08-14"
+
+workers_dev = false
+route = { pattern = "notion.totto2727.dev/*", zone_name = "totto2727.dev" }

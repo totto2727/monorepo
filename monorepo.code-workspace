@@ -5,6 +5,10 @@
       "path": "./"
     },
     {
+      "name": "infra",
+      "path": "./infra"
+    },
+    {
       "path": "./config/eslint-config",
       "name": "config/eslint"
     },
@@ -31,6 +35,10 @@
     {
       "path": "./package/microcms",
       "name": "package/microcms"
+    },
+    {
+      "path": "./app/notion",
+      "name": "app/notion"
     },
     {
       "path": "./app/www",
