@@ -1,0 +1,26 @@
+---
+import type { LocalImageProps, RemoteImageProps } from "astro:assets";
+
+export type Props = (LocalImageProps | RemoteImageProps) & {
+  ssr: boolean;
+};
+
+let Image_: ((_props: LocalImageProps | RemoteImageProps) => any) | undefined;
+
+const { ssr, ...props } = Astro.props;
+
+if (!ssr) {
+  Image_ = (await import("astro:assets").catch(() => undefined))?.Image;
+}
+---
+
+{
+  Image_ ? (
+    <Image_ {...props} slot={props.slot ?? undefined} />
+  ) : (
+    <img
+      {...props}
+      src={typeof props.src === "string" ? props.src : props.src.src}
+    />
+  )
+}

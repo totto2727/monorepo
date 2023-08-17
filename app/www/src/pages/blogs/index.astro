@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { intlFormat } from "date-fns";
 import { getBlogs } from "microcms/query/blogs";
 import { css } from "pandacss/css";
@@ -19,8 +20,8 @@ if (isFailure(blogsResponse)) {
   throw blogsResponse.cause;
 }
 
-const blogs = blogsResponse.value.contents.filter(
-  (v) => v.status[0] === "公開",
+const blogs = await Promise.all(
+  blogsResponse.value.contents.filter((v) => v.status[0] === "公開"),
 );
 ---
 
@@ -49,8 +50,10 @@ const blogs = blogsResponse.value.contents.filter(
             placeItems: "center",
           })}
         >
-          <img
+          <Image
             src={v.eyecatch.url}
+            height={v.eyecatch.width ?? 1280}
+            width={v.eyecatch.height ?? 720}
             alt=""
             class={css({
               maxWidth: "40rem",

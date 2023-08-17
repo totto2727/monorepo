@@ -14,4 +14,7 @@ export default defineConfig({
   vite: {
     envDir: env.VITE_LOCAL ? "." : "../../",
   },
+  experimental: {
+    assets: true,
+  },
 });
