@@ -19,7 +19,9 @@ if (isFailure(blogsResponse)) {
   throw blogsResponse.cause;
 }
 
-const blogs = blogsResponse.value.contents;
+const blogs = blogsResponse.value.contents.filter(
+  (v) => v.status[0] === "公開",
+);
 ---
 
 <BaseLayout title="blogs">
