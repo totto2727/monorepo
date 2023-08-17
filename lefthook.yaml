@@ -1,7 +1,5 @@
 pre-commit:
   parallel: true
   commands:
-    format:root:
-      run: pnpm run format
-    format:packages:
-      run: pnpm run format
+    fix-all:
+      run: pnpm run all && git add {staged_files}

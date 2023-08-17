@@ -5,8 +5,12 @@
   },
   "scripts": {
     "deploy": "wrangler deploy",
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
-    "format": "prettier . --write --cache **/*.{js,jsx,mjs,cjs,ts,tsx,json,md,html,css,scss,astro,svelte} --no-error-on-unmatched-pattern --ignore-path ../../.gitignore"
+    "check:lint": "eslint --exit-on-fatal-error --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --no-error-on-unmatched-pattern .",
+    "check:format": "prettier -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
+    "check": "run-s check:*",
+    "fix:lint": "eslint --fix --exit-on-fatal-error --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --no-error-on-unmatched-pattern .",
+    "fix:format": "prettier --write -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
+    "fix": "run-s fix:*"
   },
   "type": "module"
 }

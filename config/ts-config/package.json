@@ -4,8 +4,10 @@
     "extends": "../../package.json"
   },
   "scripts": {
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
-    "format": "prettier . --write --cache"
+    "check:format": "prettier -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
+    "check": "run-s check:*",
+    "fix:format": "prettier --write -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
+    "fix": "run-s fix:*"
   },
   "type": "module",
   "dependencies": {

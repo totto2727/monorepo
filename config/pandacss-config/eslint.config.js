@@ -1,3 +1,3 @@
-import { base } from "eslint-config";
+import { base, ts } from "eslint-config";
 
-export default base;
+export default base.concat(ts);

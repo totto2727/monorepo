@@ -2,6 +2,6 @@
   "extends": "ts-config/node.json",
   "include": ["**/*.ts"],
   "compilerOptions": {
-    "outDir": "./.ts-cache/"
+    "outDir": "./node_modules/.cache/.ts-cache/"
   }
 }

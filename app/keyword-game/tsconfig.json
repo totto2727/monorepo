@@ -5,7 +5,7 @@
       "~/*": ["./src/*"]
     },
     "noPropertyAccessFromIndexSignature": false,
-    "outDir": "./.ts-cache/"
+    "outDir": "./node_modules/.cache/.ts-cache/"
   },
   "include": ["src", "./**/*.d.ts", "./**/*.config.ts"]
 }

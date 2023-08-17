@@ -12,9 +12,9 @@
     "dev": "turbo dev",
     "build": "turbo build",
     "start": "turbo start",
-    "lint": "turbo lint",
-    "format": "turbo format",
-    "type": "turbo type"
+    "check": "turbo check",
+    "fix": "turbo fix",
+    "all": "run-p root fix"
   },
   "type": "module",
   "dependencies": {

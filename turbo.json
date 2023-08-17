@@ -16,17 +16,19 @@
     "dev": {
       "dependsOn": ["prebuild", "^dev"]
     },
-    "type": {
+    "check": {
       "dependsOn": ["prebuild"],
-      "outputs": [".ts-cache/**"]
+      "outputs": [
+        "./node_modules/.cache/eslint/.eslint-cache",
+        "./node_modules/.cache/prettier/.prettier-cache"
+      ]
     },
-    "lint": {
-      "dependsOn": ["type"],
-      "outputs": ["./node_modules/.cache/eslint/.eslint-cache"]
-    },
-    "format": {
-      "dependsOn": ["lint"],
-      "outputs": ["./node_modules/.cache/prettier/.prettier-cache"]
+    "fix": {
+      "dependsOn": ["prebuild"],
+      "outputs": [
+        "./node_modules/.cache/eslint/.eslint-cache",
+        "./node_modules/.cache/prettier/.prettier-cache"
+      ]
     }
   }
 }

@@ -7,6 +7,6 @@
     "paths": {
       "~/*": ["./src/*"]
     },
-    "outDir": "./.ts-cache/"
+    "outDir": "./node_modules/.cache/.ts-cache/"
   }
 }

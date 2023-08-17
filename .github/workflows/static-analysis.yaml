@@ -25,4 +25,4 @@ jobs:
       - name: setup pnpm
         uses: ./.github/actions/setup-pnpm
       - name: static-analysis
-        run: pnpm format
+        run: pnpm all

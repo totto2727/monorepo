@@ -8,7 +8,10 @@
     "show": "terraform show",
     "plan": "terraform plan -var-file=\"local.tfvars\"",
     "apply": "terraform apply --auto-approve -var-file=\"local.tfvars\"",
-    "format": "terraform fmt"
+    "check:format": "terraform fmt -write=false",
+    "check": "run-s check:*",
+    "fix:format": "terraform fmt",
+    "fix": "run-s fix:*"
   },
   "type": "module"
 }
