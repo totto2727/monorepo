@@ -71,4 +71,5 @@ notion.totto2727.dev
 [ドキュメント](./docs/notion.md)
 
 ## infra
+
 Web Analyticsだけは手動で有効化する必要あり

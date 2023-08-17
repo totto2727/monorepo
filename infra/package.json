@@ -5,9 +5,9 @@
   },
   "scripts": {
     "init": "terraform init",
-    "show":"terraform show",
-    "plan":"terraform plan -var-file=\"local.tfvars\"",
-    "apply":"terraform apply --auto-approve -var-file=\"local.tfvars\"",
+    "show": "terraform show",
+    "plan": "terraform plan -var-file=\"local.tfvars\"",
+    "apply": "terraform apply --auto-approve -var-file=\"local.tfvars\"",
     "format": "terraform fmt"
   },
   "type": "module"

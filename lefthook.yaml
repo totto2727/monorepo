@@ -1,7 +1,7 @@
 pre-commit:
+  parallel: true
   commands:
     format:root:
       run: pnpm run format
     format:packages:
       run: pnpm run format
-      

@@ -15,4 +15,3 @@ tasks:
       - pnpm --filter show
       - pnpm wrangler pages deploy app/keyword-game/dist --project-name keyword-game
       - pnpm wrangler pages deploy app/www/dist --project-name www
-
