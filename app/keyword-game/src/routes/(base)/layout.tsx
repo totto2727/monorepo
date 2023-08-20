@@ -3,6 +3,7 @@ import type { RequestHandler } from "@builder.io/qwik-city";
 
 import "./base.css";
 import { component$, Slot } from "@builder.io/qwik";
+import { CloudflareWebAnalytics } from "~/components/layout/CloudflareWebAnalytics";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -25,13 +26,7 @@ export default component$(() => {
   return (
     <>
       <Slot />
-      {/* Cloudflare Web Analytics */}
-      <script
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon='{"token": "3163423d5d3e4e02b2e04187f7f89a37"}'
-      ></script>
-      {/* End Cloudflare Web Analytics */}
+      <CloudflareWebAnalytics />
     </>
   );
 });

@@ -22,6 +22,14 @@ variable "MICROCMS_SERVICE_DOMAIN" {
   type = string
 }
 
+variable "PUBLIC_DATA_CF_BEACON_TOKEN_ID_KEYWARD_GAME" {
+  type = string
+}
+
+variable "DATA_CF_BEACON_TOKEN_ID_WWW" {
+  type = string
+}
+
 terraform {
   required_providers {
     cloudflare = {
@@ -60,7 +68,9 @@ resource "cloudflare_pages_project" "keyword-game" {
     }
     production {
       environment_variables = {}
-      secrets               = {}
+      secrets               = {
+        PUBLIC_DATA_CF_BEACON_TOKEN_ID = var.PUBLIC_DATA_CF_BEACON_TOKEN_ID_KEYWARD_GAME
+      }
       fail_open             = false
       compatibility_date    = "2023-08-12"
       usage_model           = "bundled"
@@ -89,6 +99,7 @@ resource "cloudflare_pages_project" "www" {
   account_id        = var.CLOUDFLARE_ACCOUNT_ID
   name              = "www"
   production_branch = "main"
+
   deployment_configs {
     preview {
       environment_variables = {}
@@ -108,6 +119,7 @@ resource "cloudflare_pages_project" "www" {
       secrets = {
         MICROCMS_API_KEY        = var.MICROCMS_API_KEY
         MICROCMS_SERVICE_DOMAIN = var.MICROCMS_SERVICE_DOMAIN
+        DATA_CF_BEACON_TOKEN_ID = var.DATA_CF_BEACON_TOKEN_ID_WWW
       }
       compatibility_date = "2023-08-12"
       fail_open          = false

@@ -19,12 +19,15 @@ brew install volta go-task terraform
   - www
     - MICROCMS_API_KEY: 下書き権限なし
     - MICROCMS_SERVICE_DOMAIN
+  - keyword-game
   - infra
     - local.tfvars
-      - TF_VAR_CLOUDFLARE_DOMAIN
-      - TF_VAR_CLOUDFLARE_ZONE_ID
-      - TF_VAR_CLOUDFLARE_ACCOUNT_ID
-      - TF_VAR_CLOUDFLARE_API_KEY
+      - CLOUDFLARE_DOMAIN
+      - CLOUDFLARE_ZONE_ID
+      - CLOUDFLARE_ACCOUNT_ID
+      - CLOUDFLARE_API_KEY
+      - DATA_CF_BEACON_TOKEN_ID_WWW
+      - PUBLIC_DATA_CF_BEACON_TOKEN_ID_KEYWARD_GAME
 - GitHub Actions Global(Dependabot)
   - Dependabot込みでプロジェクト全体のSecretsに適用する環境変数
   - CLOUDFLARE_ACCOUNT_ID
@@ -37,6 +40,18 @@ brew install volta go-task terraform
       - Dependabot
     - Secrets
       - MICROCMS_SERVICE_DOMAIN
+        - www production
+      - MICROCMS_API_KEY
+      - DATA_CF_BEACON_TOKEN_ID
+  - keyword-game
+    - Environment
+      - keyword-game production
+      - keyword-game staging
+      - Dependabot
+    - Secrets
+      - PUBLIC_DATA_CF_BEACON_TOKEN_ID
+        - keyword-game production
+      - MICROCMS_SERVICE_DOMAIN
       - MICROCMS_API_KEY
 - Cloudflare Pages
   - www
@@ -44,6 +59,11 @@ brew install volta go-task terraform
     - MICROCMS_API_KEY
       - production: 下書き権限あり
       - staging: 下書き権限あり
+    - DATA_CF_BEACON_TOKEN_ID
+      - TF_VAR_DATA_CF_BEACON_TOKEN_ID_WWW
+  - keyword-game
+    - PUBLIC_DATA_CF_BEACON_TOKEN_ID
+      - TF_VAR_PUBLIC_DATA_CF_BEACON_TOKEN_ID_KEYWARD_GAME
 
 ## アクセス制限
 
@@ -71,5 +91,7 @@ notion.totto2727.dev
 [ドキュメント](./docs/notion.md)
 
 ## infra
+
+[ドキュメント](./docs/infra.md)
 
 Web Analyticsだけは手動で有効化する必要あり

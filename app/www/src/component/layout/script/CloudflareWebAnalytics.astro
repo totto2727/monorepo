@@ -1,0 +1,14 @@
+---
+
+---
+
+{
+  import.meta.env.DATA_CF_BEACON_TOKEN_ID ? (
+    <script
+      is:inline
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={`{"token": "${import.meta.env.DATA_CF_BEACON_TOKEN_ID}"}`}
+    />
+  ) : null
+}
