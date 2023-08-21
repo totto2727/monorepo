@@ -12,12 +12,9 @@ brew install volta go-task terraform
   - rootはプロジェクトルートの.env.localに記述
   - その他は各プロジェクトルートの.env.localに記述
   - root
-    - CLOUDFLARE_ACCOUNT_ID
-      - wwwの初回の環境作成
-      - notionのデプロイ
     - VITE_LOCAL=true
   - www
-    - MICROCMS_API_KEY: 下書き権限なし
+    - MICROCMS_API_KEY
     - MICROCMS_SERVICE_DOMAIN
   - keyword-game
   - infra
@@ -26,12 +23,12 @@ brew install volta go-task terraform
       - CLOUDFLARE_ZONE_ID
       - CLOUDFLARE_ACCOUNT_ID
       - CLOUDFLARE_API_KEY
-      - DATA_CF_BEACON_TOKEN_ID_WWW
-      - PUBLIC_DATA_CF_BEACON_TOKEN_ID_KEYWARD_GAME
-- GitHub Actions Global(Dependabot)
-  - Dependabot込みでプロジェクト全体のSecretsに適用する環境変数
-  - CLOUDFLARE_ACCOUNT_ID
-  - CLOUDFLARE_API_TOKEN
+- GitHub Actions
+  - Environment
+    - root, dependabot
+  - Secrets
+    - CLOUDFLARE_ACCOUNT_ID
+    - CLOUDFLARE_API_TOKEN
 - GitHub Actions Project
   - www
     - Environment
@@ -40,9 +37,9 @@ brew install volta go-task terraform
       - Dependabot
     - Secrets
       - MICROCMS_SERVICE_DOMAIN
-        - www production
       - MICROCMS_API_KEY
       - DATA_CF_BEACON_TOKEN_ID
+        - www production
   - keyword-game
     - Environment
       - keyword-game production
@@ -51,19 +48,23 @@ brew install volta go-task terraform
     - Secrets
       - PUBLIC_DATA_CF_BEACON_TOKEN_ID
         - keyword-game production
-      - MICROCMS_SERVICE_DOMAIN
-      - MICROCMS_API_KEY
 - Cloudflare Pages
   - www
-    - MICROCMS_SERVICE_DOMAIN
-    - MICROCMS_API_KEY
-      - production: 下書き権限あり
-      - staging: 下書き権限あり
-    - DATA_CF_BEACON_TOKEN_ID
-      - TF_VAR_DATA_CF_BEACON_TOKEN_ID_WWW
+    - Environment
+      - production
+      - preview
+    - Secrets
+      - MICROCMS_SERVICE_DOMAIN
+      - MICROCMS_API_KEY
+      - DATA_CF_BEACON_TOKEN_ID
+        - production
   - keyword-game
+    - Environment
+      - production
+      - preview
+    - Secrets
     - PUBLIC_DATA_CF_BEACON_TOKEN_ID
-      - TF_VAR_PUBLIC_DATA_CF_BEACON_TOKEN_ID_KEYWARD_GAME
+      - production
 
 ## アクセス制限
 
