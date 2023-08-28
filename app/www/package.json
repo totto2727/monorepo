@@ -16,8 +16,8 @@
   "type": "module",
   "dependencies": {
     "@astrojs/react": "^2.2.1",
-    "@pandacss/astro": "^0.11.0",
-    "@pandacss/dev": "^0.11.0",
+    "@pandacss/astro": "^0.13.0",
+    "@pandacss/dev": "^0.13.0",
     "@types/node": "^20.5.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
