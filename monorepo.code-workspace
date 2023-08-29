@@ -5,6 +5,10 @@
       "path": "./"
     },
     {
+      "name": "public",
+      "path": "./public"
+    },
+    {
       "name": "infra",
       "path": "./infra"
     },

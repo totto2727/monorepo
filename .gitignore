@@ -1,17 +1,26 @@
 # Build
 dist/
+
+# cloudflare
 server/
-functions/\[\[path]].js
+functions/\[\[path\]\].js
 
 # generated types
 .astro/
 
 # Development
 node_modules/
+*.local
+
+# terraform
 **/.terraform/*
-local.tfvars
+
+*.tfvars
+*.tfvars.json
+
 *.tfstate
 *.tfstate.*
+
 crash.log
 crash.*.log
 override.tf
@@ -20,9 +29,6 @@ override.tf.json
 *_override.tf.json
 .terraformrc
 terraform.rc
-*.tfvars
-*.tfvars.json
-*.local
 
 # Cache
 tmp/
@@ -46,3 +52,8 @@ lerna-debug.log*
 
 # turborepo logs
 .turbo
+
+# idea
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/shelf/
