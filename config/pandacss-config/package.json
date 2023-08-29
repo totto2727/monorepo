@@ -26,8 +26,8 @@
     "src"
   ],
   "dependencies": {
-    "@pandacss/dev": "^0.11.0",
-    "@pandacss/types": "^0.11.1",
+    "@pandacss/dev": "^0.13.0",
+    "@pandacss/types": "^0.13.0",
     "@types/node": "^20.5.0",
     "ts-config": "workspace:^",
     "typescript": "^5.1.6"
