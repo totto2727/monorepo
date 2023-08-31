@@ -10,8 +10,8 @@ export const base = {
     "./pages/**/*.{ts,tsx,js,jsx,astro}",
   ] as string[],
   exclude: [] as string[],
-  emitPackage: true,
-  outdir: "pandacss",
+  emitPackage: false,
+  outdir: "src/style/pandacss",
 
   optimize: process.env["NODE_ENV"] === "production",
   minify: process.env["NODE_ENV"] === "production",

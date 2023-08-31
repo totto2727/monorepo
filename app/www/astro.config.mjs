@@ -1,4 +1,3 @@
-import react from "@astrojs/react";
 import pandacss from "@pandacss/astro";
 import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
@@ -8,7 +7,7 @@ const env = loadEnv("", process.cwd() + "/../..");
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), pandacss()],
+  integrations: [pandacss({ applyBaseStyles: false })],
   publicDir: "../../public",
   server: { port: 3001 },
   vite: {

@@ -1,12 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import { intlFormat } from "date-fns";
 import { getBlogs } from "microcms/query/blogs";
-import { css } from "pandacss/css";
 import { isFailure } from "result";
 
 import BaseLayout from "~/component/layout/BaseLayout.astro";
+import { PUBLIC_AT, TITLE, UPDATED_AT } from "~/component/text";
+import BaseHeader from "~/component/ui/header/BaseHeader.astro";
 import { microCMS } from "~/config/microcms";
+import { css, sva } from "~/style/pandacss/css";
 
 const blogsResponse = await getBlogs(microCMS(), [
   "id",
@@ -23,64 +24,69 @@ if (isFailure(blogsResponse)) {
 const blogs = await Promise.all(
   blogsResponse.value.contents.filter((v) => v.status[0] === "公開"),
 );
+
+const stylesGenerater = sva({
+  slots: ["main", "title", "articleList"],
+  base: {
+    main: {
+      maxWidth: "80rem",
+      marginX: "auto",
+      display: "grid",
+      gridAutoRows: "auto",
+      placeItems: "center",
+    },
+    title: {
+      textStyle: "notoH1",
+    },
+    articleList: {
+      width: "100%",
+      display: "grid",
+      gridAutoRows: "auto",
+      placeItems: "center",
+    },
+  },
+});
+const styles = stylesGenerater();
 ---
 
 <BaseLayout title="blogs">
-  <div
-    class={css({
-      maxWidth: "80rem",
-      marginX: "auto",
-      paddingX: 0,
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-    })}
-  >
-    {
-      blogs.map((v) => (
-        <a
-          href={`/blogs/${v.id}`}
-          class={css({
-            width: "100%",
-            display: "grid",
-            gridTemplateColumns: "auto auto",
-            gridTemplateRows: "auto auto",
-            gridTemplateAreas: '"image image" "title publishAt"',
-            placeItems: "center",
-          })}
-        >
-          <Image
-            src={v.eyecatch.url}
-            height={v.eyecatch.width ?? 1280}
-            width={v.eyecatch.height ?? 720}
-            alt=""
-            class={css({
-              maxWidth: "40rem",
-              maxHeight: "30rem",
-              objectFit: "contain",
-              width: v.eyecatch.width,
-              height: v.eyecatch.height,
-              gridArea: "image",
-            })}
-          />
-          <div class={css({ gridArea: "title" })}>{v.title}</div>
-          <div class={css({ gridArea: "publishAt" })}>
-            {intlFormat(
-              new Date(v.publishedAt ?? ""),
-              {
-                timeZone: "Asia/Tokyo",
-                year: "numeric",
-                month: "numeric",
-                day: "numeric",
-                hour: "numeric",
-                minute: "numeric",
-              },
-              { locale: "ja" },
-            )}
-          </div>
-        </a>
-      ))
-    }
-  </div>
+  <BaseHeader />
+  <main class={styles.main}>
+    <h1 class={styles.title}>{TITLE}</h1>
+    <ul class={styles.articleList}>
+      {
+        blogs.map((v) => (
+          <li>
+            <div>
+              <Image
+                src={v.eyecatch.url}
+                alt=""
+                width={v.eyecatch.width ?? 40 * 16}
+                height={v.eyecatch.height ?? 22.5 * 16}
+                slot="image"
+                class={css({
+                  maxWidth: "40rem",
+                  maxHeight: "22.5rem",
+                  objectFit: "contain",
+                })}
+              />
+              <div
+                slot="text"
+                class={css({
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  width: "100%",
+                })}
+              >
+                <div>{v.title}</div>
+                <div>最{UPDATED_AT}:</div>
+                <div>{PUBLIC_AT}:</div>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
 </BaseLayout>

@@ -5,6 +5,9 @@ dist/
 server/
 functions/\[\[path\]\].js
 
+# pandacss
+**/pandacss/
+
 # generated types
 .astro/
 

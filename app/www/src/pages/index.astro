@@ -1,11 +1,23 @@
 ---
 import BaseLayout from "~/component/layout/BaseLayout.astro";
+import TextLink from "~/component/ui/link/TextLink.astro";
+import { css } from "~/style/pandacss/css";
 ---
 
-<BaseLayout title="home">
-  <div>
-    <div>
-      <a href="/blogs">blogs</a>
-    </div>
-  </div>
+<BaseLayout title="ホーム">
+  <main
+    class={css({
+      height: "100svh",
+      display: "grid",
+      gridAutoRows: "auto",
+      placeItems: "center",
+      paddingY: "20",
+    })}
+  >
+    <ul>
+      <li>
+        <TextLink href="/blogs">blogs</TextLink>
+      </li>
+    </ul>
+  </main>
 </BaseLayout>
