@@ -4,32 +4,39 @@
     "extends": "../../package.json"
   },
   "scripts": {
-    "check:type": "tsc",
+    "test": "vitest run",
+    "type": "tsc",
     "check:lint": "eslint --exit-on-fatal-error --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --no-error-on-unmatched-pattern .",
     "check:format": "prettier -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
     "check": "run-s check:*",
-    "fix:type": "tsc",
     "fix:lint": "eslint --fix --exit-on-fatal-error --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --no-error-on-unmatched-pattern .",
     "fix:format": "prettier --write -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
     "fix": "run-s fix:*"
   },
   "type": "module",
   "exports": {
-    ".": "./index.ts"
+    ".": "./index.ts",
+    "./error": "./error.ts"
   },
   "typesVersions": {
     "*": {
       ".": [
         "./index.ts"
+      ],
+      "./error": [
+        "./error.ts"
       ]
     }
   },
   "files": [
-    "index.ts"
+    "index.ts",
+    "error.ts"
   ],
   "dependencies": {
     "@types/node": "^20.5.0",
     "ts-config": "workspace:^",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vite": "4.4.8",
+    "vitest": "^0.34.3"
   }
 }

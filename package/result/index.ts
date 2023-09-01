@@ -1,5 +1,5 @@
 /**
- * Result型の失敗を示す型
+ * 失敗の型
  */
 export type Failure<T> = {
   type: "failure";
@@ -7,22 +7,17 @@ export type Failure<T> = {
 };
 
 /**
- * 型ガード可能な失敗の原因を示す型
+ * 型ガード可能な失敗の原因の型
  *
- * 値を持つかは任意で設定可能
+ * 値を持つかは任意
  */
-export type TypedCause<
-  TCauseType extends string,
-  TCauseValue = undefined,
-> = TCauseValue extends object
-  ? {
-      type: TCauseType;
-      value: TCauseValue;
-    }
-  : { type: TCauseType };
+export type TypedCause<TCauseType extends string, TCauseValue = undefined> = {
+  type: TCauseType;
+  value?: TCauseValue;
+};
 
 /**
- * 原因が型付けされた失敗を示す型
+ * 原因が型付けされた失敗の型
  */
 export type TypedFailure<TTypedCause> = TTypedCause extends TypedCause<
   infer TCauseType,
@@ -32,12 +27,14 @@ export type TypedFailure<TTypedCause> = TTypedCause extends TypedCause<
   : never;
 
 /**
- * 原因が片付けされていない失敗を示す型
- *
- * 失敗したことを明示的に示すため、objectを型引数にしています
- * undefinedやnullの場合は型エラーが発生します
+ * 原因が型付けされていない失敗の型
  */
-export type AnyhowFailure = Failure<object>;
+export type AnyhowFailure = Failure<unknown>;
+
+/**
+ * 失敗の原因の型を取得する型関数
+ */
+export type ExcludeFailure<T> = T extends Failure<infer U> ? U : never;
 
 /**
  * 任意の値を持つ失敗を返す関数
@@ -49,6 +46,28 @@ export type AnyhowFailure = Failure<object>;
  */
 export function fail<const T>(cause: T): Failure<T> {
   return { type: "failure", cause };
+}
+
+/**
+ * 原因が型付けされた失敗を返す関数
+ *
+ * @param {string} type - 型ガードに使用するリテラル
+ * @param {any} value - 失敗の詳細を表す値
+ * @return {TypedFailure}
+ */
+export function failTyped<const TCauseType extends string, const TCauseValue>(
+  type: TCauseType,
+  value?: TCauseValue,
+): TypedFailure<TypedCause<TCauseType, TCauseValue>> {
+  if (value)
+    return {
+      type: "failure",
+      cause: { type, value },
+    };
+  return {
+    type: "failure",
+    cause: { type },
+  };
 }
 
 /**
@@ -64,28 +83,17 @@ export function isFailure<const T>(
 }
 
 /**
- * 型ガードを前提とした値を持った失敗を返す関数
- *
- * @param {string} type - 型ガードに使用するリテラル
- * @param {object | undefined} value - 失敗の詳細を表す値
- * @return {TypedFailure}
- */
-export function failTyped<const TCauseType extends string, const TCauseValue>(
-  type: TCauseType,
-  value?: TCauseValue,
-): TypedFailure<TypedCause<TCauseType, TCauseValue>> {
-  return fail({ type, value }) as TypedFailure<
-    TypedCause<TCauseType, TCauseValue>
-  >;
-}
-
-/**
- * Result型の成功を表す型
+ * 成功を表す型
  */
 export type Success<T> = {
   type: "success";
   value: T;
 };
+
+/**
+ * 成功の型を取得する型関数
+ */
+export type ExcludeSuccess<T> = T extends Success<infer U> ? U : never;
 
 /**
  * 任意の値を持った成功を返す関数
@@ -110,7 +118,7 @@ export function isSuccess<const T>(
  * 失敗する可能性があることを表す型
  *
  * 基本的にはTypedResultやAnyhowResult型を使用することを推奨
- * またisOk関数やisFail関数の検証をした上で、使用することを想定
+ * またisSuccess関数やisFailure関数の検証をした上で、使用することを想定
  */
 export type Result<T, U> = Success<T> | Failure<U>;
 
@@ -121,7 +129,7 @@ export type TypedResult<T, TFailure> = TFailure extends TypedCause<
   infer TCauseType,
   infer TCauseValue
 >
-  ? Result<T, TypedCause<TCauseType, TCauseValue>> // ? Success<T> | TypedFailure<TypedCause<TCauseType, TCauseValue>>
+  ? Result<T, TypedCause<TCauseType, TCauseValue>>
   : never;
 
 /**
@@ -131,13 +139,67 @@ export type TypedResult<T, TFailure> = TFailure extends TypedCause<
  */
 export type AnyhowResult<T> = Success<T> | AnyhowFailure;
 
-// 以下は頻出するTypedCauseの定義
-// TypedResult型の型引数として利用することを想定している
+export type Option<T> = Result<T, undefined>;
+
+export function unwrap<T, U>(result: Result<T, U>): T {
+  if (isFailure(result)) throw result;
+  return result.value;
+}
+
+export function map<T, U, V>(
+  f: (v: T) => U,
+): (result: Result<T, V>) => Result<U, V> {
+  return function (r) {
+    if (isFailure(r)) return r;
+    return succeed(f(r.value));
+  };
+}
+
+export function mapError<T, U>(
+  f: (v: U) => T,
+): (result: Result<T, U>) => Success<T> {
+  return function (r) {
+    if (isSuccess(r)) return r;
+    return succeed(f(r.cause));
+  };
+}
+
+export function flatMap<T, U, V, W>(
+  f: (x: T) => Result<V, W>,
+): (result: Result<T, U>) => Result<V, U | W> {
+  return function (result) {
+    if (isFailure(result)) return result;
+    return f(result.value);
+  };
+}
+
+export function flatMapError<T, U, V>(
+  f: (x: U) => Result<T, V>,
+): (result: Result<T, U>) => Result<T, V> {
+  return function (result) {
+    if (isSuccess(result)) return result;
+    return f(result.cause);
+  };
+}
+
+export function tryCatch<T, U = unknown, V = ExcludeFailure<AnyhowFailure>>(
+  f: () => T,
+  fe: (e: U) => Failure<V>,
+): () => Result<T, V> {
+  return () => {
+    try {
+      return succeed(f());
+    } catch (e) {
+      return fe(e as U);
+    }
+  };
+}
+
 /**
  * ステータスコード404を示す失敗
  */
 export type NotFoundCause = TypedCause<"notfound">;
 
-export function failNotFound(cause?: unknown): TypedFailure<NotFoundCause> {
-  return failTyped("notfound", cause);
+export function failNotFound(): TypedFailure<NotFoundCause> {
+  return failTyped("notfound");
 }
