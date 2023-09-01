@@ -187,6 +187,12 @@ importers:
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
+      vite:
+        specifier: 4.4.8
+        version: 4.4.8(@types/node@20.5.0)
+      vitest:
+        specifier: ^0.34.3
+        version: 0.34.3
 
   config/ts-config:
     dependencies:

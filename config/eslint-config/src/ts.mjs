@@ -34,6 +34,7 @@ export const ts = [
       "no-console": "warn",
       "@typescript-eslint/consistent-type-imports": "warn",
       "@typescript-eslint/no-throw-literal": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
     },
   },
 ];
