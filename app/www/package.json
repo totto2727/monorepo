@@ -23,7 +23,7 @@
     "@pandacss/astro": "^0.11.0",
     "@pandacss/dev": "^0.11.0",
     "@types/node": "^20.5.0",
-    "astro": "^2.10.5",
+    "astro": "^3.0.6",
     "date-fns": "^2.30.0",
     "microcms": "workspace:^",
     "microcms-js-sdk": "^2.5.0",
