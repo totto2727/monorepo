@@ -3,7 +3,7 @@
 ## 導入ツール
 
 ```bash
-brew install volta go-task terraform
+brew install volta go-task terraform entr fd
 ```
 
 ## 環境変数
