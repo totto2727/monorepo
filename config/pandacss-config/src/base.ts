@@ -1,8 +1,16 @@
+import { defineTextStyles } from "@pandacss/dev";
+
+import { colorTokens } from "./color/index.js";
+import { noto } from "./font/noto.js";
+
 /* eslint-disable no-undef */
 export const base = {
   preflight: true,
   theme: {
-    extend: {},
+    extend: {
+      textStyles: defineTextStyles({ ...noto }),
+    },
+    tokens: { ...colorTokens },
   },
 
   include: [
