@@ -33,6 +33,7 @@ export const ts = [
       "@typescript-eslint/no-explicit-any": "warn",
       "no-console": "warn",
       "@typescript-eslint/consistent-type-imports": "warn",
+      "@typescript-eslint/no-throw-literal": "off",
     },
   },
 ];
