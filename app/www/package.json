@@ -5,7 +5,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "panda codegen",
+    "prebuild": "panda codegen && astro sync",
     "build": "astro build",
     "start": "astro preview",
     "astro": "astro",
