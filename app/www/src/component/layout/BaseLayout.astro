@@ -1,18 +1,21 @@
 ---
+import { css } from "~/style/pandacss/css";
+
 import Favicon from "./meta/Favicon.astro";
 import CloudflareWebAnalytics from "./script/CloudflareWebAnalytics.astro";
 
 export interface Props {
+  prefix?: string;
   title: string;
 }
 
-const { title } = Astro.props;
+const { title, prefix } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>{title}</title>
+    <title>{prefix ?? "totto2727 "}{title}</title>
     <meta charset="utf-8" slot="metas" />
     <Favicon />
     <slot name="meta" />
@@ -20,7 +23,15 @@ const { title } = Astro.props;
       @layer reset, base, tokens, recipes, utilities;
     </style>
   </head>
-  <body>
+  <body
+    class={css({
+      textStyle: "notoP",
+      backgroundColor: "light.bg",
+      color: "light.text",
+      // backgroundColor: "dark.bg",
+      // color: "dark.text",
+    })}
+  >
     <slot />
     <CloudflareWebAnalytics />
   </body>
