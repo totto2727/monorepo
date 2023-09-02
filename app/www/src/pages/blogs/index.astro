@@ -1,32 +1,17 @@
 ---
 import { Image } from "astro:assets";
-import { getBlogs } from "microcms/query/blogs";
-import { isFailure } from "result";
+import { getCollection } from "astro:content";
 
 import BaseLayout from "~/component/layout/BaseLayout.astro";
-import { PUBLIC_AT, TITLE, UPDATED_AT } from "~/component/text";
 import BaseHeader from "~/component/ui/header/BaseHeader.astro";
-import { microCMS } from "~/config/microcms";
 import { css, sva } from "~/style/pandacss/css";
 
-const blogsResponse = await getBlogs(microCMS(), [
-  "id",
-  "eyecatch",
-  "title",
-  "publishedAt",
-  "status",
-]);
+import DefaultEyeCatch from "./wallpaperflare.com_wallpaper.jpg";
 
-if (isFailure(blogsResponse)) {
-  throw blogsResponse.cause;
-}
-
-const blogs = await Promise.all(
-  blogsResponse.value.contents.filter((v) => v.status[0] === "公開"),
-);
+const blogs = await getCollection("blog");
 
 const stylesGenerater = sva({
-  slots: ["main", "title", "articleList"],
+  slots: ["main", "title", "articleList", "articleImage"],
   base: {
     main: {
       maxWidth: "80rem",
@@ -37,12 +22,18 @@ const stylesGenerater = sva({
     },
     title: {
       textStyle: "notoH1",
+      paddingY: "2rem",
     },
     articleList: {
       width: "100%",
       display: "grid",
       gridAutoRows: "auto",
       placeItems: "center",
+    },
+    articleImage: {
+      maxWidth: "45rem",
+      maxHeight: "40rem",
+      objectFit: "contain",
     },
   },
 });
@@ -52,23 +43,16 @@ const styles = stylesGenerater();
 <BaseLayout title="blogs">
   <BaseHeader />
   <main class={styles.main}>
-    <h1 class={styles.title}>{TITLE}</h1>
+    <h1 class={styles.title}>ブログ</h1>
     <ul class={styles.articleList}>
       {
         blogs.map((v) => (
           <li>
             <div>
               <Image
-                src={v.eyecatch.url}
+                src={v.data.eyeCatch ?? DefaultEyeCatch}
                 alt=""
-                width={v.eyecatch.width ?? 40 * 16}
-                height={v.eyecatch.height ?? 22.5 * 16}
-                slot="image"
-                class={css({
-                  maxWidth: "40rem",
-                  maxHeight: "22.5rem",
-                  objectFit: "contain",
-                })}
+                class={styles.articleImage}
               />
               <div
                 slot="text"
@@ -79,9 +63,9 @@ const styles = stylesGenerater();
                   width: "100%",
                 })}
               >
-                <div>{v.title}</div>
-                <div>最{UPDATED_AT}:</div>
-                <div>{PUBLIC_AT}:</div>
+                <div>{v.data.title}</div>
+                <div>最終更新日:</div>
+                <div>公開日:</div>
               </div>
             </div>
           </li>

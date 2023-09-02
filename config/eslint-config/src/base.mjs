@@ -44,6 +44,13 @@ export const base = [
     },
   },
   {
-    ignores: ["**/dist/*", "**/server/*", "**/tmp/*", "**/pandacss/*"],
+    ignores: [
+      "**/dist/*",
+      "**/server/*",
+      "**/tmp/*",
+      "**/pandacss/*",
+      "**/.astro/*",
+      "**/src/env.d.ts",
+    ],
   },
 ];

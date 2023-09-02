@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 
-import { TITLE } from "~/component/text";
 import { applyAspect } from "~/lib/css";
 import { sva } from "~/style/pandacss/css";
 
@@ -46,6 +45,6 @@ const styles = stylesGenerator();
       width={64}
       height={applyAspect(64, Maguro.height / Maguro.width)}
     />
-    <h1 class={styles.title}>{TITLE}</h1>
+    <h1 class={styles.title}>止まれないフロントエンドエンジニア</h1>
   </a>
 </header>

@@ -1,4 +1,6 @@
 import { defineConfig } from "@pandacss/dev";
 import { base } from "pandacss-config";
 
-export default defineConfig(base);
+const config: ReturnType<typeof defineConfig> = defineConfig(base);
+
+export default config;
