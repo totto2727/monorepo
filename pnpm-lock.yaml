@@ -43,7 +43,7 @@ importers:
         version: 1.2.6
       '@pandacss/dev':
         specifier: ^0.11.0
-        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
+        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(sharp@0.32.5)(typescript@5.1.6)
       '@types/node':
         specifier: ^20.5.0
         version: 20.5.0
@@ -87,7 +87,7 @@ importers:
         version: 0.11.0(astro@3.0.7)(typescript@5.1.6)
       '@pandacss/dev':
         specifier: ^0.11.0
-        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
+        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(sharp@0.32.5)(typescript@5.1.6)
       '@types/node':
         specifier: ^20.5.0
         version: 20.5.0
@@ -112,6 +112,9 @@ importers:
       result:
         specifier: workspace:^
         version: link:../../package/result
+      sharp:
+        specifier: ^0.32.5
+        version: 0.32.5
       ts-config:
         specifier: workspace:^
         version: link:../../config/ts-config
@@ -165,7 +168,7 @@ importers:
     dependencies:
       '@pandacss/dev':
         specifier: ^0.11.0
-        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
+        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(sharp@0.32.5)(typescript@5.1.6)
       '@pandacss/types':
         specifier: ^0.11.1
         version: 0.11.1
@@ -411,7 +414,7 @@ packages:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.9.6(@types/node@20.5.0)
+      astro: 2.9.6(@types/node@20.5.0)(sharp@0.32.5)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -1871,7 +1874,7 @@ packages:
       ts-pattern: 5.0.4
     dev: false
 
-  /@pandacss/dev@0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6):
+  /@pandacss/dev@0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(sharp@0.32.5)(typescript@5.1.6):
     resolution: {integrity: sha512-3HJQjd+oHyOrwSPlEtsdeKvygHQxe7oc7K+XI2vmhNrREzwGaaZWX0DGeoqMC0ueXwKOk0JL0EVUXWelF8D9VQ==}
     hasBin: true
     dependencies:
@@ -1882,7 +1885,7 @@ packages:
       '@pandacss/postcss': 0.11.0(typescript@5.1.6)
       '@pandacss/preset-panda': 0.11.0
       '@pandacss/shared': 0.11.0
-      '@pandacss/studio': 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6)
+      '@pandacss/studio': 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(sharp@0.32.5)(typescript@5.1.6)
       '@pandacss/token-dictionary': 0.11.0
       '@pandacss/types': 0.11.0
       cac: 6.7.14
@@ -2033,7 +2036,7 @@ packages:
     resolution: {integrity: sha512-WOz5fwdDjvm1CWMaStsfeR9wkZjsObcKdh8RFguN914GJnoRjQ4+WpYZj7/36HR01qqua2Y46B7YH3f3Zam3UQ==}
     dev: false
 
-  /@pandacss/studio@0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(typescript@5.1.6):
+  /@pandacss/studio@0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.20)(sharp@0.32.5)(typescript@5.1.6):
     resolution: {integrity: sha512-j5M+v3ao7Ek654WGnRWSIW7yFaYPrmxENAIEeL3uwvjPGdPHn32mZ34ZWpc89Sc+KHg5ZIvgKnvzrzyR6cjPbw==}
     dependencies:
       '@ark-ui/react': 0.9.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
@@ -2044,7 +2047,7 @@ packages:
       '@pandacss/shared': 0.11.0
       '@pandacss/token-dictionary': 0.11.0
       '@pandacss/types': 0.11.0
-      astro: 2.9.6(@types/node@20.5.0)
+      astro: 2.9.6(@types/node@20.5.0)(sharp@0.32.5)
       javascript-stringify: 2.1.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -3330,7 +3333,7 @@ packages:
       - supports-color
     dev: false
 
-  /astro@2.9.6(@types/node@20.5.0):
+  /astro@2.9.6(@types/node@20.5.0)(sharp@0.32.5):
     resolution: {integrity: sha512-yvbZQ6YOWYLejyQ4nAcgZLDYQ34enQJ5/LWlXKtUzXzpsUHB75vJMj+XmEq5Q2eVlZOlQrp0lU+nhSRGaOsOUQ==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
@@ -3386,6 +3389,7 @@ packages:
       rehype: 12.0.1
       semver: 7.5.4
       server-destroy: 1.0.1
+      sharp: 0.32.5
       shiki: 0.14.3
       string-width: 5.1.2
       strip-ansi: 7.1.0
@@ -5412,7 +5416,7 @@ packages:
     resolution: {integrity: sha512-sNRVfUwkUcsVWNn5inTHDXWzpPRWPWbSgGkuQmlsFCWXAR2+K5R5vG5tC3Qs4LeJaMugKB8hGVm6rvZjFHQrUw==}
     engines: {node: '>=12.0.0'}
     dependencies:
-      sharp: 0.32.4
+      sharp: 0.32.5
     dev: false
 
   /import-fresh@3.3.0:
@@ -7763,21 +7767,6 @@ packages:
 
   /set-cookie-parser@2.6.0:
     resolution: {integrity: sha512-RVnVQxTXuerk653XfuliOxBP81Sf0+qfQE73LIYKcyMYHG94AuH0kgrQpRDuTZnSmjpysHmzxJXKNfa6PjFhyQ==}
-    dev: false
-
-  /sharp@0.32.4:
-    resolution: {integrity: sha512-exUnZewqVZC6UXqXuQ8fyJJv0M968feBi04jb9GcUHrWtkRoAKnbJt8IfwT4NJs7FskArbJ14JAFGVuooszoGg==}
-    engines: {node: '>=14.15.0'}
-    requiresBuild: true
-    dependencies:
-      color: 4.2.3
-      detect-libc: 2.0.2
-      node-addon-api: 6.1.0
-      prebuild-install: 7.1.1
-      semver: 7.5.4
-      simple-get: 4.0.1
-      tar-fs: 3.0.4
-      tunnel-agent: 0.6.0
     dev: false
 
   /sharp@0.32.5:

@@ -31,6 +31,7 @@
     "microcms-js-sdk": "^2.5.0",
     "pandacss-config": "workspace:^",
     "result": "workspace:^",
+    "sharp": "^0.32.5",
     "ts-config": "workspace:^",
     "typescript": "^5.1.6",
     "validator": "^13.11.0",
