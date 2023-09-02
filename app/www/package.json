@@ -4,7 +4,7 @@
     "extends": "../../package.json"
   },
   "scripts": {
-    "dev": "fd -t f . node_modules/pandacss-config | entr -r astro dev",
+    "dev": "astro dev",
     "prebuild": "panda codegen",
     "build": "astro build",
     "start": "astro preview",
