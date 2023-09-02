@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { vstack } from "pandacss/patterns";
+import { vstack } from "~/style/pandacss/patterns";
 
 export default component$(() => {
   return (

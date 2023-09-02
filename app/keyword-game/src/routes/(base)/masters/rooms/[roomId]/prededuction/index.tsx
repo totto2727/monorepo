@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-import { vstack } from "pandacss/patterns";
+import { vstack } from "~/style/pandacss/patterns";
 
 export default component$(() => {
   return (
