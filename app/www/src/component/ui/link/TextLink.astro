@@ -1,0 +1,22 @@
+---
+import { sva } from "~/style/pandacss/css";
+export type Props = {
+  href: string;
+};
+
+const stylesGenerater = sva({
+  slots: ["text"],
+  base: {
+    text: {
+      textStyle: "notoA",
+      color: "blue.600",
+    },
+  },
+});
+const styles = stylesGenerater();
+const props = Astro.props;
+---
+
+<a href={props.href} class={styles.text}>
+  <slot />
+</a>
