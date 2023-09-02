@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+
+import { TITLE } from "~/component/text";
+import { applyAspect } from "~/lib/css";
+import { sva } from "~/style/pandacss/css";
+
+import Maguro from "./logo.png";
+
+const stylesGenerator = sva({
+  slots: ["link", "logo", "title", "container"],
+  base: {
+    container: {
+      position: "sticky",
+      zIndex: "100",
+      backgroundColor: "rgba(0,0,0,0.05)",
+      padding: "1rem",
+    },
+    link: {
+      maxWidth: "80rem",
+      marginX: "auto",
+      display: "flex",
+      gap: "1rem",
+      alignItems: "center",
+      justifyContent: "start",
+    },
+    logo: {
+      width: "4rem",
+      objectFit: "contain",
+    },
+    title: {
+      textStyle: "notoH1",
+      fontSize: "2rem",
+    },
+  },
+});
+const styles = stylesGenerator();
+---
+
+<header class={styles.container}>
+  <a href="/" class={styles.link}>
+    <Image
+      src={Maguro}
+      alt=""
+      class={styles.logo}
+      width={64}
+      height={applyAspect(64, Maguro.height / Maguro.width)}
+    />
+    <h1 class={styles.title}>{TITLE}</h1>
+  </a>
+</header>
