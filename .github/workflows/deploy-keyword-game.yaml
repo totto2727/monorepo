@@ -27,6 +27,8 @@ jobs:
         uses: dtinth/setup-github-actions-caching-for-turbo@v1
       - name: publish-pages
         uses: ./.github/actions/publish-pages
+        env:
+          PUBLIC_DATA_CF_BEACON_TOKEN_ID: ${{ secrets.PUBLIC_DATA_CF_BEACON_TOKEN_ID }}
         with:
           project-name: keyword-game
           dist: ./app/keyword-game/dist
