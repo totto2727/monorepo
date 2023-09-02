@@ -17,11 +17,11 @@
       "dependsOn": ["prebuild", "^dev"]
     },
     "test": {
-      "dependsOn": ["^prebuild"],
+      "dependsOn": ["prebuild"],
       "outputs": ["./node_modules/.cache/vitest/**"]
     },
     "type": {
-      "dependsOn": ["^prebuild"],
+      "dependsOn": ["prebuild"],
       "outputs": ["./node_modules/.cache/.ts-cache/**"]
     },
     "check": {
