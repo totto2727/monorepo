@@ -14,8 +14,6 @@ brew install volta go-task terraform entr fd
   - root
     - VITE_LOCAL=true
   - www
-    - MICROCMS_API_KEY
-    - MICROCMS_SERVICE_DOMAIN
   - keyword-game
   - infra
     - local.tfvars
@@ -36,8 +34,6 @@ brew install volta go-task terraform entr fd
       - www staging
       - Dependabot
     - Secrets
-      - MICROCMS_SERVICE_DOMAIN
-      - MICROCMS_API_KEY
       - DATA_CF_BEACON_TOKEN_ID
         - www production
   - keyword-game
@@ -54,8 +50,6 @@ brew install volta go-task terraform entr fd
       - production
       - preview
     - Secrets
-      - MICROCMS_SERVICE_DOMAIN
-      - MICROCMS_API_KEY
       - DATA_CF_BEACON_TOKEN_ID
         - production
   - keyword-game
@@ -77,6 +71,12 @@ www*.page.dev
   - 開発者のみ
 notion.totto2727.dev
   - 誰でも
+keyword.totto2727.dev
+  - 誰でも
+keyword-game*.page.dev
+  - www.totto2727.devへリダイレクト
+*.keyword-game*.pages.dev
+  - 開発者のみ
 ```
 
 ## www
