@@ -39,7 +39,7 @@ addEventListener("fetch", (event) => {
 });
 
 function generateSitemap() {
-  let sitemap = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+  let sitemap = '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">';
   slugs.forEach(
     (slug) =>
       (sitemap +=
@@ -207,7 +207,7 @@ class BodyRewriter {
   }
   element(element) {
     element.append(
-      `<div style="display:none">Powered by <a href="http://fruitionsite.com">Fruition</a></div>
+      `<div style="display:none">Powered by <a href="https://fruitionsite.com">Fruition</a></div>
       <script>
       window.CONFIG.domainBaseUrl = 'https://${MY_DOMAIN}';
       const SLUG_TO_PAGE = ${JSON.stringify(this.SLUG_TO_PAGE)};
