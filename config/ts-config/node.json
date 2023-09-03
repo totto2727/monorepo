@@ -1,3 +1,6 @@
 {
-  "extends": ["@tsconfig/node18", "./base.json"]
+  "extends": ["@tsconfig/node18", "./base.json"],
+  "compilerOptions": {
+    "moduleResolution": "nodenext"
+  }
 }

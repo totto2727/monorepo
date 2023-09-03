@@ -36,9 +36,9 @@ export const base = [
   {
     languageOptions: {
       globals: {
-        ...globals.browser,
-        ...globals.node,
         ...globals.es2021,
+        ...globals.node,
+        ...globals.browser,
         ...globals.worker,
       },
     },

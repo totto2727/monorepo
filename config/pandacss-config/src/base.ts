@@ -1,10 +1,11 @@
 import { defineTextStyles } from "@pandacss/dev";
+import type { Config } from "@pandacss/types";
 
 import { colorTokens } from "./color/index.js";
 import { noto } from "./font/noto.js";
 
 /* eslint-disable no-undef */
-export const base = {
+export const base: Config = {
   preflight: true,
   theme: {
     extend: {
