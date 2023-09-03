@@ -23,7 +23,7 @@ include:
 
 #Execute shell command before Qodana execution (Applied in CI/CD pipeline)
 #bootstrap: sh ./prepare-qodana.sh
-bootstrap: pnpm install
+bootstrap: npm i -g pnpm && pnpm install
 
 #Install IDE plugins before Qodana execution (Applied in CI/CD pipeline)
 #plugins:
