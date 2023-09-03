@@ -4,7 +4,7 @@
   "pipeline": {
     "prebuild": {
       "dependsOn": ["^prebuild"],
-      "outputs": ["./node_modules/pandacss/**"]
+      "outputs": ["src/style/pandacss/**", ".astro/**"]
     },
     "build": {
       "dependsOn": ["^build", "prebuild"],

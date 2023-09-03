@@ -10,6 +10,7 @@
     "root:lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
     "root:format": "prettier --write --cache . '!pnpm-lock.yaml' '!package' '!config' '!app'",
     "dev": "turbo dev",
+    "prebuild": "turbo prebuild",
     "build": "turbo build",
     "start": "turbo start",
     "test": "turbo test",
