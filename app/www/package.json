@@ -9,7 +9,7 @@
     "build": "astro build",
     "start": "astro preview",
     "astro": "astro",
-    "type": "tsc",
+    "type": "tsc && astro check",
     "check:lint": "eslint --exit-on-fatal-error --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --no-error-on-unmatched-pattern .",
     "check:format": "prettier -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
     "check": "run-s check:*",
