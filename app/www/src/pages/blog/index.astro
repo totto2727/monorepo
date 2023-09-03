@@ -1,0 +1,79 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "~/component/layout/BaseLayout.astro";
+import BaseHeader from "~/component/ui/header/BaseHeader.astro";
+import { sva } from "~/style/pandacss/css";
+
+import ImageWithContainer from "../../component/ui/image/ImageWithContainer.astro";
+import { css } from "../../style/pandacss/css";
+
+const blogs = await getCollection("blog");
+
+const mainPaddingX = "2.5vw";
+const stylesGenerater = sva({
+  slots: ["main", "title", "articleList", "articleTexts"],
+  base: {
+    main: {
+      marginX: "auto",
+      display: "grid",
+      gridAutoRows: "auto",
+      placeItems: "center",
+      paddingX: mainPaddingX,
+    },
+    title: {
+      textStyle: "notoH1",
+      paddingY: "0.25em",
+    },
+    articleList: {
+      width: "100%",
+      display: "grid",
+      gridAutoRows: "auto",
+      placeItems: "center",
+    },
+    articleTexts: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      width: "100%",
+    },
+  },
+});
+const styles = stylesGenerater();
+---
+
+<BaseLayout title="blogs">
+  <BaseHeader />
+  <main class={styles.main}>
+    <h1 class={styles.title}>ブログ</h1>
+    <ul class={styles.articleList}>
+      {
+        blogs.map((v) => (
+          <li>
+            <a href={`/blog/${v.slug}`}>
+              <div>
+                <ImageWithContainer
+                  src={v.data.eyeCatch ?? "https://picsum.photos/1200"}
+                  alt=""
+                  width="960"
+                  height="540"
+                  objectFit="cover"
+                  containerWidth={
+                    css.raw({ width: `calc(100vw - ${mainPaddingX} * 2)` })
+                      .width
+                  }
+                  aspectRatio="16/9"
+                />
+                <div slot="text" class={styles.articleTexts}>
+                  <div>{v.data.title}</div>
+                  <div>最終更新日:</div>
+                  <div>公開日:</div>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</BaseLayout>
