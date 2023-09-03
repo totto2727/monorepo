@@ -1,5 +1,5 @@
 {
-  "extends": "./base.json",
+  "extends": ["./base.json"],
   "compilerOptions": {
     "moduleResolution": "bundler",
     "lib": ["es2022", "DOM", "WebWorker", "DOM.Iterable"],
