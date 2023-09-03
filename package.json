@@ -5,6 +5,7 @@
     "node": "18.17.1",
     "pnpm": "8.7.1"
   },
+  "packageManager": "pnpm@8.7.1",
   "scripts": {
     "root": "run-s root:*",
     "root:lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
