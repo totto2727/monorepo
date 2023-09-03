@@ -4,19 +4,30 @@ import { css } from "~/style/pandacss/css";
 import Favicon from "./meta/Favicon.astro";
 import CloudflareWebAnalytics from "./script/CloudflareWebAnalytics.astro";
 
-export interface Props {
+export type Props = {
   prefix?: string;
   title: string;
-}
+};
 
 const { title, prefix } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="ja">
+<html
+  lang="ja"
+  class={css({
+    fontSize: {
+      base: "12px",
+      md: "16px",
+    },
+    transition: "font-size 0.5s",
+  })}
+>
   <head>
     <title>{prefix ?? "totto2727 "}{title}</title>
     <meta charset="utf-8" slot="metas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <Favicon />
     <slot name="meta" />
     <style>

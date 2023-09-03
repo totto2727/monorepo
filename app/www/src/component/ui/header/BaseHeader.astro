@@ -1,50 +1,54 @@
 ---
 import { Image } from "astro:assets";
 
-import { applyAspect } from "~/lib/css";
 import { sva } from "~/style/pandacss/css";
 
 import Maguro from "./logo.png";
 
 const stylesGenerator = sva({
-  slots: ["link", "logo", "title", "container"],
+  slots: ["link", "logo", "title", "header", "inner"],
   base: {
-    container: {
+    header: {
       position: "sticky",
       zIndex: "100",
       backgroundColor: "rgba(0,0,0,0.05)",
       padding: "1rem",
     },
-    link: {
+    inner: {
       maxWidth: "80rem",
+      width: "100%",
       marginX: "auto",
-      display: "flex",
+    },
+    link: {
+      width: "fit-content",
+      display: "grid",
+      gridTemplateColumns: {
+        base: "auto",
+        md: "auto auto",
+      },
       gap: "1rem",
-      alignItems: "center",
-      justifyContent: "start",
+      placeItems: "center",
     },
     logo: {
       width: "4rem",
+      aspectRatio: "1",
       objectFit: "contain",
     },
     title: {
       textStyle: "notoH1",
       fontSize: "2rem",
+      hideBelow: "md",
     },
   },
 });
 const styles = stylesGenerator();
 ---
 
-<header class={styles.container}>
-  <a href="/" class={styles.link}>
-    <Image
-      src={Maguro}
-      alt=""
-      class={styles.logo}
-      width={64}
-      height={applyAspect(64, Maguro.height / Maguro.width)}
-    />
-    <h1 class={styles.title}>止まれないフロントエンドエンジニア</h1>
-  </a>
+<header class={styles.header}>
+  <div class={styles.inner}>
+    <a href="/" class={styles.link}>
+      <Image src={Maguro} alt="" class={styles.logo} width={64} height={64} />
+      <h1 class={styles.title}>止まれないフロントエンドエンジニア</h1>
+    </a>
+  </div>
 </header>
