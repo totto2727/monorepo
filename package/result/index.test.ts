@@ -160,7 +160,7 @@ describe("Result型のテスト", () => {
         expect(
           r.tryCatch(
             () => {
-              throw "error";
+              throw 1;
             },
             () => fail("error"),
           )(),
