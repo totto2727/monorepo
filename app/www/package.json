@@ -21,8 +21,8 @@
   "dependencies": {
     "@astrojs/check": "^0.2.0",
     "@fontsource-variable/noto-sans-jp": "^5.0.7",
-    "@pandacss/astro": "^0.11.0",
-    "@pandacss/dev": "^0.11.0",
+    "@pandacss/astro": "^0.13.1",
+    "@pandacss/dev": "^0.13.1",
     "@types/node": "^20.5.0",
     "@types/validator": "^13.11.1",
     "astro": "^3.0.7",
