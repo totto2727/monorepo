@@ -24,9 +24,9 @@ export const noto: TextStyles = {
   notoA: notoBase("noto a", { textDecoration: "underline" }),
   notoH1: notoBase("noto h1", {
     fontWeight: 700,
-    fontSize: "3rem",
+    fontSize: "2.5rem",
   }),
-  notoH2: notoBase("noto h2", { fontWeight: 700, fontSize: "2.75rem" }),
-  notoH3: notoBase("noto h3", { fontWeight: 700, fontSize: "2.5rem" }),
-  notoH4: notoBase("noto h4", { fontWeight: 700, fontSize: "2.25rem" }),
+  notoH2: notoBase("noto h2", { fontWeight: 700, fontSize: "2.25rem" }),
+  notoH3: notoBase("noto h3", { fontWeight: 700, fontSize: "2rem" }),
+  notoH4: notoBase("noto h4", { fontWeight: 700, fontSize: "1.75rem" }),
 };
