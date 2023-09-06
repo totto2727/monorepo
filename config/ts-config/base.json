@@ -10,6 +10,7 @@
     "incremental": true,
     "resolveJsonModule": true,
     "allowJs": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true
   }
 }

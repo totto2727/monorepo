@@ -14,12 +14,16 @@
     "check:format": "prettier -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
     "check": "run-s check:*",
     "fix:lint": "eslint --fix --exit-on-fatal-error --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --no-error-on-unmatched-pattern .",
-    "fix:format": "prettier --write -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
+    "fix:format": "prettier --write -l --cache --no-error-on-unmatched-pattern --ignore-unknown --ignore-path ../../.gitignore '**/*.*'",
     "fix": "run-s fix:*"
   },
   "type": "module",
   "dependencies": {
     "@astrojs/check": "^0.2.0",
+    "@astrojs/mdx": "^1.0.0",
+    "@astrojs/prefetch": "^0.4.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/ts-plugin": "^1.1.3",
     "@fontsource-variable/noto-sans-jp": "^5.0.7",
     "@pandacss/astro": "^0.11.0",
     "@pandacss/dev": "^0.11.0",

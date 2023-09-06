@@ -11,6 +11,8 @@
     "root:lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --fix .",
     "root:format": "prettier --write --cache . '!pnpm-lock.yaml' '!package' '!config' '!app'",
     "dev": "turbo dev",
+    "dev:www": "turbo dev --filter www",
+    "dev:keyword-game": "turbo dev --filter keyword-game",
     "prebuild": "turbo prebuild",
     "build": "turbo build",
     "start": "turbo start",
