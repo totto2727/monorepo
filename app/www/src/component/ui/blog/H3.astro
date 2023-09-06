@@ -1,0 +1,7 @@
+---
+import { css } from "~/style/pandacss/css";
+---
+
+<h3 {...Astro.props} class={css({ textStyle: "notoH3" })}>
+  <slot />
+</h3>
