@@ -12,7 +12,7 @@ export type Props = {
 const { title, prefix } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html
   lang="ja"
   class={css({
@@ -30,7 +30,21 @@ const { title, prefix } = Astro.props;
 
     <Favicon />
     <slot name="meta" />
-    <style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=optional"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=optional"
+    />
+
+    <style is:global>
       @layer reset, base, tokens, recipes, utilities;
     </style>
   </head>

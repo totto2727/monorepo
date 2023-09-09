@@ -7,10 +7,9 @@ function notoBase(
   return {
     description,
     value: {
-      fontFamily: "'Noto Sans JP Variable', sans-serif",
+      fontFamily: "'Noto Sans JP', sans-serif",
       fontWeight: "400",
       fontSize: "1.5rem",
-
       lineHeight: "1.5",
       textDecoration: "none",
       textTransform: "none",
@@ -21,7 +20,8 @@ function notoBase(
 
 export const noto: TextStyles = {
   notoP: notoBase("noto p"),
-  notoA: notoBase("noto a", { textDecoration: "underline" }),
+  notoSpan: notoBase("noto span"),
+  notoA: notoBase("noto a", { textDecoration: "underline", fontWeight: 500 }),
   notoH1: notoBase("noto h1", {
     fontWeight: 700,
     fontSize: "2.5rem",
