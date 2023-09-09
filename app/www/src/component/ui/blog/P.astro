@@ -1,7 +1,11 @@
 ---
 import { css } from "~/style/pandacss/css";
+
+const style = css({
+  textStyle: "notoP",
+});
 ---
 
-<p {...Astro.props} class={css({ textStyle: "notoP" })}>
+<p {...Astro.props} class={style}>
   <slot />
 </p>

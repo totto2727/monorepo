@@ -1,7 +1,11 @@
 ---
 import { css } from "~/style/pandacss/css";
+
+const style = css({
+  textStyle: "notoSpan",
+});
 ---
 
-<p {...Astro.props} class={css({})}>
+<span {...Astro.props} class={style}>
   <slot />
-</p>
+</span>

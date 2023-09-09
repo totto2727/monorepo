@@ -1,3 +1,4 @@
+import { default as A } from "./A.astro";
 import { default as H1 } from "./H1.astro";
 import { default as H2 } from "./H2.astro";
 import { default as H3 } from "./H3.astro";
@@ -10,4 +11,5 @@ export default {
   h3: H3,
   p: P,
   span: Span,
+  a: A,
 };

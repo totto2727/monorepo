@@ -1,0 +1,46 @@
+---
+import { getEntry } from "astro:content";
+
+import BaseLayout from "~/component/layout/BaseLayout.astro";
+import blog from "~/component/ui/blog";
+import BaseHeader from "~/component/ui/header/BaseHeader.astro";
+import { sva } from "~/style/pandacss/css";
+import { type BlogIDProps, getBlogPaths } from "~/type/blog/BlogIDProps";
+
+export type Props = BlogIDProps;
+
+export const getStaticPaths = getBlogPaths;
+
+const { data } = Astro.props as Props;
+
+const entry = await getEntry("blog", Astro.props.slug);
+
+const { Content, headings } = await entry.render();
+
+const stylesGenerater = sva({
+  slots: ["main", "title", "content"],
+  base: {
+    main: {
+      marginX: "auto",
+      display: "grid",
+      gridAutoRows: "auto",
+      placeItems: "center",
+    },
+    content: {
+      paddingX: "5vw",
+      textAlign: "left",
+      width: "100%",
+    },
+  },
+});
+const styles = stylesGenerater();
+---
+
+<BaseLayout title={data.title}>
+  <BaseHeader />
+  <main class={styles.main}>
+    <div class={styles.content}>
+      <Content components={blog} />
+    </div>
+  </main>
+</BaseLayout>

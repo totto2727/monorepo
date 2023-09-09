@@ -1,0 +1,17 @@
+---
+import { css } from "~/style/pandacss/css";
+
+const style = css({
+  textStyle: "notoA",
+  color: {
+    base: "link",
+    _visited: "link.visited",
+    _hover: "link.hover",
+    _focus: "link.focus",
+  },
+});
+---
+
+<a {...Astro.props} class={style}>
+  <slot />
+</a>

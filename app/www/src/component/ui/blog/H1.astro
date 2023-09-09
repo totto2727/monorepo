@@ -1,7 +1,18 @@
 ---
 import { css } from "~/style/pandacss/css";
+
+const style = css({
+  textStyle: "notoH1",
+  marginY: {
+    base: "1.5em 0.75em",
+    _first: "2em 0.75em",
+  },
+  marginBottom: {
+    _last: "0",
+  },
+});
 ---
 
-<h1 {...Astro.props} class={css({ textStyle: "notoH1" })}>
+<h1 {...Astro.props} class={style}>
   <slot />
 </h1>
