@@ -1,17 +1,21 @@
 import { defineTextStyles } from "@pandacss/dev";
 import type { Config } from "@pandacss/types";
 
-import { colorTokens } from "./color/index.js";
+import { colorSemanticToken, colorTokens } from "./color/index.js";
 import { noto } from "./font/noto.js";
 
 /* eslint-disable no-undef */
 export const base: Config = {
   preflight: true,
+  conditions: {
+    dark: "[data-color-mode=dark] &",
+  },
   theme: {
     extend: {
       textStyles: defineTextStyles({ ...noto }),
     },
     tokens: { ...colorTokens },
+    semanticTokens: { ...colorSemanticToken },
   },
 
   include: [
