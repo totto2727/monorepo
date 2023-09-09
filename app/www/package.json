@@ -37,7 +37,7 @@
     "result": "workspace:^",
     "sharp": "^0.32.5",
     "ts-config": "workspace:^",
-    "typescript": "^5.1.6",
+    "typescript": "^5.2.2",
     "validator": "^13.11.0",
     "vite": "4.4.8"
   }

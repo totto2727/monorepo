@@ -33,7 +33,7 @@
     "pandacss-config": "workspace:^",
     "result": "workspace:^",
     "ts-config": "workspace:^",
-    "typescript": "^5.1.6",
+    "typescript": "^5.2.2",
     "undici": "5.23.0",
     "vite": "4.4.8",
     "vite-tsconfig-paths": "4.2.0"

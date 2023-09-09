@@ -37,6 +37,6 @@
     "microcms-js-sdk": "^2.5.0",
     "result": "workspace:^",
     "ts-config": "workspace:^",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   }
 }
