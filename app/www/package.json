@@ -32,7 +32,7 @@
     "astro": "^3.0.7",
     "date-fns": "^2.30.0",
     "microcms": "workspace:^",
-    "microcms-js-sdk": "^2.5.0",
+    "microcms-js-sdk": "^2.6.1",
     "pandacss-config": "workspace:^",
     "result": "workspace:^",
     "sharp": "^0.32.5",
