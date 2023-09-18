@@ -32,7 +32,7 @@
     "src"
   ],
   "dependencies": {
-    "@types/node": "^20.5.0",
+    "@types/node": "^20.6.2",
     "date-fns": "^2.30.0",
     "microcms-js-sdk": "^2.5.0",
     "result": "workspace:^",
