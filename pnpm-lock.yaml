@@ -37,7 +37,7 @@ importers:
     dependencies:
       '@builder.io/qwik':
         specifier: ^1.2.6
-        version: 1.2.6(undici@5.23.0)
+        version: 1.2.6(undici@5.25.2)
       '@builder.io/qwik-city':
         specifier: ^1.2.6
         version: 1.2.6
@@ -63,8 +63,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       undici:
-        specifier: 5.23.0
-        version: 5.23.0
+        specifier: 5.25.2
+        version: 5.25.2
       vite:
         specifier: 4.4.8
         version: 4.4.8(@types/node@20.5.0)
@@ -551,7 +551,7 @@ packages:
       dset: 3.1.2
       is-docker: 3.0.0
       is-wsl: 2.2.0
-      undici: 5.23.0
+      undici: 5.25.2
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
@@ -567,7 +567,7 @@ packages:
       dset: 3.1.2
       is-docker: 3.0.0
       is-wsl: 3.0.0
-      undici: 5.23.0
+      undici: 5.25.2
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
@@ -586,7 +586,7 @@ packages:
   /@astrojs/webapi@2.2.0:
     resolution: {integrity: sha512-mHAOApWyjqSe5AQMOUD9rsZJqbMQqe3Wosb1a40JV6Okvyxj1G6GTlthwYadWCymq/lbgwh0PLiY8Fr4eFxtuQ==}
     dependencies:
-      undici: 5.23.0
+      undici: 5.25.2
     dev: false
 
   /@babel/code-frame@7.22.10:
@@ -839,7 +839,7 @@ packages:
       - supports-color
     dev: false
 
-  /@builder.io/qwik@1.2.6(undici@5.23.0):
+  /@builder.io/qwik@1.2.6(undici@5.25.2):
     resolution: {integrity: sha512-Cm1sLAimML55I5T1RI80R1lLgI4cnSeQt5obQtcMKa8wMmf2/luEyQaEkeN2fV3sp/gaVXCfAuKaddXK6ONdww==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
@@ -847,7 +847,7 @@ packages:
       undici: ^5.14.0
     dependencies:
       csstype: 3.1.2
-      undici: 5.23.0
+      undici: 5.25.2
     dev: false
 
   /@cloudflare/kv-asset-handler@0.2.0:
@@ -3540,7 +3540,7 @@ packages:
       string-width: 6.1.0
       strip-ansi: 7.1.0
       tsconfig-resolver: 3.0.1
-      undici: 5.23.0
+      undici: 5.25.2
       unist-util-visit: 4.1.2
       vfile: 5.3.7
       vite: 4.4.9(@types/node@20.5.0)
@@ -6765,7 +6765,7 @@ packages:
       set-cookie-parser: 2.6.0
       source-map-support: 0.5.21
       stoppable: 1.1.0
-      undici: 5.23.0
+      undici: 5.25.2
       workerd: 1.20230814.1
       ws: 8.13.0
       youch: 3.2.3
@@ -8590,8 +8590,8 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: false
 
-  /undici@5.23.0:
-    resolution: {integrity: sha512-1D7w+fvRsqlQ9GscLBwcAJinqcZGHUKjbOmXdlE/v8BvEGXjeWAax+341q44EuTcHXXnfyKNbKRq4Lg7OzhMmg==}
+  /undici@5.25.2:
+    resolution: {integrity: sha512-tch8RbCfn1UUH1PeVCXva4V8gDpGAud/w0WubD6sHC46vYQ3KDxL+xv1A2UxK0N6jrVedutuPHxe1XIoqerwMw==}
     engines: {node: '>=14.0'}
     dependencies:
       busboy: 1.6.0
