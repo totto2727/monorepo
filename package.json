@@ -31,6 +31,6 @@
     "prettier": "^3.0.1",
     "prettier-config": "workspace:^",
     "turbo": "^1.10.7",
-    "wrangler": "^3.5.0"
+    "wrangler": "^3.10.1"
   }
 }
