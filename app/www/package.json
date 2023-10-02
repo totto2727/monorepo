@@ -27,7 +27,7 @@
     "@fontsource-variable/noto-sans-jp": "^5.0.7",
     "@pandacss/astro": "^0.11.0",
     "@pandacss/dev": "^0.11.0",
-    "@types/node": "^20.5.0",
+    "@types/node": "^20.8.0",
     "@types/validator": "^13.11.1",
     "astro": "^3.0.7",
     "date-fns": "^2.30.0",
