@@ -13,6 +13,6 @@
   "dependencies": {
     "@tsconfig/node18": "^18.2.0",
     "@tsconfig/strictest": "^2.0.1",
-    "astro": "^3.0.7"
+    "astro": "^3.2.3"
   }
 }
