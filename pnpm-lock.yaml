@@ -37,7 +37,7 @@ importers:
     dependencies:
       '@builder.io/qwik':
         specifier: ^1.2.6
-        version: 1.2.6(undici@5.23.0)
+        version: 1.2.6(undici@5.26.4)
       '@builder.io/qwik-city':
         specifier: ^1.2.6
         version: 1.2.6
@@ -66,8 +66,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       undici:
-        specifier: 5.23.0
-        version: 5.23.0
+        specifier: 5.26.4
+        version: 5.26.4
       vite:
         specifier: 4.4.8
         version: 4.4.8(@types/node@20.5.0)
@@ -822,7 +822,7 @@ packages:
       - supports-color
     dev: false
 
-  /@builder.io/qwik@1.2.6(undici@5.23.0):
+  /@builder.io/qwik@1.2.6(undici@5.26.4):
     resolution: {integrity: sha512-Cm1sLAimML55I5T1RI80R1lLgI4cnSeQt5obQtcMKa8wMmf2/luEyQaEkeN2fV3sp/gaVXCfAuKaddXK6ONdww==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
@@ -830,7 +830,7 @@ packages:
       undici: ^5.14.0
     dependencies:
       csstype: 3.1.2
-      undici: 5.23.0
+      undici: 5.26.4
     dev: false
 
   /@cloudflare/kv-asset-handler@0.2.0:
@@ -3865,13 +3865,6 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       run-applescript: 5.0.0
-    dev: false
-
-  /busboy@1.6.0:
-    resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
-    engines: {node: '>=10.16.0'}
-    dependencies:
-      streamsearch: 1.1.0
     dev: false
 
   /cac@6.7.14:
@@ -8168,11 +8161,6 @@ packages:
     engines: {node: '>=4', npm: '>=6'}
     dev: false
 
-  /streamsearch@1.1.0:
-    resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
-    engines: {node: '>=10.0.0'}
-    dev: false
-
   /streamx@2.15.1:
     resolution: {integrity: sha512-fQMzy2O/Q47rgwErk/eGeLu/roaFWV0jVsogDmrszM9uIw8L5OA+t+V93MgYlufNptfjmYR1tOMWhei/Eh7TQA==}
     dependencies:
@@ -8666,13 +8654,6 @@ packages:
 
   /undici-types@5.25.3:
     resolution: {integrity: sha512-Ga1jfYwRn7+cP9v8auvEXN1rX3sWqlayd4HP7OKk4mZWylEmu3KzXDUGrQUN6Ol7qo1gPvB2e5gX6udnyEPgdA==}
-    dev: false
-
-  /undici@5.23.0:
-    resolution: {integrity: sha512-1D7w+fvRsqlQ9GscLBwcAJinqcZGHUKjbOmXdlE/v8BvEGXjeWAax+341q44EuTcHXXnfyKNbKRq4Lg7OzhMmg==}
-    engines: {node: '>=14.0'}
-    dependencies:
-      busboy: 1.6.0
     dev: false
 
   /undici@5.26.4:
