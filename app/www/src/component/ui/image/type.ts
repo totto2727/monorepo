@@ -1,7 +1,6 @@
 import type { ImageMetadata } from "astro";
 import type { LocalImageProps, RemoteImageProps } from "astro:assets";
-
-import type { SystemStyleObject } from "~/style/pandacss/types";
+import type { SystemStyleObject } from "pandacss-www/types";
 
 export type ImageWithContainerProps = Omit<
   LocalImageProps & RemoteImageProps,

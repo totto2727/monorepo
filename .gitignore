@@ -6,7 +6,7 @@ server/
 functions/\[\[path\]\].js
 
 # pandacss
-**/pandacss/
+package/pandacss-*
 
 # generated types
 .astro/

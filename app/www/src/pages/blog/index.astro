@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
+import { sva } from "pandacss-www/css";
+import { css } from "pandacss-www/css";
 
 import BaseLayout from "~/component/layout/BaseLayout.astro";
 import BaseHeader from "~/component/ui/header/BaseHeader.astro";
-import { sva } from "~/style/pandacss/css";
 
 import ImageWithContainer from "../../component/ui/image/ImageWithContainer.astro";
-import { css } from "../../style/pandacss/css";
 
 const blogs = await getCollection("blog");
 

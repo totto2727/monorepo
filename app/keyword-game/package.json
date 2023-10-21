@@ -31,6 +31,7 @@
     "@types/node": "^20.5.0",
     "date-fns": "^2.30.0",
     "pandacss-config": "workspace:^",
+    "pandacss-keyword-game": "workspace:^",
     "result": "workspace:^",
     "ts-config": "workspace:^",
     "typescript": "^5.1.6",

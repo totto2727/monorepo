@@ -1,10 +1,10 @@
 ---
 import { getEntry } from "astro:content";
+import { sva } from "pandacss-www/css";
 
 import BaseLayout from "~/component/layout/BaseLayout.astro";
 import blog from "~/component/ui/blog";
 import BaseHeader from "~/component/ui/header/BaseHeader.astro";
-import { sva } from "~/style/pandacss/css";
 import { type BlogIDProps, getBlogPaths } from "~/type/blog/BlogIDProps";
 
 export type Props = BlogIDProps;
