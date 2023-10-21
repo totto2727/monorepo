@@ -43,10 +43,10 @@ importers:
         version: 1.2.6
       '@pandacss/dev':
         specifier: ^0.11.0
-        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6)
+        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.8.7)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6)
       '@types/node':
-        specifier: ^20.5.0
-        version: 20.5.0
+        specifier: ^20.8.7
+        version: 20.8.7
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -70,7 +70,7 @@ importers:
         version: 5.23.0
       vite:
         specifier: 4.4.8
-        version: 4.4.8(@types/node@20.5.0)
+        version: 4.4.8(@types/node@20.8.7)
       vite-tsconfig-paths:
         specifier: 4.2.0
         version: 4.2.0(typescript@5.1.6)(vite@4.4.8)
@@ -102,16 +102,16 @@ importers:
         version: 0.11.0(astro@3.0.7)(typescript@5.1.6)
       '@pandacss/dev':
         specifier: ^0.11.0
-        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6)
+        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.8.7)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6)
       '@types/node':
-        specifier: ^20.5.0
-        version: 20.5.0
+        specifier: ^20.8.7
+        version: 20.8.7
       '@types/validator':
         specifier: ^13.11.1
         version: 13.11.1
       astro:
         specifier: ^3.0.7
-        version: 3.0.7(@types/node@20.5.0)
+        version: 3.0.7(@types/node@20.8.7)
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -138,7 +138,7 @@ importers:
         version: 13.11.0
       vite:
         specifier: 4.4.8
-        version: 4.4.8(@types/node@20.5.0)
+        version: 4.4.8(@types/node@20.8.7)
 
   config/eslint-config:
     dependencies:
@@ -180,13 +180,13 @@ importers:
     dependencies:
       '@pandacss/dev':
         specifier: ^0.11.0
-        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6)
+        version: 0.11.0(@internationalized/date@3.4.0)(@types/node@20.8.7)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6)
       '@pandacss/types':
         specifier: ^0.11.1
         version: 0.11.1
       '@types/node':
-        specifier: ^20.5.0
-        version: 20.5.0
+        specifier: ^20.8.7
+        version: 20.8.7
       ts-config:
         specifier: workspace:^
         version: link:../ts-config
@@ -203,8 +203,8 @@ importers:
   config/template:
     dependencies:
       '@types/node':
-        specifier: ^20.5.0
-        version: 20.5.0
+        specifier: ^20.8.7
+        version: 20.8.7
       ts-config:
         specifier: workspace:^
         version: link:../ts-config
@@ -213,7 +213,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: 4.4.8
-        version: 4.4.8(@types/node@20.5.0)
+        version: 4.4.8(@types/node@20.8.7)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3
@@ -228,7 +228,7 @@ importers:
         version: 2.0.1
       astro:
         specifier: ^3.0.7
-        version: 3.0.7
+        version: 3.0.7(@types/node@20.8.7)
 
   package/pandacss-keyword-game: {}
 
@@ -237,8 +237,8 @@ importers:
   package/result:
     dependencies:
       '@types/node':
-        specifier: ^20.5.0
-        version: 20.5.0
+        specifier: ^20.8.7
+        version: 20.8.7
       ts-config:
         specifier: workspace:^
         version: link:../../config/ts-config
@@ -247,7 +247,7 @@ importers:
         version: 5.1.6
       vite:
         specifier: 4.4.8
-        version: 4.4.8(@types/node@20.5.0)
+        version: 4.4.8(@types/node@20.8.7)
       vitest:
         specifier: ^0.34.3
         version: 0.34.3
@@ -409,7 +409,7 @@ packages:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.9.6(@types/node@20.5.0)(sharp@0.32.5)
+      astro: 2.9.6(@types/node@20.8.7)(sharp@0.32.5)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -432,7 +432,7 @@ packages:
       astro: ^3.0.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.0.7(@types/node@20.5.0)
+      astro: 3.0.7(@types/node@20.8.7)
       github-slugger: 2.0.0
       import-meta-resolve: 3.0.0
       rehype-raw: 6.1.1
@@ -459,7 +459,7 @@ packages:
       '@astrojs/prism': 3.0.0
       '@mdx-js/mdx': 2.3.0
       acorn: 8.10.0
-      astro: 3.0.7(@types/node@20.5.0)
+      astro: 3.0.7(@types/node@20.8.7)
       es-module-lexer: 1.3.0
       estree-util-visit: 1.2.1
       github-slugger: 2.0.0
@@ -1910,7 +1910,7 @@ packages:
       astro: '>=2.x'
     dependencies:
       '@pandacss/postcss': 0.11.0(typescript@5.1.6)
-      astro: 3.0.7(@types/node@20.5.0)
+      astro: 3.0.7(@types/node@20.8.7)
       autoprefixer: 10.4.14(postcss@8.4.27)
       postcss: 8.4.27
       postcss-load-config: 4.0.1(postcss@8.4.27)
@@ -1956,7 +1956,7 @@ packages:
       ts-pattern: 5.0.4
     dev: false
 
-  /@pandacss/dev@0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6):
+  /@pandacss/dev@0.11.0(@internationalized/date@3.4.0)(@types/node@20.8.7)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6):
     resolution: {integrity: sha512-3HJQjd+oHyOrwSPlEtsdeKvygHQxe7oc7K+XI2vmhNrREzwGaaZWX0DGeoqMC0ueXwKOk0JL0EVUXWelF8D9VQ==}
     hasBin: true
     dependencies:
@@ -1967,7 +1967,7 @@ packages:
       '@pandacss/postcss': 0.11.0(typescript@5.1.6)
       '@pandacss/preset-panda': 0.11.0
       '@pandacss/shared': 0.11.0
-      '@pandacss/studio': 0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6)
+      '@pandacss/studio': 0.11.0(@internationalized/date@3.4.0)(@types/node@20.8.7)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6)
       '@pandacss/token-dictionary': 0.11.0
       '@pandacss/types': 0.11.0
       cac: 6.7.14
@@ -2118,7 +2118,7 @@ packages:
     resolution: {integrity: sha512-WOz5fwdDjvm1CWMaStsfeR9wkZjsObcKdh8RFguN914GJnoRjQ4+WpYZj7/36HR01qqua2Y46B7YH3f3Zam3UQ==}
     dev: false
 
-  /@pandacss/studio@0.11.0(@internationalized/date@3.4.0)(@types/node@20.5.0)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6):
+  /@pandacss/studio@0.11.0(@internationalized/date@3.4.0)(@types/node@20.8.7)(@types/react-dom@18.2.7)(@types/react@18.2.21)(sharp@0.32.5)(typescript@5.1.6):
     resolution: {integrity: sha512-j5M+v3ao7Ek654WGnRWSIW7yFaYPrmxENAIEeL3uwvjPGdPHn32mZ34ZWpc89Sc+KHg5ZIvgKnvzrzyR6cjPbw==}
     dependencies:
       '@ark-ui/react': 0.9.0(@internationalized/date@3.4.0)(react-dom@18.2.0)(react@18.2.0)
@@ -2129,11 +2129,11 @@ packages:
       '@pandacss/shared': 0.11.0
       '@pandacss/token-dictionary': 0.11.0
       '@pandacss/types': 0.11.0
-      astro: 2.9.6(@types/node@20.5.0)(sharp@0.32.5)
+      astro: 2.9.6(@types/node@20.8.7)(sharp@0.32.5)
       javascript-stringify: 2.1.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      vite: 4.4.8(@types/node@20.5.0)
+      vite: 4.4.8(@types/node@20.8.7)
     transitivePeerDependencies:
       - '@internationalized/date'
       - '@types/node'
@@ -2334,10 +2334,6 @@ packages:
 
   /@types/node@17.0.45:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
-    dev: false
-
-  /@types/node@20.5.0:
-    resolution: {integrity: sha512-Mgq7eCtoTjT89FqNoTzzXg2XvCi5VMhRV6+I2aYanc6kQCBImeNaAYRs/DyoVqk1YEUJK5gN9VO7HRIdz4Wo3Q==}
     dev: false
 
   /@types/node@20.8.7:
@@ -3439,7 +3435,7 @@ packages:
       - supports-color
     dev: false
 
-  /astro@2.9.6(@types/node@20.5.0)(sharp@0.32.5):
+  /astro@2.9.6(@types/node@20.8.7)(sharp@0.32.5):
     resolution: {integrity: sha512-yvbZQ6YOWYLejyQ4nAcgZLDYQ34enQJ5/LWlXKtUzXzpsUHB75vJMj+XmEq5Q2eVlZOlQrp0lU+nhSRGaOsOUQ==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
@@ -3503,7 +3499,7 @@ packages:
       typescript: 5.2.2
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.5.0(@types/node@20.5.0)
+      vite: 4.5.0(@types/node@20.8.7)
       vitefu: 0.2.4(vite@4.5.0)
       which-pm: 2.0.0
       yargs-parser: 21.1.1
@@ -3519,7 +3515,7 @@ packages:
       - terser
     dev: false
 
-  /astro@3.0.7:
+  /astro@3.0.7(@types/node@20.8.7):
     resolution: {integrity: sha512-slUnDBXfxMzq5abE4svcKbaeYC/tHZsJYOrzwDNU9lLye3/4cqYP7OuHMTXiRlx7LSpHQlUhwbMe2HqCv2GKag==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -3576,78 +3572,6 @@ packages:
       unist-util-visit: 4.1.2
       vfile: 5.3.7
       vite: 4.5.0(@types/node@20.8.7)
-      vitefu: 0.2.4(vite@4.5.0)
-      which-pm: 2.0.0
-      yargs-parser: 21.1.1
-      zod: 3.21.1
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-    dev: false
-
-  /astro@3.0.7(@types/node@20.5.0):
-    resolution: {integrity: sha512-slUnDBXfxMzq5abE4svcKbaeYC/tHZsJYOrzwDNU9lLye3/4cqYP7OuHMTXiRlx7LSpHQlUhwbMe2HqCv2GKag==}
-    engines: {node: '>=18.14.1', npm: '>=6.14.0'}
-    hasBin: true
-    dependencies:
-      '@astrojs/compiler': 2.0.1
-      '@astrojs/internal-helpers': 0.2.0
-      '@astrojs/markdown-remark': 3.0.0(astro@3.0.7)
-      '@astrojs/telemetry': 3.0.1
-      '@babel/core': 7.22.10
-      '@babel/generator': 7.22.10
-      '@babel/parser': 7.22.10
-      '@babel/plugin-transform-react-jsx': 7.22.5(@babel/core@7.22.10)
-      '@babel/traverse': 7.22.10
-      '@babel/types': 7.22.10
-      '@types/babel__core': 7.20.1
-      acorn: 8.10.0
-      boxen: 7.1.1
-      chokidar: 3.5.3
-      ci-info: 3.8.0
-      clsx: 2.0.0
-      common-ancestor-path: 1.0.1
-      cookie: 0.5.0
-      debug: 4.3.4
-      devalue: 4.3.2
-      diff: 5.1.0
-      es-module-lexer: 1.3.0
-      esbuild: 0.19.2
-      estree-walker: 3.0.3
-      execa: 8.0.1
-      fast-glob: 3.3.1
-      github-slugger: 2.0.0
-      gray-matter: 4.0.3
-      html-escaper: 3.0.3
-      http-cache-semantics: 4.1.1
-      js-yaml: 4.1.0
-      kleur: 4.1.5
-      magic-string: 0.30.3
-      mime: 3.0.0
-      ora: 7.0.1
-      p-limit: 4.0.0
-      path-to-regexp: 6.2.1
-      preferred-pm: 3.0.3
-      prompts: 2.4.2
-      rehype: 12.0.1
-      resolve: 1.22.4
-      semver: 7.5.4
-      server-destroy: 1.0.1
-      sharp: 0.32.5
-      shiki: 0.14.3
-      string-width: 6.1.0
-      strip-ansi: 7.1.0
-      tsconfig-resolver: 3.0.1
-      undici: 5.26.4
-      unist-util-visit: 4.1.2
-      vfile: 5.3.7
-      vite: 4.5.0(@types/node@20.5.0)
       vitefu: 0.2.4(vite@4.5.0)
       which-pm: 2.0.0
       yargs-parser: 21.1.1
@@ -8881,13 +8805,13 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 2.1.2(typescript@5.1.6)
-      vite: 4.4.8(@types/node@20.5.0)
+      vite: 4.4.8(@types/node@20.8.7)
     transitivePeerDependencies:
       - supports-color
       - typescript
     dev: false
 
-  /vite@4.4.8(@types/node@20.5.0):
+  /vite@4.4.8(@types/node@20.8.7):
     resolution: {integrity: sha512-LONawOUUjxQridNWGQlNizfKH89qPigK36XhMI7COMGztz8KNY0JHim7/xDd71CZwGT4HtSRgI7Hy+RlhG0Gvg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -8915,46 +8839,10 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.5.0
+      '@types/node': 20.8.7
       esbuild: 0.18.17
       postcss: 8.4.27
       rollup: 3.26.3
-    optionalDependencies:
-      fsevents: 2.3.3
-    dev: false
-
-  /vite@4.5.0(@types/node@20.5.0):
-    resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      '@types/node': 20.5.0
-      esbuild: 0.18.17
-      postcss: 8.4.27
-      rollup: 3.28.1
     optionalDependencies:
       fsevents: 2.3.3
     dev: false
@@ -9003,7 +8891,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.0(@types/node@20.5.0)
+      vite: 4.5.0(@types/node@20.8.7)
     dev: false
 
   /vitest@0.34.3:
