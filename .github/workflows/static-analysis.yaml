@@ -1,3 +1,4 @@
+name: static-analysis
 on:
   workflow_dispatch:
   push:
@@ -19,10 +20,10 @@ jobs:
 
     steps:
       - name: checkout
-        uses: actions/checkout@v3
-      - name: setup turbo
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+        uses: actions/checkout@v4
+      - name: setup turborepo
+        uses: ./.github/actions/setup-turborepo
       - name: setup pnpm
         uses: ./.github/actions/setup-pnpm
       - name: static-analysis
-        run: pnpm all
+        run: pnpm all:check

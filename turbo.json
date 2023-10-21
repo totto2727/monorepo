@@ -3,11 +3,11 @@
   "globalDependencies": [".env", ".env.local"],
   "pipeline": {
     "prebuild": {
-      "dependsOn": ["^prebuild"],
-      "outputs": ["src/style/pandacss/**", ".astro/**"]
+      "dependsOn": ["^prebuild", "^build"],
+      "outputs": ["package/pandacss-*/**", ".astro/**"]
     },
     "build": {
-      "dependsOn": ["^build", "prebuild"],
+      "dependsOn": ["prebuild"],
       "outputs": ["dist/**", "server/**"]
     },
     "start": {
@@ -32,7 +32,6 @@
       ]
     },
     "fix": {
-      "dependsOn": ["type"],
       "outputs": [
         "./node_modules/.cache/eslint/.eslint-cache",
         "./node_modules/.cache/prettier/.prettier-cache"

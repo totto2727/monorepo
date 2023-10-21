@@ -1,0 +1,8 @@
+name: setup-turborepo
+description: setup-turborepo
+
+runs:
+  using: composite
+  steps:
+    - name: setup turbo
+      uses: dtinth/setup-github-actions-caching-for-turbo@v1

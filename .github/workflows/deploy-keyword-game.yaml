@@ -22,9 +22,9 @@ jobs:
       name: "keyword-game production"
     steps:
       - name: checkout
-        uses: actions/checkout@v3
-      - name: setup turbo
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+        uses: actions/checkout@v4
+      - name: setup turborepo
+        uses: ./.github/actions/setup-turborepo
       - name: publish-pages
         uses: ./.github/actions/publish-pages
         env:
@@ -49,9 +49,9 @@ jobs:
       name: "keyword-game preview"
     steps:
       - name: checkout
-        uses: actions/checkout@v3
-      - name: setup turbo
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+        uses: actions/checkout@v4
+      - name: setup turborepo
+        uses: ./.github/actions/setup-turborepo
       - name: publish-pages
         uses: ./.github/actions/publish-pages
         with:

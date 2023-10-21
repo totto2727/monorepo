@@ -2,4 +2,4 @@ pre-commit:
   parallel: true
   commands:
     fix-all:
-      run: pnpm run all && git add {staged_files}
+      run: pnpm run all:fix && git add {staged_files}
