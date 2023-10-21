@@ -1,5 +1,5 @@
-name: publish pages
-description: publish pages
+name: publish-cloudflare-pages
+description: publish cloudflare pages
 inputs:
   gitHubToken:
     required: true
