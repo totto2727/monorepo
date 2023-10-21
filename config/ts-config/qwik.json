@@ -1,10 +1,16 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": ["./base.json"],
   "compilerOptions": {
+    "target": "esnext",
+    "module": "es2022",
     "moduleResolution": "bundler",
-    "lib": ["es2022", "DOM", "WebWorker", "DOM.Iterable"],
+    "lib": ["esnext", "DOM", "WebWorker", "DOM.Iterable"],
     "jsx": "react-jsx",
     "jsxImportSource": "@builder.io/qwik",
-    "types": ["node", "vite/client"]
+    "types": ["node", "vite/client"],
+    "allowImportingTsExtensions": false,
+    "allowArbitraryExtensions": false,
+    "verbatimModuleSyntax": false
   }
 }

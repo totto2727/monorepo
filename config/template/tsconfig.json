@@ -1,7 +1,11 @@
 {
-  "extends": "ts-config/node.json",
-  "include": ["**/*.ts"],
+  "extends": "ts-config/base.json",
+  "include": ["src", "**/*.ts"],
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
     "outDir": "./node_modules/.cache/.ts-cache/"
   }
 }

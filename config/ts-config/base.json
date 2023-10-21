@@ -1,16 +1,21 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "exactOptionalPropertyTypes": false,
+    "incremental": true,
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./node_modules/.cache/.ts-cache/",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "allowArbitraryExtensions": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noEmit": false,
-    "incremental": true,
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true
+    "exactOptionalPropertyTypes": false,
+    "noPropertyAccessFromIndexSignature": false
   }
 }

@@ -1,12 +1,11 @@
 {
-  "extends": "ts-config/qwik",
+  "extends": "ts-config/qwik.json",
+  "include": ["src", "**/*.ts"],
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
     },
-    "noPropertyAccessFromIndexSignature": false,
     "outDir": "./node_modules/.cache/.ts-cache/"
-  },
-  "include": ["src", "./**/*.d.ts", "./**/*.config.ts"],
-  "exclude": ["src/style/pandacss"]
+  }
 }

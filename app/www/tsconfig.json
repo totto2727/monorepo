@@ -1,7 +1,6 @@
 {
   "extends": "ts-config/astro.json",
-  "include": ["**/*.ts", "**/*.tsx", "**/*.astro"],
-  "exclude": ["src/style/pandacss"],
+  "include": ["src", "**/*.ts"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
