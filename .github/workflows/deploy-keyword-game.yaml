@@ -2,6 +2,9 @@ name: publish keyword-game
 on:
   workflow_dispatch:
   merge_group:
+  push:
+    branches:
+      - main
   pull_request:
 
 concurrency:
