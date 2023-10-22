@@ -2,6 +2,9 @@
   "extends": "ts-config/base.json",
   "include": ["src", "**/*.ts"],
   "compilerOptions": {
+    "target": "esnext",
+    "module": "es2022",
+    "moduleResolution": "node16",
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
