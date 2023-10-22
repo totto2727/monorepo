@@ -4,7 +4,7 @@ import { css } from "pandacss-www/css";
 
 import { type ImageWithContainerProps } from "./type";
 
-export type Props = ImageWithContainerProps;
+export type Props = ImageWithContainerProps & { srcset: string[] };
 
 const {
   aspectRatio,
@@ -14,6 +14,8 @@ const {
   cssProps,
   ...props
 } = Astro.props as Props;
+
+const ImageWrapper = typeof props.src !== "string" ? "img" : Image;
 ---
 
 <div
@@ -25,7 +27,7 @@ const {
   })}
 >
   <!-- @ts-ignore -->
-  <Image
+  <ImageWrapper
     {...props}
     class={css({
       width: "100%",
