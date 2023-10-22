@@ -9,6 +9,8 @@ import { type BlogIDProps, getBlogPaths } from "~/type/blog/BlogIDProps";
 
 export type Props = BlogIDProps;
 
+export const prerender = true;
+
 export const getStaticPaths = getBlogPaths;
 
 const { data } = Astro.props as Props;

@@ -8,6 +8,8 @@ import BaseHeader from "~/component/ui/header/BaseHeader.astro";
 
 import ImageWithContainer from "../../component/ui/image/ImageWithContainer.astro";
 
+export const prerender = true;
+
 const blogs = await getCollection("blog");
 
 const mainPaddingX = "2.5vw";
