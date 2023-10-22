@@ -67,10 +67,7 @@ const styles = stylesGenerater();
                       v.data.eyeCatch?.src ??
                       "https://picsum.photos/480/270.webp"
                     }
-                    srcset={[
-                      "https://picsum.photos/720/405.webp 1.5x",
-                      "https://picsum.photos/960/540.webp 2x",
-                    ]}
+                    srcset="https://picsum.photos/720/405.webp 1.5x, https://picsum.photos/960/540.webp 2x"
                     densities={[1.5, 2]}
                     alt={v.data.eyeCatch?.alt ?? ""}
                     width="480"
