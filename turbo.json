@@ -5,8 +5,8 @@
     "prebuild": {
       "dependsOn": ["^prebuild", "^build"],
       "outputs": [
-        "package/pandacss-www/**",
-        "package/pandacss-keyword-game/**",
+        "node_modules/pndacss-www/**",
+        "node_modules/pandacss-keyword-game/**",
         ".astro/**"
       ]
     },
@@ -18,27 +18,28 @@
       "dependsOn": ["build"]
     },
     "dev": {
-      "dependsOn": ["prebuild", "^dev"]
+      "dependsOn": ["prebuild", "^dev"],
+      "persistent": true
     },
     "test": {
       "dependsOn": ["prebuild"],
-      "outputs": ["./node_modules/.cache/vitest/**"]
+      "outputs": ["node_modules/.cache/vitest/**"]
     },
     "type": {
       "dependsOn": ["prebuild"],
-      "outputs": ["./node_modules/.cache/.ts-cache/**"]
+      "outputs": ["node_modules/.cache/.ts-cache/**"]
     },
     "check": {
       "dependsOn": ["type"],
       "outputs": [
-        "./node_modules/.cache/eslint/.eslint-cache",
-        "./node_modules/.cache/prettier/.prettier-cache"
+        "node_modules/.cache/eslint/.eslint-cache",
+        "node_modules/.cache/prettier/.prettier-cache"
       ]
     },
     "fix": {
       "outputs": [
-        "./node_modules/.cache/eslint/.eslint-cache",
-        "./node_modules/.cache/prettier/.prettier-cache"
+        "node_modules/.cache/eslint/.eslint-cache",
+        "node_modules/.cache/prettier/.prettier-cache"
       ]
     }
   }

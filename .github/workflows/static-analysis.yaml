@@ -1,7 +1,8 @@
 name: static-analysis
 on:
   workflow_dispatch:
-  push:
+  merge_group:
+  pull_request:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
