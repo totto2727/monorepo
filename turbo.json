@@ -4,7 +4,11 @@
   "pipeline": {
     "prebuild": {
       "dependsOn": ["^prebuild", "^build"],
-      "cache": false
+      "outputs": [
+        "node_modules/pandacss-www/**",
+        "node_modules/pandacss-keyword-game/**",
+        ".astro/**"
+      ]
     },
     "build": {
       "dependsOn": ["prebuild"],
