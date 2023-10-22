@@ -26,7 +26,7 @@
       "outputs": ["node_modules/.cache/vitest/**"]
     },
     "type": {
-      "dependsOn": ["prebuild"],
+      "dependsOn": ["^prebuild", "prebuild"],
       "outputs": ["node_modules/.cache/.ts-cache/**"]
     },
     "check": {
