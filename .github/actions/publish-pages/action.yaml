@@ -35,7 +35,7 @@ runs:
         directory: ${{ inputs.dist }}
         projectName: ${{ inputs.project-name }}
         wranglerVersion: "3"
-        branch: ${{ github.ref }}
+        branch: ${{ github.ref_name }}
         gitHubToken: ${{ inputs.gitHubToken }}
         accountId: ${{ inputs.accountId }}
         apiToken: ${{ inputs.apiToken }}
