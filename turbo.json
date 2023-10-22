@@ -4,11 +4,7 @@
   "pipeline": {
     "prebuild": {
       "dependsOn": ["^prebuild", "^build"],
-      "outputs": [
-        "node_modules/pndacss-www/**",
-        "node_modules/pandacss-keyword-game/**",
-        ".astro/**"
-      ]
+      "cache": false
     },
     "build": {
       "dependsOn": ["prebuild"],
