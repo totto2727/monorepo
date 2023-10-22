@@ -1,3 +1,4 @@
+import cloudflare from "@astrojs/cloudflare";
 import mdx from "@astrojs/mdx";
 import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
@@ -19,7 +20,12 @@ export default defineConfig({
     mdx(),
     prefetch(),
     sitemap(),
+    cloudflare({
+      runtime: { mode: "local" },
+    }),
   ],
+  output: "server",
+  adapter: cloudflare(),
   publicDir: "../../public",
   server: { port: 3001 },
   vite: {
