@@ -10,6 +10,11 @@ const env = loadEnv("", process.cwd() + "/../..");
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://www.totto2727.dev",
+  image: {
+    domains: ["picsum.photos"],
+    remotePatterns: [{ protocol: "https" }],
+  },
   integrations: [
     pandacss({ applyBaseStyles: false }),
     mdx(),
