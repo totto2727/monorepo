@@ -67,26 +67,17 @@ const styles = stylesGenerater();
                       v.data.eyeCatch?.src ??
                       "https://picsum.photos/480/270.webp"
                     }
+                    srcset={[
+                      "https://picsum.photos/720/405.webp 1.5x",
+                      "https://picsum.photos/960/540.webp 2x",
+                    ]}
+                    densities={[1.5, 2]}
                     alt={v.data.eyeCatch?.alt ?? ""}
                     width="480"
                     height="270"
+                    aspectRatio="16/9"
                     objectFit="cover"
                     containerWidth={css.raw({ width: "100%" })}
-                    aspectRatio="16/9"
-                    cssProps={css.raw({ hideFrom: "md" })}
-                  />
-                  <ImageWithContainer
-                    src={
-                      v.data.eyeCatch?.src ??
-                      "https://picsum.photos/960/540.webp"
-                    }
-                    alt={v.data.eyeCatch?.alt ?? ""}
-                    width="960"
-                    height="540"
-                    objectFit="cover"
-                    containerWidth={css.raw({ width: "100%" })}
-                    aspectRatio="16/9"
-                    cssProps={css.raw({ hideBelow: "md" })}
                   />
                   <div class={styles.articleTexts}>
                     <div>{v.data.title}</div>
