@@ -36,10 +36,19 @@ export const base = [
   {
     languageOptions: {
       globals: {
+        ...globals.builtin,
+        ...globals.es5,
+        ...globals.es2015,
+        ...globals.es2017,
+        ...globals.es2020,
         ...globals.es2021,
-        ...globals.node,
         ...globals.browser,
         ...globals.worker,
+        ...globals.serviceworker,
+        ...globals.node,
+        ...globals.nodeBuiltin,
+        ...globals.commonjs,
+        ...globals.jest,
       },
     },
   },
@@ -48,7 +57,6 @@ export const base = [
       "**/dist/*",
       "**/server/*",
       "**/tmp/*",
-      "**/pandacss/*",
       "**/.astro/*",
       "**/src/env.d.ts",
     ],
