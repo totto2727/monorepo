@@ -5,6 +5,9 @@ dotenv:
   - .env.local
 
 tasks:
+  init:
+    cmds:
+      - bash ./init.bash
   cloudflare-init:
     cmds:
       - pnpm install

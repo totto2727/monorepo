@@ -18,6 +18,9 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: init
+      uses: ./.github/actions/init
+
     - name: setup pnpm
       uses: ./.github/actions/setup-pnpm
 

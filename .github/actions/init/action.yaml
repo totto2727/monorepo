@@ -1,0 +1,9 @@
+name: setup pnpm
+description: "setup pnpm with volta"
+
+runs:
+  using: composite
+  steps:
+    - name: init
+      shell: bash
+      run: bash ./init.bash

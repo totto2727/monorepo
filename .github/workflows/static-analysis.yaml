@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+      - name: init
+        uses: ./.github/actions/init
       - name: setup turborepo
         uses: ./.github/actions/setup-turborepo
       - name: setup pnpm
