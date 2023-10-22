@@ -23,8 +23,8 @@
     "type": "turbo type",
     "check": "turbo check",
     "fix": "turbo fix",
-    "all:check": "run-p root:check check",
-    "all:fix": "run-p root:fix fix"
+    "all:check": "run-s check root:check ",
+    "all:fix": "run-s fix root:fix"
   },
   "type": "module",
   "dependencies": {
