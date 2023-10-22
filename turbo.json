@@ -4,11 +4,7 @@
   "pipeline": {
     "prebuild": {
       "dependsOn": ["^prebuild", "^build"],
-      "outputs": [
-        "node_modules/pndacss-www/**",
-        "node_modules/pandacss-keyword-game/**",
-        ".astro/**"
-      ]
+      "cache": false
     },
     "build": {
       "dependsOn": ["prebuild"],
@@ -26,7 +22,7 @@
       "outputs": ["node_modules/.cache/vitest/**"]
     },
     "type": {
-      "dependsOn": ["^prebuild", "prebuild"],
+      "dependsOn": ["prebuild"],
       "outputs": ["node_modules/.cache/.ts-cache/**"]
     },
     "check": {
