@@ -1,7 +1,7 @@
 import Qwik from "eslint-plugin-qwik";
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
-export const astro = [
+export const qwik = [
   {
     files: ["**/*.ts", "**/*.tsx"],
     plugins: {
