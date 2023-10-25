@@ -1,10 +1,11 @@
-import app from './entry.hono'
-import { serveStatic } from 'hono/cloudflare-workers'
-import qwikCityPlan from '@qwik-city-plan'
-import render from './entry.ssr'
-import { qwikMiddleware } from '@hono/qwik-city'
+import { qwikMiddleware } from "@hono/qwik-city";
+import qwikCityPlan from "@qwik-city-plan";
+import { serveStatic } from "hono/cloudflare-workers";
 
-app.get('*', qwikMiddleware({ render, qwikCityPlan }))
-app.get('*', serveStatic({ root: './' }))
+import app from "./entry.hono";
+import render from "./entry.ssr";
 
-export default app
+app.get("*", qwikMiddleware({ render, qwikCityPlan }));
+app.get("*", serveStatic({ root: "./" }));
+
+export default app;
