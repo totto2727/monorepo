@@ -25,15 +25,12 @@
       "dependsOn": ["prebuild"],
       "outputs": ["node_modules/.cache/vitest/**"]
     },
-    "type": {
-      "dependsOn": ["prebuild"],
-      "outputs": ["node_modules/.cache/.ts-cache/**"]
-    },
     "check": {
-      "dependsOn": ["type"],
+      "dependsOn": ["prebuild"],
       "outputs": [
         "node_modules/.cache/eslint/.eslint-cache",
-        "node_modules/.cache/prettier/.prettier-cache"
+        "node_modules/.cache/prettier/.prettier-cache",
+        "node_modules/.cache/.ts-cache/**"
       ]
     },
     "fix": {

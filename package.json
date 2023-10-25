@@ -7,7 +7,7 @@
   },
   "packageManager": "pnpm@8.7.1",
   "scripts": {
-    "root:check": "run-s root:fix:*",
+    "root:check": "run-p root:check:*",
     "root:check:lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache .",
     "root:check:format": "prettier --cache . '!pnpm-lock.yaml' '!package' '!config' '!app'",
     "root:fix": "run-s root:fix:*",
@@ -20,7 +20,6 @@
     "build": "turbo build",
     "start": "turbo start",
     "test": "turbo test",
-    "type": "turbo type",
     "check": "turbo check",
     "fix": "turbo fix",
     "all:check": "run-s check root:check ",

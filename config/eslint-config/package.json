@@ -4,12 +4,12 @@
     "extends": "../../package.json"
   },
   "scripts": {
+    "check": "run-p check:*",
     "check:lint": "eslint --exit-on-fatal-error --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --no-error-on-unmatched-pattern .",
     "check:format": "prettier -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
-    "check": "run-s check:*",
+    "fix": "run-s fix:*",
     "fix:lint": "eslint --fix --exit-on-fatal-error --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --no-error-on-unmatched-pattern .",
-    "fix:format": "prettier --write -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
-    "fix": "run-s fix:*"
+    "fix:format": "prettier --write -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore ."
   },
   "type": "module",
   "exports": {

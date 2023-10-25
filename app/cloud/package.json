@@ -1,0 +1,41 @@
+{
+  "name": "cloud",
+  "volta": {
+    "node": "18.18.2",
+    "pnpm": "8.9.2"
+  },
+  "scripts": {
+    "build": "run-p build:*",
+    "build:qwik": "vite build",
+    "build:workers": "vite build -c vite.config.workers.ts",
+    "dev:qwik": "vite build --watch",
+    "dev:workers": "wrangler dev",
+    "deploy": "yarn build.workers && wrangler publish server/entry.workers.mjs",
+    "check": "run-p check:*",
+    "check:type": "tsc",
+    "check:lint": "eslint --exit-on-fatal-error --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --no-error-on-unmatched-pattern .",
+    "check:format": "prettier -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
+    "fix": "run-s fix:*",
+    "fix:lint": "eslint --fix --exit-on-fatal-error --cache --cache-location ./node_modules/.cache/eslint/.eslint-cache --no-error-on-unmatched-pattern .",
+    "fix:format": "prettier --write -l --cache --no-error-on-unmatched-pattern --ignore-unknown --ignore-path ../../.gitignore '**/*.*'"
+  },
+  "type": "module",
+  "dependencies": {
+    "@builder.io/qwik": "^1.2.14",
+    "@builder.io/qwik-city": "^1.2.14",
+    "@hono/qwik-city": "^0.0.2",
+    "@types/node": "^20.8.7",
+    "@typescript-eslint/eslint-plugin": "5.48.0",
+    "@typescript-eslint/parser": "5.48.0",
+    "eslint-config": "workspace:^",
+    "hono": "^3.1.5",
+    "pm2": "^5.3.0",
+    "prettier-config": "workspace:^",
+    "ts-config": "workspace:^",
+    "typescript": "^5.2.2",
+    "undici": "5.26.4",
+    "vite": "4.5.0",
+    "vite-tsconfig-paths": "4.2.1",
+    "wrangler": "^3.14.0"
+  }
+}

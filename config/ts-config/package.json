@@ -4,10 +4,10 @@
     "extends": "../../package.json"
   },
   "scripts": {
+    "check": "run-p check:*",
     "check:format": "prettier -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
-    "check": "run-s check:*",
-    "fix:format": "prettier --write -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore .",
-    "fix": "run-s fix:*"
+    "fix": "run-s fix:*",
+    "fix:format": "prettier --write -l --cache --no-error-on-unmatched-pattern --ignore-path ../../.gitignore ."
   },
   "type": "module",
   "dependencies": {

@@ -1,0 +1,11 @@
+name = "cloud"
+main = "./server/entry.workers.js"
+compatibility_date = "2023-01-10"
+
+[site]
+bucket = "./dist"
+
+[build]
+command = "pnpm run build:workers"
+cwd = "."
+watch_dir = "src"
