@@ -23,7 +23,7 @@
   "dependencies": {
     "@builder.io/qwik": "^1.2.14",
     "@builder.io/qwik-city": "^1.2.14",
-    "@hono/qwik-city": "^0.0.2",
+    "@hono/qwik-city": "^0.0.5",
     "@types/node": "^20.8.7",
     "@typescript-eslint/eslint-plugin": "5.48.0",
     "@typescript-eslint/parser": "5.48.0",
